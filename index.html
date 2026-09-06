@@ -1,1483 +1,265 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ESC Congress 2026 | Puesta al día</title>
-
-  <style>
-    :root{
-      --bg:#07111f;
-      --bg-2:#0d1a2c;
-      --card:#ffffff;
-      --line:#e6edf3;
-      --text:#122033;
-      --muted:#6d7f92;
-      --navy:#0f2140;
-      --navy-2:#132b52;
-      --red:#f44336;
-      --red-soft:#ffebe8;
-      --green:#2e8b57;
-      --green-soft:#eaf7ef;
-      --blue:#2474d2;
-      --blue-soft:#edf5ff;
-      --shadow:0 12px 32px rgba(11, 23, 42, 0.08);
-      --radius:18px;
-      --container:1280px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background:#f6f8fb;
-      color:var(--text);
-      line-height:1.5;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    .container{
-      max-width:var(--container);
-      margin:auto;
-      padding:0 24px;
-    }
-
-    /* NAV */
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(5, 12, 23, .92);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-
-    .topbar-inner{
-      min-height:76px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      color:#fff;
-      font-weight:800;
-      letter-spacing:.3px;
-    }
-
-    .brand-badge{
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg,#1e2b44,#0a1322);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 0 0 4px rgba(255,255,255,.02);
-      font-size:20px;
-    }
-
-    .brand small{
-      display:block;
-      font-size:12px;
-      font-weight:600;
-      color:#afbdd0;
-      letter-spacing:.8px;
-      text-transform:uppercase;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-    }
-
-    .nav-links a{
-      color:#dbe5f2;
-      font-size:14px;
-      font-weight:600;
-      position:relative;
-      padding:8px 0;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active{
-      color:#fff;
-    }
-
-    .nav-links a.active::after,
-    .nav-links a:hover::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-8px;
-      height:3px;
-      border-radius:999px;
-      background:var(--red);
-    }
-
-    /* HERO */
-    .hero{
-      background:
-        radial-gradient(circle at 78% 30%, rgba(244,67,54,.24), transparent 20%),
-        radial-gradient(circle at 90% 20%, rgba(244,67,54,.10), transparent 10%),
-        linear-gradient(180deg, rgba(6,12,24,.95), rgba(8,18,33,.96)),
-        linear-gradient(120deg, #08111f, #10213a);
-      color:#fff;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,.03), rgba(255,255,255,0)),
-        radial-gradient(circle at 20% 0%, rgba(255,255,255,.03), transparent 20%);
-      pointer-events:none;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:28px;
-      align-items:center;
-      min-height:620px;
-      padding:40px 0 34px;
-      position:relative;
-      z-index:1;
-    }
-
-    .hero-kicker{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      color:#ffbdb7;
-      font-weight:700;
-      font-size:13px;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-    }
-
-    .hero h1{
-      margin:0;
-      font-size:clamp(40px, 6vw, 74px);
-      line-height:.98;
-      letter-spacing:-2px;
-      max-width:760px;
-    }
-
-    .hero .highlight{
-      display:block;
-      margin-top:16px;
-      color:#ff594d;
-      font-size:clamp(22px, 3vw, 36px);
-      letter-spacing:-.5px;
-      font-weight:800;
-    }
-
-    .hero-subtitle{
-      margin-top:22px;
-      font-size:21px;
-      color:#d3ddeb;
-      max-width:620px;
-    }
-
-    .hero-note{
-      margin-top:10px;
-      color:#a8b7c9;
-      font-size:15px;
-    }
-
-    .hero-stats{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      margin-top:34px;
-    }
-
-    .hero-stat{
-      min-width:170px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      padding:18px 18px 16px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
-    }
-
-    .hero-stat-number{
-      font-size:34px;
-      font-weight:800;
-      color:#fff;
-      line-height:1;
-      margin-bottom:6px;
-    }
-
-    .hero-stat-label{
-      font-size:13px;
-      color:#c2cfde;
-    }
-
-    .hero-art{
-      min-height:420px;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .hero-heart{
-      font-size:290px;
-      line-height:1;
-      color:#ff3d35;
-      filter: drop-shadow(0 0 14px rgba(255,59,48,.35))
-              drop-shadow(0 0 32px rgba(255,59,48,.18));
-      opacity:.96;
-      transform: translateY(-6px);
-      user-select:none;
-    }
-
-    .hero-glow{
-      position:absolute;
-      width:380px;
-      height:380px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,66,54,.20), rgba(255,66,54,0) 70%);
-      filter:blur(8px);
-    }
-
-    /* generic sections */
-    section{
-      padding:42px 0;
-    }
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:20px;
-      margin-bottom:22px;
-    }
-
-    .eyebrow{
-      color:var(--red);
-      font-size:12px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      margin-bottom:8px;
-    }
-
-    .section-head h2{
-      margin:0;
-      color:var(--navy);
-      font-size:34px;
-      line-height:1.08;
-      letter-spacing:-1px;
-    }
-
-    .section-head p{
-      margin:10px 0 0;
-      color:var(--muted);
-      max-width:760px;
-    }
-
-    /* cards */
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
-    /* key messages */
-    .messages-grid{
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:16px;
-    }
-
-    .message-card{
-      padding:22px 18px;
-      text-align:center;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-    }
-
-    .message-icon{
-      font-size:28px;
-      margin-bottom:10px;
-    }
-
-    .message-card h3{
-      margin:0 0 8px;
-      font-size:17px;
-      color:var(--navy);
-    }
-
-    .message-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* top 10 */
-    .top10-header-link{
-      color:var(--muted);
-      font-weight:700;
-      font-size:14px;
-      white-space:nowrap;
-    }
-
-    .top10-header-link:hover{color:var(--red)}
-
-    .top10-grid{
-      display:grid;
-      grid-template-columns:repeat(10, 1fr);
-      gap:12px;
-    }
-
-    .mini-study{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      min-height:192px;
-    }
-
-    .mini-study-visual{
-      height:74px;
-      background:
-        radial-gradient(circle at 80% 15%, rgba(244,67,54,.55), transparent 22%),
-        linear-gradient(135deg,#0d172a,#0f2343 60%, #162f58);
-      position:relative;
-      display:flex;
-      align-items:flex-start;
-      justify-content:flex-start;
-      padding:8px;
-      color:#fff;
-    }
-
-    .mini-study-visual .rank{
-      width:26px;
-      height:26px;
-      border-radius:50%;
-      background:#ff4337;
-      display:grid;
-      place-items:center;
-      font-weight:800;
-      font-size:13px;
-      box-shadow:0 4px 12px rgba(244,67,54,.3);
-    }
-
-    .mini-study-body{
-      padding:10px 10px 12px;
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .mini-study-body h3{
-      margin:0;
-      color:var(--navy);
-      font-size:13px;
-      line-height:1.1;
-      min-height:30px;
-    }
-
-    .mini-study-body p{
-      margin:0;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.35;
-    }
-
-    /* topics */
-    .topics-grid{
-      display:grid;
-      grid-template-columns:repeat(8, 1fr);
-      gap:14px;
-    }
-
-    .topic-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:18px 12px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
-
-    .topic-card .icon{
-      font-size:26px;
-      margin-bottom:10px;
-    }
-
-    .topic-card h4{
-      margin:0;
-      color:var(--navy);
-      font-size:14px;
-      line-height:1.2;
-    }
-
-    /* two big ctas */
-    .cta-row{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-
-    .dark-card{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-        linear-gradient(135deg,#07101d,#0c1930);
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:18px;
-      padding:24px;
-      box-shadow:0 14px 32px rgba(5, 12, 23, .18);
-    }
-
-    .dark-card h3{
-      margin:0 0 8px;
-      font-size:20px;
-    }
-
-    .dark-card p{
-      margin:0 0 18px;
-      color:#c3d0df;
-      font-size:14px;
-    }
-
-    .ghost-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:11px 16px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:12px;
-      color:#fff;
-      font-size:14px;
-      font-weight:700;
-      background:rgba(255,255,255,.03);
-    }
-
-    .ghost-btn:hover{
-      background:rgba(255,255,255,.06);
-    }
-
-    /* featured study */
-    .study-shell{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:20px;
-      align-items:start;
-    }
-
-    .study-main,
-    .study-side{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:24px;
-    }
-
-    .breadcrumbs{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      font-size:13px;
-      color:#8090a2;
-      margin-bottom:10px;
-    }
-
-    .breadcrumbs span.sep{
-      color:#b8c5d1;
-    }
-
-    .study-title{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:18px;
-      margin-bottom:18px;
-    }
-
-    .study-title h2{
-      margin:0;
-      font-size:52px;
-      line-height:.95;
-      color:var(--navy);
-      letter-spacing:-1.5px;
-    }
-
-    .study-title p{
-      margin:10px 0 0;
-      font-size:18px;
-      color:#42566b;
-      max-width:690px;
-    }
-
-    .impact-pill{
-      background:var(--green-soft);
-      color:var(--green);
-      border:1px solid #d6ecd9;
-      border-radius:16px;
-      padding:12px 16px;
-      min-width:180px;
-      text-align:center;
-      font-weight:800;
-      font-size:14px;
-      line-height:1.35;
-    }
-
-    .impact-pill small{
-      display:block;
-      font-weight:700;
-      font-size:12px;
-      color:#5d8f69;
-      margin-bottom:4px;
-    }
-
-    .tabbar{
-      display:flex;
-      flex-wrap:wrap;
-      gap:22px;
-      border-bottom:1px solid var(--line);
-      margin-bottom:22px;
-      padding-bottom:10px;
-    }
-
-    .tabbar a{
-      font-size:14px;
-      color:#65788c;
-      font-weight:700;
-      padding-bottom:8px;
-      border-bottom:3px solid transparent;
-    }
-
-    .tabbar a.active{
-      color:var(--red);
-      border-color:var(--red);
-    }
-
-    .study-metrics{
-      display:grid;
-      grid-template-columns:repeat(5, 1fr);
-      gap:12px;
-      margin-bottom:18px;
-    }
-
-    .metric{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px 14px;
-      background:#fff;
-    }
-
-    .metric .m-title{
-      font-size:13px;
-      font-weight:800;
-      color:var(--navy);
-      margin-bottom:6px;
-    }
-
-    .metric .m-text{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    .study-content-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:16px;
-    }
-
-    .subcard{
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:20px;
-      background:#fff;
-    }
-
-    .subcard h3{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:24px;
-      letter-spacing:-.5px;
-    }
-
-    .subcard h4{
-      margin:0 0 10px;
-      color:var(--navy);
-      font-size:21px;
-      letter-spacing:-.3px;
-    }
-
-    .subcard .small-label{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:16px;
-    }
-
-    .primary-result{
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      gap:16px;
-      margin:18px 0 8px;
-      flex-wrap:wrap;
-    }
-
-    .result-block{
-      text-align:center;
-    }
-
-    .result-big-red{
-      font-size:54px;
-      font-weight:800;
-      color:var(--red);
-      line-height:1;
-    }
-
-    .result-big-blue{
-      font-size:54px;
-      font-weight:800;
-      color:var(--blue);
-      line-height:1;
-    }
-
-    .vs{
-      font-size:20px;
-      font-weight:800;
-      color:#7f90a1;
-      padding-bottom:8px;
-    }
-
-    .subtext{
-      font-size:14px;
-      color:var(--muted);
-      margin-top:6px;
-    }
-
-    .hr-line{
-      margin-top:10px;
-      text-align:center;
-      font-size:18px;
-      font-weight:800;
-      color:var(--navy);
-    }
-
-    .meaning-visual{
-      display:flex;
-      align-items:center;
-      justify-content:space-around;
-      gap:12px;
-      margin-top:20px;
-      flex-wrap:wrap;
-    }
-
-    .meaning-item{
-      text-align:center;
-      flex:1 1 130px;
-    }
-
-    .meaning-circle{
-      width:90px;
-      height:90px;
-      margin:0 auto 12px;
-      border-radius:50%;
-      background:var(--red-soft);
-      display:grid;
-      place-items:center;
-      font-size:42px;
-    }
-
-    .arrow{
-      font-size:44px;
-      color:var(--blue);
-      font-weight:800;
-    }
-
-    .bar-group{
-      display:grid;
-      gap:16px;
-    }
-
-    .bar-item .label{
-      font-size:14px;
-      font-weight:700;
-      color:var(--navy);
-      margin-bottom:8px;
-    }
-
-    .bar-caption{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-
-    .bar-track{
-      background:#edf2f7;
-      border-radius:999px;
-      height:16px;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .bar-fill-red{
-      height:100%;
-      width:52%;
-      background:linear-gradient(90deg,#ff6257,#f44336);
-      border-radius:999px;
-    }
-
-    .bar-fill-blue{
-      height:100%;
-      width:95%;
-      background:linear-gradient(90deg,#2d86ea,#2474d2);
-      border-radius:999px;
-    }
-
-    .bar-value{
-      margin-top:6px;
-      font-size:14px;
-      font-weight:800;
-      text-align:right;
-    }
-
-    .quote-box{
-      background:#fff6f5;
-      border:1px solid #ffe0dd;
-      border-radius:18px;
-      padding:22px;
-      color:#b23a34;
-      font-weight:700;
-      font-size:16px;
-    }
-
-    .quote-box h4{
-      margin:0 0 12px;
-      color:#de4e45;
-      font-size:18px;
-    }
-
-    .bottom-study-grid{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-
-    .bullet-list{
-      margin:0;
-      padding-left:18px;
-      color:#3f5367;
-    }
-
-    .bullet-list li{
-      margin-bottom:10px;
-    }
-
-    .check-list{
-      list-style:none;
-      margin:0;
-      padding:0;
-    }
-
-    .check-list li{
-      margin-bottom:10px;
-      padding-left:26px;
-      position:relative;
-      color:#3f5367;
-    }
-
-    .check-list li::before{
-      content:"✓";
-      position:absolute;
-      left:0;
-      top:0;
-      color:var(--green);
-      font-weight:800;
-    }
-
-    .resource-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:12px;
-      margin-top:18px;
-    }
-
-    .resource{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px 14px;
-      background:#fff;
-    }
-
-    .resource-title{
-      font-size:14px;
-      font-weight:800;
-      color:var(--navy);
-      margin-bottom:4px;
-    }
-
-    .resource-sub{
-      font-size:13px;
-      color:var(--muted);
-    }
-
-    /* hotlines summary */
-    .hotline-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-
-    .hotline-card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:20px;
-      box-shadow:var(--shadow);
-    }
-
-    .hotline-card .hl-num{
-      display:inline-flex;
-      min-width:46px;
-      height:32px;
-      align-items:center;
-      justify-content:center;
-      border-radius:999px;
-      background:var(--red-soft);
-      color:var(--red);
-      font-weight:800;
-      font-size:13px;
-      margin-bottom:12px;
-    }
-
-    .hotline-card h3{
-      margin:0 0 10px;
-      font-size:20px;
-      color:var(--navy);
-    }
-
-    .hotline-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* footer */
-    footer{
-      margin-top:20px;
-      background:#08111f;
-      color:#fff;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-
-    .footer-inner{
-      padding:28px 0;
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .footer-inner p{
-      margin:0;
-      color:#b8c6d7;
-      font-size:13px;
-    }
-
-    .footer-inner strong{
-      color:#fff;
-    }
-
-    /* responsive */
-    @media (max-width: 1200px){
-      .top10-grid{grid-template-columns:repeat(5, 1fr)}
-      .topics-grid{grid-template-columns:repeat(4, 1fr)}
-      .messages-grid{grid-template-columns:repeat(3, 1fr)}
-      .study-metrics{grid-template-columns:repeat(3, 1fr)}
-      .resource-grid{grid-template-columns:repeat(2, 1fr)}
-      .hotline-grid{grid-template-columns:repeat(2, 1fr)}
-    }
-
-    @media (max-width: 980px){
-      .nav-links{display:none}
-      .hero-grid{grid-template-columns:1fr; min-height:auto; padding:42px 0 26px}
-      .hero-art{min-height:240px}
-      .hero-heart{font-size:180px}
-      .cta-row{grid-template-columns:1fr}
-      .study-shell{grid-template-columns:1fr}
-      .study-content-grid{grid-template-columns:1fr}
-      .bottom-study-grid{grid-template-columns:1fr}
-      .study-title{flex-direction:column}
-    }
-
-    @media (max-width: 720px){
-      .messages-grid{grid-template-columns:repeat(2, 1fr)}
-      .top10-grid{grid-template-columns:repeat(2, 1fr)}
-      .topics-grid{grid-template-columns:repeat(2, 1fr)}
-      .study-metrics{grid-template-columns:repeat(2, 1fr)}
-      .section-head h2{font-size:28px}
-      .study-title h2{font-size:40px}
-      .hero-subtitle{font-size:18px}
-      .hotline-grid{grid-template-columns:1fr}
-    }
-
-    @media (max-width: 520px){
-      .messages-grid{grid-template-columns:1fr}
-      .study-metrics{grid-template-columns:1fr}
-      .resource-grid{grid-template-columns:1fr}
-      .container{padding:0 16px}
-      .hero h1{font-size:38px}
-      .hero .highlight{font-size:24px}
-      .hero-stat{min-width:140px}
-      .hero-heart{font-size:140px}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#071321" />
+<title>ESC Congress 2026 | Puesta al día</title>
+<style>
+:root{
+  --ink:#0e2035;
+  --navy:#071321;
+  --navy2:#0b1d31;
+  --navy3:#102945;
+  --red:#ff4b45;
+  --red2:#ff6b62;
+  --redsoft:#fff0ee;
+  --blue:#315e88;
+  --muted:#708096;
+  --muted2:#9eacba;
+  --paper:#ffffff;
+  --page:#f6f8fb;
+  --line:#e4e9ef;
+  --soft:#f2f5f8;
+  --green:#2f7c50;
+  --shadow:0 9px 30px rgba(20,36,56,.08);
+  --max:1420px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+
+/* SVG icon sprite */
+.icon{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon.small{width:20px;height:20px}
+
+/* top navigation */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(6,16,28,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:230px}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:#10243a;border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:var(--red);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.brand-copy{line-height:1.04}
+.brand-copy strong{font-size:14px;letter-spacing:.2px;display:block}
+.brand-copy span{display:block;color:#9fb0c2;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-top:5px}
+.navlinks{display:flex;gap:28px;align-items:center;color:#d8e0e8;font-size:13px;font-weight:650}
+.navlinks a{height:74px;display:flex;align-items:center;position:relative;transition:.2s}
+.navlinks a:hover{color:#fff}
+.navlinks a:first-child{color:#fff}
+.navlinks a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);border-radius:3px 3px 0 0}
+.search-dot{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#c5d0dc}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+radial-gradient(circle at 74% 30%,rgba(255,69,60,.19),transparent 20%),
+radial-gradient(circle at 90% 80%,rgba(28,57,93,.28),transparent 28%),
+linear-gradient(112deg,#06101e 0%,#071524 54%,#0a1420 100%)}
+.hero:after{content:"";position:absolute;right:-3%;bottom:-35px;width:52%;height:55%;opacity:.33;background:linear-gradient(180deg,transparent,rgba(5,10,16,.65)),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 56px);transform:skewY(-2deg)}
+.hero-inner{min-height:505px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;position:relative;z-index:2}
+.hero-copy{padding:52px 0 48px;max-width:770px}
+.kicker{color:#ff766f;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.7px;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,5.4vw,78px);line-height:.96;letter-spacing:-2.6px;margin:0;font-weight:850}
+.hero h1 .line{display:block}
+.hero h2{margin:18px 0 0;font-size:clamp(22px,2.35vw,36px);line-height:1;font-weight:850;color:var(--red);letter-spacing:-.7px}
+.hero .intro{margin:18px 0 0;color:#d9e1ea;font-size:16px;line-height:1.55;max-width:650px}
+.hero .byline{margin-top:9px;color:#9cafc2;font-size:13px}
+.hero-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero-stat{width:154px;padding:14px 15px;border:1px solid rgba(255,255,255,.13);border-radius:11px;background:rgba(255,255,255,.025)}
+.hero-stat strong{display:block;font-size:29px;line-height:1;color:#fff;letter-spacing:-.8px}
+.hero-stat span{display:block;font-size:10.5px;color:#b8c5d4;margin-top:7px;font-weight:650}
+.hero-art{height:100%;min-height:470px;position:relative;display:grid;place-items:center}
+.glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,48,.22),rgba(255,59,48,.07) 38%,transparent 70%);filter:blur(5px)}
+.heart-svg{width:min(480px,92%);height:auto;overflow:visible;filter:drop-shadow(0 0 18px rgba(255,61,53,.34)) drop-shadow(0 0 42px rgba(255,61,53,.14));transform:rotate(-2deg)}
+.heart-shell{fill:url(#heartFill);stroke:#ff6259;stroke-width:5}
+.heart-vessel{fill:none;stroke:#ff554d;stroke-width:12;stroke-linecap:round}
+.heart-vessel.thin{stroke-width:5;opacity:.8}
+.heart-detail{fill:none;stroke:#ff9d97;stroke-width:2.2;opacity:.76}
+.heart-highlight{fill:none;stroke:#ffd3cf;stroke-width:1.8;opacity:.52}
+
+/* section typography */
+section.light{background:#fff;border-top:1px solid #edf1f5}
+.section{padding:34px 0}
+.section + .section{padding-top:16px}
+.section-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:17px}
+.title-group{display:flex;gap:12px;align-items:flex-start}
+.title-icon{color:var(--red);margin-top:2px}
+.section-title-row h3{font-size:22px;margin:0;color:#17273a;letter-spacing:-.45px}
+.section-title-row p{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+.seeall{font-size:11.5px;font-weight:800;color:#5f7185;white-space:nowrap}
+
+/* messages */
+.messages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.msg{min-height:148px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;box-shadow:0 4px 14px rgba(21,35,52,.045)}
+.msg-icon{height:40px;color:var(--red);display:grid;place-items:center;margin-bottom:7px}
+.msg h4{margin:0 0 8px;font-size:13.5px;color:#182b43}
+.msg p{font-size:11.5px;color:#687a8e;line-height:1.55;margin:0}
+
+/* top 10 */
+.top10{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:9px}
+.trial-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:0 4px 12px rgba(20,35,52,.055);transition:transform .18s, box-shadow .18s}
+a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,52,.10)}
+.trial-art{height:78px;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(255,72,62,.46),transparent 22%),linear-gradient(145deg,#071524,#0b2138 70%,#12273f)}
+.trial-art:before,.trial-art:after{content:"";position:absolute;border:2px solid rgba(255,78,68,.52);border-radius:50%}
+.trial-art:before{width:72px;height:38px;left:12px;top:30px;transform:rotate(-18deg)}
+.trial-art:after{width:34px;height:62px;right:18px;top:11px;transform:rotate(29deg)}
+.rank{position:absolute;z-index:2;top:7px;left:7px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font-size:10px;font-weight:850;box-shadow:0 4px 12px rgba(255,75,69,.28)}
+.trial-body{padding:10px 9px 11px}
+.trial-body h4{font-size:11.3px;line-height:1.1;margin:0 0 6px;color:#12263f;min-height:24px;overflow-wrap:anywhere}
+.trial-body p{font-size:9.8px;line-height:1.35;color:#748397;margin:0;min-height:39px}
+.trial-tag{margin-top:8px;font-size:8.8px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.6px}
+
+/* topics */
+.topics{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.topic{background:#fff;border:1px solid var(--line);border-radius:10px;min-height:96px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(20,35,52,.04)}
+.topic .ico{color:#43688e;height:33px;display:grid;place-items:center}
+.topic:nth-child(2) .ico,.topic:nth-child(3) .ico,.topic:nth-child(4) .ico,.topic:nth-child(6) .ico{color:var(--red)}
+.topic h5{font-size:10.8px;line-height:1.25;margin:6px 0 0;color:#19304a}
+
+/* lower band */
+.band{background:linear-gradient(180deg,#081321,#07101b);margin-top:32px;color:#fff}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.band-card{background:#081321;padding:23px 24px;min-height:138px;display:grid;grid-template-columns:44px 1fr;gap:14px}
+.band-ico{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#62c5c6}
+.band-card:nth-child(2) .band-ico{color:#d49b46}.band-card:nth-child(3) .band-ico{color:#76b759}
+.band-card h4{margin:1px 0 6px;font-size:14px}.band-card p{margin:0;color:#afbdcb;font-size:11px;line-height:1.5}.band-card span{display:inline-block;margin-top:12px;border:1px solid rgba(255,255,255,.13);border-radius:6px;padding:6px 10px;color:#dbe4ec;font-size:9.5px;font-weight:700}
+.footer{background:#06101c;color:#879aad;border-top:1px solid rgba(255,255,255,.07);font-size:10px}
+.footer-inner{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer strong{color:#b9c7d4}
+
+/* mobile */
+@media(max-width:1180px){
+  .navlinks{gap:18px}.top10{grid-template-columns:repeat(5,1fr)}.topics{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:900px){
+  .container{width:min(100% - 30px,var(--max))}.navlinks{display:none}.brand{min-width:0}.hero-inner{grid-template-columns:1fr}.hero-art{min-height:320px}.hero-copy{padding-bottom:15px}.heart-svg{width:340px}.messages{grid-template-columns:repeat(2,1fr)}.band-grid{grid-template-columns:1fr}.footer-inner{padding:15px 0;flex-direction:column;align-items:flex-start;justify-content:center}
+}
+@media(max-width:560px){
+  .hero h1{font-size:42px}.hero h2{font-size:24px}.hero .intro{font-size:14px}.hero-stat{width:calc(50% - 7px)}.hero-stat:last-child{width:100%}.hero-art{min-height:270px}.messages{grid-template-columns:1fr}.top10{display:flex;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}.trial-card{min-width:145px;scroll-snap-align:start}.topics{grid-template-columns:repeat(2,1fr)}.section-title-row{align-items:flex-start}.seeall{margin-top:4px}
+}
+</style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#inicio">
-        <div class="brand-badge">❤</div>
-        <div>
-          ESC Congress 2026
-          <small>Puesta al día en cardiología</small>
-        </div>
-      </a>
+<!-- reusable icon symbols -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.1-7 10-3.8-1.9-7-5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-lungs" viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M10 11c-1-5-3-6-4-3-1 2-2 5-2 8 0 3 2 5 5 5 1 0 2-.4 3-1V11z"/><path d="M14 11c1-5 3-6 4-3 1 2 2 5 2 8 0 3-2 5-5 5-1 0-2-.4-3-1V11z"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M5 3h2M13 3h2"/><path d="M10 12v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="11" r="2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h4l1.5-2h5L16 7h4v12H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h5M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-update" viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M18.5 16a8 8 0 1 1 1.2-7"/></symbol>
+</defs>
+</svg>
 
-      <nav class="nav-links">
-        <a href="#inicio" class="active">Inicio</a>
-        <a href="#ensayos">Ensayos</a>
-        <a href="#guias">Guías</a>
-        <a href="#temas">Temas</a>
-        <a href="#top10">Top 10</a>
-        <a href="#descargables">Descargables</a>
-        <a href="#acerca">Acerca de</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#inicio">
+      <div class="brand-mark"><svg class="icon small"><use href="#i-pulse"/></svg></div>
+      <div class="brand-copy"><strong>ESC Congress 2026</strong><span>Puesta al día en cardiología</span></div>
+    </a>
+    <nav class="navlinks">
+      <a href="#inicio">Inicio</a><a href="#top10">Ensayos</a><a href="#guias">Guías</a><a href="#temas">Temas</a><a href="#top10">Top 10</a><a href="#descargas">Descargables</a><a href="#acerca">Acerca de</a>
+    </nav>
+    <div class="search-dot" aria-hidden="true">⌕</div>
+  </div>
+</header>
 
-  <section class="hero" id="inicio">
-    <div class="container hero-grid">
-      <div>
-        <div class="hero-kicker">Revisión académica independiente</div>
-
-        <h1>
-          EUROPEAN CARDIOLOGY
-          <br>
-          CONGRESS 2026
-          <span class="highlight">WHAT CHANGES MONDAY MORNING?</span>
-        </h1>
-
-        <div class="hero-subtitle">
-          Una revisión clínica y práctica de los ensayos,
-          Hot Lines y documentos que pueden cambiar nuestra forma de tratar pacientes.
-        </div>
-
-        <div class="hero-note">
-          Curaduría académica · <strong>David Vélez Verbel</strong>
-        </div>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-number">59</div>
-            <div class="hero-stat-label">Hot Line Trials</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">12</div>
-            <div class="hero-stat-label">Late-Breaking Sessions</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-number">4</div>
-            <div class="hero-stat-label">Key Documents / Guidelines</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <div class="hero-heart">♥</div>
+<main>
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="kicker">Revisión académica independiente</div>
+      <h1><span class="line">EUROPEAN CARDIOLOGY</span><span class="line">CONGRESS 2026</span></h1>
+      <h2>WHAT CHANGES MONDAY MORNING?</h2>
+      <p class="intro">Una selección clínica y práctica de los ensayos, Hot Lines y documentos que pueden cambiar nuestra forma de tratar pacientes.</p>
+      <div class="byline">Curaduría académica · <strong>David Vélez Verbel</strong></div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>59</strong><span>Hot Line Trials</span></div>
+        <div class="hero-stat"><strong>12</strong><span>Late-Breaking Sessions</span></div>
+        <div class="hero-stat"><strong>4</strong><span>Key Documents / Guidelines</span></div>
       </div>
     </div>
-  </section>
-
-  <section class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Mensajes clave</div>
-        <h2>Lo más importante del congreso</h2>
-        <p>Cinco ideas rápidas para orientar la lectura clínica del ESC Congress 2026.</p>
-      </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="glow"></div>
+      <svg class="heart-svg" viewBox="0 0 600 600">
+        <defs>
+          <linearGradient id="heartFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b61"/><stop offset=".5" stop-color="#ff3f37"/><stop offset="1" stop-color="#b91720"/></linearGradient>
+        </defs>
+        <path class="heart-vessel" d="M329 151c3-56 7-91 32-112 26-21 68-4 73 28 4 27-17 43-38 48-23 6-40 20-48 47"/>
+        <path class="heart-vessel" d="M292 159c-8-54-26-84-56-93-30-8-58 13-55 42 3 31 31 40 55 46 23 6 37 22 46 45"/>
+        <path class="heart-vessel" d="M350 168c25-26 58-39 92-32 39 8 55 45 38 73-13 21-42 27-69 23"/>
+        <path class="heart-shell" d="M299 173c-43-56-113-48-145 1-36 56-15 139 26 197 34 48 87 91 137 133 10 8 25 8 35-1 58-51 116-106 146-169 32-67 34-141-12-183-44-40-105-26-137 22-12 18-18 34-19 52-7-19-15-35-31-52z"/>
+        <path class="heart-detail" d="M300 198c-26 38-25 88-9 132 17 48 44 93 62 151"/>
+        <path class="heart-detail" d="M336 204c-5 61 8 115 32 164 17 34 36 66 46 91"/>
+        <path class="heart-detail" d="M263 214c-47 34-74 82-74 133 0 28 10 53 25 76"/>
+        <path class="heart-detail" d="M218 268c38 9 65 28 82 57M392 258c-29 14-49 34-61 60M243 356c46 4 82 25 105 62"/>
+        <path class="heart-highlight" d="M180 199c40-41 89-39 118-3M358 182c29-31 79-44 113-9"/>
+        <path class="heart-vessel thin" d="M318 170c-4-39 1-76 18-103M275 171c-12-34-31-59-57-74M365 178c26-21 57-31 91-27"/>
+      </svg>
     </div>
+  </div>
+</section>
 
-    <div class="messages-grid">
-      <article class="message-card">
-        <div class="message-icon">♡</div>
-        <h3>Prevention</h3>
-        <p>La prevención en adultos mayores vuelve a tomar fuerza.</p>
-      </article>
+<div class="light">
+<section class="section container">
+  <div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-pulse"/></svg></div><div><h3>Lo más importante del congreso</h3><p>Cinco ideas rápidas para orientar la lectura clínica del ESC Congress 2026.</p></div></div></div>
+  <div class="messages">
+    <article class="msg"><div class="msg-icon"><svg class="icon"><use href="#i-heart"/></svg></div><h4>Prevención</h4><p>La prevención en adultos mayores vuelve a tomar fuerza.</p></article>
+    <article class="msg"><div class="msg-icon"><svg class="icon"><use href="#i-steth"/></svg></div><h4>Revascularización</h4><p>Completa no significa necesariamente stentear todo.</p></article>
+    <article class="msg"><div class="msg-icon"><svg class="icon"><use href="#i-heart"/></svg></div><h4>Insuficiencia cardiaca</h4><p>Nuevas terapias, nuevas preguntas y mejor selección del paciente.</p></article>
+    <article class="msg"><div class="msg-icon"><svg class="icon"><use href="#i-pulse"/></svg></div><h4>FA y arritmias</h4><p>Ablación, anticoagulación y desenlaces centrados en el paciente.</p></article>
+    <article class="msg"><div class="msg-icon"><svg class="icon"><use href="#i-lungs"/></svg></div><h4>TEP y emergencias</h4><p>Avances relevantes en estratificación e intervenciones.</p></article>
+  </div>
+</section>
 
-      <article class="message-card">
-        <div class="message-icon">🩺</div>
-        <h3>Revascularization</h3>
-        <p>Completa no significa necesariamente stentear todo.</p>
-      </article>
+<section class="section container" id="top10">
+  <div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-heart"/></svg></div><div><h3>Top 10 Hot Line Trials</h3><p>Selección personal por relevancia clínica, novedad y potencial de cambio.</p></div></div><a class="seeall" href="#temas">Ver todos →</a></div>
+  <div class="top10">
+    <article class="trial-card"><div class="trial-art"><span class="rank">1</span></div><div class="trial-body"><h4>TRIC-I-HF</h4><p>Intervención tricuspídea en insuficiencia cardiaca.</p><div class="trial-tag">Estructural</div></div></article>
+    <a class="trial-card" href="air-stemi.html"><div class="trial-art"><span class="rank">2</span></div><div class="trial-body"><h4>AIR-STEMI</h4><p>Fisiología funcional vs angiografía en STEMI multivaso.</p><div class="trial-tag">Ver ficha →</div></div></a>
+    <article class="trial-card"><div class="trial-art"><span class="rank">3</span></div><div class="trial-body"><h4>STAREE</h4><p>Atorvastatina en prevención primaria ≥70 años.</p><div class="trial-tag">Prevención</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">4</span></div><div class="trial-body"><h4>ACACIA-HCM</h4><p>Aficamten en miocardiopatía hipertrófica no obstructiva.</p><div class="trial-tag">Miocardiopatías</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">5</span></div><div class="trial-body"><h4>PRAGUE-26</h4><p>Intervención dirigida por catéter en TEP.</p><div class="trial-tag">TEP</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">6</span></div><div class="trial-body"><h4>SINGLE-AF</h4><p>Anticoagulación en FA con riesgo intermedio.</p><div class="trial-tag">Arritmias</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">7</span></div><div class="trial-body"><h4>REACT</h4><p>Aterosclerosis subclínica y prevención.</p><div class="trial-tag">Prevención</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">8</span></div><div class="trial-body"><h4>NOTION-4</h4><p>HALT y anticoagulación después de TAVI.</p><div class="trial-tag">Valvular</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">9</span></div><div class="trial-body"><h4>PVI-SHAM-AF</h4><p>Ablación frente a procedimiento simulado.</p><div class="trial-tag">FA</div></div></article>
+    <article class="trial-card"><div class="trial-art"><span class="rank">10</span></div><div class="trial-body"><h4>CARDIO-TTRansform</h4><p>Eplontersen en ATTR-CM.</p><div class="trial-tag">Amiloidosis</div></div></article>
+  </div>
+</section>
 
-      <article class="message-card">
-        <div class="message-icon">❤️</div>
-        <h3>Heart Failure</h3>
-        <p>Nuevas definiciones, nuevas terapias y mejor selección del paciente.</p>
-      </article>
+<section class="section container" id="temas">
+  <div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-shield"/></svg></div><div><h3>Encuentra la evidencia por área clínica</h3><p>Explora el congreso por problema y no solo por sesión.</p></div></div></div>
+  <div class="topics">
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-shield"/></svg></div><h5>Prevención</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h5>Enfermedad coronaria</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h5>Insuficiencia cardiaca</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-pulse"/></svg></div><h5>Arritmias y FA</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-heart"/></svg></div><h5>Corazón estructural</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-lungs"/></svg></div><h5>TEP y emergencias</h5></div>
+    <div class="topic"><div class="ico"><svg class="icon"><use href="#i-camera"/></svg></div><h5>Imagen y diagnóstico</h5></div>
+    <div class="topic" id="guias"><div class="ico"><svg class="icon"><use href="#i-doc"/></svg></div><h5>Guías 2026</h5></div>
+  </div>
+</section>
+</div>
 
-      <article class="message-card">
-        <div class="message-icon">〰️</div>
-        <h3>AF & Arrhythmias</h3>
-        <p>Ablación más temprana y anticoagulación más personalizada.</p>
-      </article>
+<section class="band" id="descargas">
+  <div class="container band-grid">
+    <div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-shield"/></svg></div><div><h4>What changes in practice?</h4><p>Análisis crítico y aplicabilidad clínica de cada estudio.</p><span>Ver análisis</span></div></div>
+    <div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-download"/></svg></div><div><h4>Descargables</h4><p>Fichas de lectura, resúmenes y material para repasar.</p><span>Próximamente</span></div></div>
+    <div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-update"/></svg></div><div><h4>Actualizaciones</h4><p>Nuevos análisis, correcciones y seguimiento de publicaciones.</p><span>Ver novedades</span></div></div>
+  </div>
+</section>
+</main>
 
-      <article class="message-card">
-        <div class="message-icon">🫁</div>
-        <h3>VTE & Emergencies</h3>
-        <p>Avances relevantes en estratificación y tratamiento.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="container" id="top10">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Selección priorizada</div>
-        <h2>Top 10 Hot Line Trials</h2>
-        <p>Los diez ensayos que más vale la pena revisar con calma por impacto clínico o novedad.</p>
-      </div>
-      <a href="#ensayos" class="top10-header-link">Ver todos →</a>
-    </div>
-
-    <div class="top10-grid">
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">1</div></div>
-        <div class="mini-study-body">
-          <h3>TRIC-I-HF</h3>
-          <p>Tricúspide en el paciente correcto.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">2</div></div>
-        <div class="mini-study-body">
-          <h3>AIR-STEMI</h3>
-          <p>Fisiología vs angiografía.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">3</div></div>
-        <div class="mini-study-body">
-          <h3>STAREE</h3>
-          <p>Estatinas en mayores de 70 años.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">4</div></div>
-        <div class="mini-study-body">
-          <h3>ACACIA-HCM</h3>
-          <p>Aficamten en miocardiopatía hipertrófica.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">5</div></div>
-        <div class="mini-study-body">
-          <h3>PRAGUE-26</h3>
-          <p>Catéter en TEP intermedio-alto.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">6</div></div>
-        <div class="mini-study-body">
-          <h3>SINGLE-AF</h3>
-          <p>Ablación y estrategia de primera línea.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">7</div></div>
-        <div class="mini-study-body">
-          <h3>REACT</h3>
-          <p>Colchicina en aterosclerosis subclínica.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">8</div></div>
-        <div class="mini-study-body">
-          <h3>NOTION-4</h3>
-          <p>HALT y trombosis valvular tras TAVI.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">9</div></div>
-        <div class="mini-study-body">
-          <h3>PVI-SHAM-AF</h3>
-          <p>Ablación versus procedimiento simulado.</p>
-        </div>
-      </article>
-
-      <article class="mini-study">
-        <div class="mini-study-visual"><div class="rank">10</div></div>
-        <div class="mini-study-body">
-          <h3>CARDIO-TTRansform</h3>
-          <p>Eplontersen en ATTR-CM.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="container" id="temas">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Explorar por temas</div>
-        <h2>Encuentra la evidencia por área clínica</h2>
-      </div>
-    </div>
-
-    <div class="topics-grid">
-      <div class="topic-card"><div class="icon">🛡️</div><h4>Prevention</h4></div>
-      <div class="topic-card"><div class="icon">🫀</div><h4>Coronary Disease</h4></div>
-      <div class="topic-card"><div class="icon">❤️</div><h4>Heart Failure</h4></div>
-      <div class="topic-card"><div class="icon">〰️</div><h4>Arrhythmias & AF</h4></div>
-      <div class="topic-card"><div class="icon">🫀</div><h4>Structural Heart</h4></div>
-      <div class="topic-card"><div class="icon">🫁</div><h4>VTE & Emergencies</h4></div>
-      <div class="topic-card"><div class="icon">📷</div><h4>Imaging & Diagnosis</h4></div>
-      <div class="topic-card"><div class="icon">📄</div><h4>2026 Guides</h4></div>
-    </div>
-  </section>
-
-  <section class="container" id="descargables">
-    <div class="cta-row">
-      <article class="dark-card">
-        <h3>What changes in practice?</h3>
-        <p>Análisis crítico y aplicabilidad clínica de cada estudio relevante.</p>
-        <a href="#air-stemi" class="ghost-btn">View analysis</a>
-      </article>
-
-      <article class="dark-card">
-        <h3>Downloads</h3>
-        <p>Resúmenes, fichas prácticas y materiales complementarios.</p>
-        <a href="#air-stemi" class="ghost-btn">Download</a>
-      </article>
-
-      <article class="dark-card">
-        <h3>Updates</h3>
-        <p>Nuevos comentarios, ajustes y seguimiento de los estudios.</p>
-        <a href="#ensayos" class="ghost-btn">View updates</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="container" id="air-stemi">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Página modelo de estudio</div>
-        <h2>Así se verán los ensayos individuales</h2>
-        <p>Tomemos AIR-STEMI como formato base para las fichas de lectura crítica.</p>
-      </div>
-    </div>
-
-    <div class="study-shell">
-      <div class="study-main">
-        <div class="breadcrumbs">
-          <span>Inicio</span><span class="sep">›</span>
-          <span>Ensayos</span><span class="sep">›</span>
-          <span>Coronarias</span><span class="sep">›</span>
-          <span>AIR-STEMI</span>
-        </div>
-
-        <div class="study-title">
-          <div>
-            <h2>AIR-STEMI</h2>
-            <p>Fisiología derivada de angiografía vs angiografía convencional en STEMI multivaso.</p>
-          </div>
-
-          <div class="impact-pill">
-            <small>Impacto en práctica</small>
-            PROBABLEMENTE SÍ
-          </div>
-        </div>
-
-        <div class="tabbar">
-          <a href="#" class="active">Resumen</a>
-          <a href="#">Resultados</a>
-          <a href="#">Figuras</a>
-          <a href="#">Interpretación</a>
-          <a href="#">Comentario crítico</a>
-          <a href="#">Referencias</a>
-        </div>
-
-        <div class="study-metrics">
-          <div class="metric">
-            <div class="m-title">Diseño</div>
-            <div class="m-text">Ensayo aleatorizado multicéntrico</div>
-          </div>
-          <div class="metric">
-            <div class="m-title">Población</div>
-            <div class="m-text">1.283 pacientes con STEMI multivaso</div>
-          </div>
-          <div class="metric">
-            <div class="m-title">Intervención</div>
-            <div class="m-text">Fisiología derivada de angiografía</div>
-          </div>
-          <div class="metric">
-            <div class="m-title">Comparador</div>
-            <div class="m-text">Angiografía convencional</div>
-          </div>
-          <div class="metric">
-            <div class="m-title">Seguimiento</div>
-            <div class="m-text">Mediana 12 años</div>
-          </div>
-        </div>
-
-        <div class="study-content-grid">
-          <div class="subcard">
-            <h3>Resultado primario</h3>
-            <div class="small-label">Muerte / IAM / ACV / Revascularización por isquemia</div>
-
-            <div class="primary-result">
-              <div class="result-block">
-                <div class="result-big-red">8,9%</div>
-                <div class="subtext">Fisiología derivada</div>
-              </div>
-
-              <div class="vs">VS</div>
-
-              <div class="result-block">
-                <div class="result-big-blue">13,7%</div>
-                <div class="subtext">Angiografía convencional</div>
-              </div>
-            </div>
-
-            <div class="hr-line">HR 0,62 <span style="font-size:14px;color:#6f8295;font-weight:700;">IC 95% 0,46–0,83 · p = 0,001</span></div>
-          </div>
-
-          <div class="subcard">
-            <h4>¿Qué significa?</h4>
-            <div class="meaning-visual">
-              <div class="meaning-item">
-                <div class="meaning-circle">🩸</div>
-                <strong>MENOS</strong><br>INTERVENCIONES INNECESARIAS
-              </div>
-              <div class="arrow">→</div>
-              <div class="meaning-item">
-                <div class="meaning-circle">❤️</div>
-                <strong>MENOS</strong><br>EVENTOS CLÍNICOS
-              </div>
-            </div>
-          </div>
-
-          <div class="subcard">
-            <h4>Lesiones no culpables tratadas</h4>
-            <div class="small-label">Menos stents, mejores resultados</div>
-
-            <div class="bar-group">
-              <div class="bar-item">
-                <div class="label">Fisiología derivada</div>
-                <div class="bar-track"><div class="bar-fill-red"></div></div>
-                <div class="bar-value" style="color:var(--red)">51,9%</div>
-              </div>
-
-              <div class="bar-item">
-                <div class="label">Angiografía convencional</div>
-                <div class="bar-track"><div class="bar-fill-blue"></div></div>
-                <div class="bar-value" style="color:var(--blue)">94,9%</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="quote-box">
-            <h4>Una frase para recordar</h4>
-            “Complete revascularization ≠ complete stenting”
-          </div>
-        </div>
-
-        <div class="bottom-study-grid">
-          <div class="subcard">
-            <h4>Interpretación</h4>
-            <ul class="bullet-list">
-              <li>Guiar el tratamiento de lesiones no culpables con fisiología reduce eventos clínicos sin aumentar riesgos.</li>
-              <li>Se implanta menos de la mitad de stents comparado con la estrategia angiográfica.</li>
-              <li>El mensaje central es tratar mejor, no tratar más.</li>
-            </ul>
-          </div>
-
-          <div class="subcard">
-            <h4>Impacto clínico</h4>
-            <ul class="check-list">
-              <li>Puede cambiar práctica.</li>
-              <li>Aplicable en la mayoría de laboratorios con recursos adecuados.</li>
-              <li>Redefine el concepto de revascularización completa.</li>
-            </ul>
-          </div>
-
-          <div class="subcard">
-            <h4>Limitaciones</h4>
-            <ul class="bullet-list">
-              <li>Estudio abierto.</li>
-              <li>La fisiología derivada no está disponible en todos los sistemas.</li>
-              <li>La implementación depende de experiencia local y acceso tecnológico.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="resource-grid">
-          <div class="resource">
-            <div class="resource-title">Publicación original</div>
-            <div class="resource-sub">DOI / Link</div>
-          </div>
-          <div class="resource">
-            <div class="resource-title">Presentación ESC 2026</div>
-            <div class="resource-sub">Ver presentación</div>
-          </div>
-          <div class="resource">
-            <div class="resource-title">Editorial / Comentario experto</div>
-            <div class="resource-sub">Leer comentario</div>
-          </div>
-          <div class="resource">
-            <div class="resource-title">Ficha descargable</div>
-            <div class="resource-sub">PDF</div>
-          </div>
-        </div>
-      </div>
-
-      <aside class="study-side">
-        <div class="eyebrow">Cómo seguiremos</div>
-        <h2 style="margin:0 0 12px;color:var(--navy);font-size:28px;line-height:1.05;">Siguiente paso</h2>
-        <p style="color:var(--muted);margin-top:0;">
-          Este bloque ya te deja una estructura muy cercana al ejemplo visual que me mostraste.
-          Después podemos convertir cada estudio del Top 10 en su propia sección o en páginas separadas.
-        </p>
-
-        <hr style="border:none;border-top:1px solid var(--line);margin:20px 0;">
-
-        <h3 style="margin:0 0 10px;color:var(--navy);">Qué falta pulir</h3>
-        <ul class="bullet-list">
-          <li>Poner un corazón anatómico real en vez del símbolo del hero.</li>
-          <li>Crear páginas individuales para TRIC-I-HF, STAREE, PRAGUE-26, etc.</li>
-          <li>Agregar links reales a PDF, DOI y presentaciones.</li>
-          <li>Insertar QR y sección “Tu página”.</li>
-        </ul>
-
-        <hr style="border:none;border-top:1px solid var(--line);margin:20px 0;">
-
-        <h3 style="margin:0 0 10px;color:var(--navy);">Ruta de trabajo</h3>
-        <ul class="check-list">
-          <li>Home final</li>
-          <li>Top 10 completo</li>
-          <li>Hot Lines 1–12</li>
-          <li>Guías 2026</li>
-          <li>Descargables</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section class="container" id="ensayos">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Hot Lines</div>
-        <h2>Mapa resumido de las 12 Hot Lines</h2>
-        <p>Una vista rápida del contenido que iremos llenando con análisis más detallado.</p>
-      </div>
-    </div>
-
-    <div class="hotline-grid">
-      <div class="hotline-card"><div class="hl-num">HL 1</div><h3>Miocardiopatías y FA</h3><p>CARDIO-TTRansform · SINGLE-AF · POET-II · ACACIA-HCM · CMR-GUIDE</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 2</div><h3>Prevención</h3><p>STAREE · AMUNDSEN · TRANQUILITY · REACT · ENRICH-AF · DAN-RSV</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 3</div><h3>SCA y antitrombóticos</h3><p>LIBREXIA ACS · PREMIUM · SWITCH-SWEDEHEART · A-CLOSE · EPIDAURUS</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 4</div><h3>Infarto y revascularización</h3><p>PRESC1SE-MI · 0/1-h IPDMA · AIR-STEMI · TARGET-CTCA</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 5</div><h3>Salud digital</h3><p>EMAIL-HF · Remote Exercise SWEDEHEART · ADHERE-ASCVD · VIRTUES</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 6</div><h3>Insuficiencia cardiaca</h3><p>H-HeFT · Met-HeFT · LUMINARA · TIME-HF y otros</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 7</div><h3>Estructural</h3><p>POPular ACE TAVI · TAVI-PCI · TRIC-I-HF · ACASA-TAVI · NOTION-4</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 8</div><h3>Fibrilación auricular</h3><p>AFFIRMO · PVI-SHAM-AF · NEXAF · IDEAL-AF</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 9</div><h3>HTA y prevención</h3><p>SHASTA-3/4 · BPLTTC meta-analysis · ECLIPSE-CKD</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 10</div><h3>Dispositivos</h3><p>ASPIRED · DANISH-CRT · SyncAV PMT · HIS Alternative II</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 11</div><h3>Imagen y coronarias</h3><p>EVA-OLD · ISOLEDS · CorCal · CoCAP</p></div>
-      <div class="hotline-card"><div class="hl-num">HL 12</div><h3>Emergencias CV</h3><p>DISCO · OHCA-CAG meta-analysis · HeartRunner · PRAGUE-26 · LAACS-2</p></div>
-    </div>
-  </section>
-
-  <section class="container" id="guias">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Más allá de los ensayos</div>
-        <h2>Documentos y guías clave</h2>
-        <p>Además de las Hot Lines, estos documentos merecen un apartado específico.</p>
-      </div>
-    </div>
-
-    <div class="hotline-grid">
-      <div class="hotline-card">
-        <div class="hl-num">DOC 1</div>
-        <h3>Guía ESC 2026 de insuficiencia cardiaca</h3>
-        <p>Nuevas recomendaciones terapéuticas y redefinición del manejo práctico.</p>
-      </div>
-
-      <div class="hotline-card">
-        <div class="hl-num">DOC 2</div>
-        <h3>Guía ESC 2026 cardiovascular y enfermedad renal crónica</h3>
-        <p>Integración cardio-renal con visión transversal del riesgo.</p>
-      </div>
-
-      <div class="hotline-card">
-        <div class="hl-num">DOC 3</div>
-        <h3>Quinta Definición Universal de Infarto</h3>
-        <p>Nueva clasificación clínica y lectura más útil para la práctica diaria.</p>
-      </div>
-
-      <div class="hotline-card">
-        <div class="hl-num">DOC 4</div>
-        <h3>Guía ESC 2026 de rehabilitación cardiovascular</h3>
-        <p>Rehabilitación como componente integral del tratamiento CV moderno.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer id="acerca">
-    <div class="container footer-inner">
-      <p>
-        <strong>Curaduría académica:</strong> Dr. David Vélez Verbel
-      </p>
-      <p>
-        Revisión académica independiente · No afiliada ni avalada por la European Society of Cardiology.
-      </p>
-    </div>
-  </footer>
-
+<footer class="footer" id="acerca">
+  <div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong> · Actualizado septiembre 2026</div></div>
+</footer>
 </body>
 </html>
