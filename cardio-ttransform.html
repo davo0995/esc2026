@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#ffffff" />
+<title>CARDIO-TTRansform | ESC Congress 2026</title>
+<style>
+:root{--ink:#13233a;--navy:#081625;--red:#ff4b45;--redsoft:#fff1ef;--blue:#2576c9;--green:#2f7b4f;--greensoft:#eef8f1;--muted:#718096;--line:#e3e8ee;--page:#f7f9fb;--white:#fff;--shadow:0 7px 24px rgba(22,39,61,.06);--max:1420px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:11px;align-items:center;font-weight:800;color:#0f2137}.mark{width:38px;height:38px;border-radius:11px;background:#0a1a2c;color:var(--red);display:grid;place-items:center}.nav-right{display:flex;gap:9px}.btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 13px;font-size:12px;font-weight:700;color:#41566d}
+.page{padding:30px 0 55px}.breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:#7f8da0;margin-bottom:24px}.breadcrumbs b{color:#52667b}.header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}.header h1{margin:0;font-size:52px;line-height:.98;letter-spacing:-1.7px;color:#10243d}.subtitle{margin:12px 0 0;font-size:18px;color:#4f6277;line-height:1.55}.impact{min-width:190px;padding:13px 16px;background:var(--greensoft);border:1px solid #d8eadc;border-radius:12px;text-align:center;color:var(--green);font-size:13px;font-weight:850}.impact small{display:block;font-size:10px;font-weight:700;color:#6d9b79;margin-bottom:4px}.tabs{display:flex;gap:28px;border-bottom:1px solid var(--line);margin-top:25px;overflow-x:auto}.tabs a{font-size:12px;font-weight:700;color:#5e7186;padding:12px 0 13px;white-space:nowrap;border-bottom:3px solid transparent}.tabs a.active{color:var(--red);border-color:var(--red)}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:22px}.metric{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 13px;display:grid;grid-template-columns:28px 1fr;gap:9px;box-shadow:var(--shadow)}.metric .mi{color:#456b91}.metric h4{margin:0 0 4px;font-size:10.5px;color:#243b55}.metric p{margin:0;font-size:10px;line-height:1.4;color:#758396}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px;box-shadow:var(--shadow)}.card h3{margin:0 0 7px;font-size:17px;color:#20354e}.eyebrow{font-size:10px;color:#7d8b9c;margin-bottom:13px}.result{display:flex;align-items:flex-end;justify-content:center;gap:18px;padding:14px 0 7px}.num{font-size:44px;font-weight:850;line-height:1}.red{color:var(--red)}.blue{color:var(--blue)}.res-label{text-align:center;color:#718096;font-size:10px;margin-top:5px}.vs{font-size:12px;color:#6e8093;font-weight:800;margin-bottom:12px}.hr{text-align:center;font-size:13px;font-weight:800;color:#172c45;margin-top:12px}.hr span{color:#758396;font-weight:650}.meaning{display:grid;grid-template-columns:1fr 50px 1fr;align-items:center;text-align:center;min-height:190px}.meaning-circle{width:84px;height:84px;border-radius:50%;margin:0 auto 10px;background:var(--redsoft);display:grid;place-items:center;color:var(--red);font-size:34px}.arrow{font-size:34px;color:#2f679a}.meaning strong{font-size:11px}.meaning p{font-size:10px;color:#718096;margin:4px 0 0}
+.bars{display:grid;gap:18px;margin-top:16px}.barlabel{font-size:11px;font-weight:750;color:#334b63;margin-bottom:7px}.track{height:13px;border-radius:999px;background:#edf2f6;overflow:hidden}.fill{height:100%;border-radius:999px}.fill.redf{width:51.9%;background:linear-gradient(90deg,#ff665d,#ff4540)}.fill.bluef{width:94.9%;background:linear-gradient(90deg,#3a8be1,#2476cc)}.barvalue{text-align:right;font-size:12px;font-weight:850;margin-top:5px}.quote{display:flex;align-items:center;justify-content:center;text-align:left;background:#fff5f3;border-color:#fee0dc}.quote-inner{max-width:420px}.quote b{display:block;color:#e5544b;font-size:12px;margin-bottom:14px}.quote p{font-size:19px;color:#cf403a;font-weight:800;line-height:1.35;margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.card h4{margin:0 0 13px;font-size:15px;color:#20354e}.list{margin:0;padding-left:17px;color:#52677c;font-size:11px;line-height:1.58}.list li{margin-bottom:7px}.checks{list-style:none;margin:0;padding:0;color:#52677c;font-size:11px}.checks li{margin-bottom:8px;padding-left:22px;position:relative}.checks li:before{content:"✓";position:absolute;left:0;color:#3d9a62;font-weight:900}.resources{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}.resource{background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px;box-shadow:var(--shadow)}.resource strong{display:block;font-size:11px;color:#2b4058}.resource span{display:block;margin-top:5px;font-size:10px;color:#78889a}.resource a{color:#2b70b4;font-weight:750}
+.sourcebox{margin-top:16px;background:#f1f5f8;border:1px solid #e2e7ec;border-radius:10px;padding:12px 14px;font-size:10px;color:#64768a;line-height:1.55}.sourcebox b{color:#2a4058}.footer{background:#081523;color:#a8b6c5;font-size:10px}.footer-inner{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer strong{color:#d7e0e8}
+@media(max-width:1000px){.metrics{grid-template-columns:repeat(2,1fr)}.grid3,.resources{grid-template-columns:1fr 1fr}.header{grid-template-columns:1fr}.impact{justify-self:start}}
+@media(max-width:700px){.container{width:min(100% - 28px,var(--max))}.nav-right{display:none}.page{padding-top:20px}.header h1{font-size:42px}.subtitle{font-size:15px}.grid2,.grid3,.resources{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.meaning{grid-template-columns:1fr}.arrow{transform:rotate(90deg);margin:4px}.tabs{gap:20px}.footer-inner{padding:14px 0;flex-direction:column;align-items:flex-start;justify-content:center}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+<symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
+<symbol id="compare" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16M5 7h6M13 17h6"/><path d="m9 5 2 2-2 2M15 15l-2 2 2 2"/></symbol>
+</svg>
+<header class="top"><div class="container nav"><a class="brand" href="index.html"><span class="mark">⌁</span><span><b>ESC Congress 2026</b><small>PUESTA AL DÍA EN CARDIOLOGÍA</small></span></a><div class="nav-right"><a href="index.html">Inicio</a><a href="index.html#top10">Ensayos</a><a href="index.html#temas">Temas</a><a href="index.html#guias">Guías</a></div></div></header>
+
+<main class="container page">
+<div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><a href="index.html#top10">Ensayos</a><span>›</span><b>Amiloidosis</b><span>›</span><b>CARDIO-TTRansform</b></div>
+<div class="header"><div><h1>CARDIO-TTRansform</h1><p class="subtitle">Eplontersen en ATTR-CM.</p></div><div class="impact"><small>Estado de la ficha</small>EN PREPARACIÓN</div></div>
+<nav class="tabs"><a class="active" href="#resumen">Resumen</a><a href="#resultados">Resultados</a><a href="#interpretacion">Interpretación</a><a href="#impacto">Impacto clínico</a><a href="#limitaciones">Limitaciones</a><a href="#referencias">Referencias</a></nav>
+
+<section id="resumen">
+<div class="metrics">
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Ficha individual</h4><p>La navegación ya está activa desde la página de inicio.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Contenido</h4><p>Se completará con los datos verificados del estudio.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Formato</h4><p>Misma plantilla editorial utilizada en AIR-STEMI.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Lectura crítica</h4><p>Interpretación, impacto y limitaciones por separado.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Fuentes</h4><p>Publicación primaria y material del ESC.</p></div></div>
+</div>
+</section>
+
+<section class="grid2" id="resultados">
+<div class="card">
+<h3>Ficha en construcción</h3>
+<div class="eyebrow">El enlace ya funciona</div>
+<p style="font-size:14px;line-height:1.7;color:#52677c;margin:8px 0 0">
+Esta página ya forma parte del micrositio. No he colocado cifras ni conclusiones provisionales para evitar mezclar datos no verificados. La siguiente fase es completar esta ficha con el diseño, población, intervención, resultados y lectura crítica del estudio.
+</p>
+</div>
+<div class="card">
+<h3>Qué tendrá esta página</h3>
+<ul class="checks">
+<li>Pregunta clínica y diseño del ensayo.</li>
+<li>Población, intervención y comparador.</li>
+<li>Endpoint primario y resultados secundarios.</li>
+<li>Interpretación práctica.</li>
+<li>Impacto potencial en la práctica.</li>
+<li>Limitaciones y referencias primarias.</li>
+</ul>
+</div>
+</section>
+
+<section class="grid3" style="margin-top:16px">
+<div class="card" id="interpretacion"><h4>Interpretación</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Pendiente de completar con la lectura crítica final.</p></div>
+<div class="card" id="impacto"><h4>Impacto clínico</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Se calificará después de revisar el artículo y el contexto clínico.</p></div>
+<div class="card" id="limitaciones"><h4>Limitaciones</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Se incorporarán las limitaciones metodológicas y de aplicabilidad.</p></div>
+</section>
+
+<div class="sourcebox" id="referencias"><b>Próximo paso:</b> completar esta ficha con evidencia verificada antes de publicar cifras o mensajes clínicos. AIR-STEMI ya sirve como ejemplo de la versión terminada.</div>
+<div style="margin:20px 0 34px"><a href="index.html#top10" style="display:inline-block;padding:10px 14px;border:1px solid #dfe6ec;border-radius:9px;background:#fff;font-size:12px;font-weight:700;color:#27435e">← Volver al Top 10</a></div>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
+</body>
+</html>
