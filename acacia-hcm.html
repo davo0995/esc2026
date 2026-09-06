@@ -17,9 +17,12 @@
 .sourcebox{margin-top:16px;background:#f1f5f8;border:1px solid #e2e7ec;border-radius:10px;padding:12px 14px;font-size:10px;color:#64768a;line-height:1.55}.sourcebox b{color:#2a4058}.footer{background:#081523;color:#a8b6c5;font-size:10px}.footer-inner{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer strong{color:#d7e0e8}
 @media(max-width:1000px){.metrics{grid-template-columns:repeat(2,1fr)}.grid3,.resources{grid-template-columns:1fr 1fr}.header{grid-template-columns:1fr}.impact{justify-self:start}}
 @media(max-width:700px){.container{width:min(100% - 28px,var(--max))}.nav-right{display:none}.page{padding-top:20px}.header h1{font-size:42px}.subtitle{font-size:15px}.grid2,.grid3,.resources{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.meaning{grid-template-columns:1fr}.arrow{transform:rotate(90deg);margin:4px}.tabs{gap:20px}.footer-inner{padding:14px 0;flex-direction:column;align-items:flex-start;justify-content:center}}
+
+.impact.no{background:#fff1ef;border-color:#ffd9d5;color:#c84842}.impact.no small{color:#bd7772}
+.impact.mixed{background:#fff8e8;border-color:#f3e4b5;color:#936f16}.impact.mixed small{color:#a58a4d}
+.impact.neutral{background:#eef4fb;border-color:#d8e4f2;color:#315f8b}.impact.neutral small{color:#6f8eab}
 </style>
 </head>
-
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
@@ -29,119 +32,31 @@
 <symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
 </defs></svg>
 <header class="topbar"><div class="container nav"><a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a><div class="nav-right"><a class="btn" href="index.html#top10">← Top 10</a><a class="btn" href="#referencias">Referencias</a></div></div></header>
-
 <main class="page"><div class="container">
 <div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><b>Ensayos</b><span>›</span><b>Miocardiopatías</b><span>›</span><b>ACACIA-HCM</b></div>
-
-<div class="header">
-  <div><h1>ACACIA-HCM</h1><p class="subtitle">Aficamten en miocardiopatía hipertrófica.</p></div>
-  <div class="impact"><small>Estado de la ficha</small>EN PREPARACIÓN</div>
-</div>
-
-<nav class="tabs">
-  <a class="active" href="#resumen">Resumen</a>
-  <a href="#resultados">Resultados</a>
-  <a href="#interpretacion">Interpretación</a>
-  <a href="#impacto">Impacto clínico</a>
-  <a href="#limitaciones">Limitaciones</a>
-  <a href="#referencias">Referencias</a>
-</nav>
-
+<div class="header"><div><h1>ACACIA-HCM</h1><p class="subtitle">Aficamten en miocardiopatía hipertrófica no obstructiva sintomática.</p></div><div class="impact"><small>Impacto en práctica</small>PROBABLEMENTE SÍ</div></div>
+<nav class="tabs"><a class="active" href="#resumen">Resumen</a><a href="#resultados">Resultados</a><a href="#interpretacion">Interpretación</a><a href="#impacto">Impacto clínico</a><a href="#limitaciones">Limitaciones</a><a href="#referencias">Referencias</a></nav>
 <section class="metrics" id="resumen">
-  <div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Diseño</h4><p>Pendiente de incorporar desde la publicación primaria.</p></div></div>
-  <div class="metric"><div class="mi"><svg class="icon"><use href="#user"/></svg></div><div><h4>Población</h4><p>Miocardiopatía hipertrófica. Datos finales en revisión.</p></div></div>
-  <div class="metric"><div class="mi"><svg class="icon"><use href="#target"/></svg></div><div><h4>Intervención</h4><p>Se completará con la estrategia exacta del ensayo.</p></div></div>
-  <div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Comparador</h4><p>Se completará con el brazo control del estudio.</p></div></div>
-  <div class="metric"><div class="mi"><svg class="icon"><use href="#clock"/></svg></div><div><h4>Seguimiento</h4><p>Duración final pendiente de verificación.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Diseño</h4><p>Fase III, doble ciego, 182 sitios internacionales.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#user"/></svg></div><div><h4>Población</h4><p>517 adultos con MCH no obstructiva sintomática.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#target"/></svg></div><div><h4>Intervención</h4><p>Aficamten, dosis ajustada según FEVI.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Comparador</h4><p>Placebo.</p></div></div>
+<div class="metric"><div class="mi"><svg class="icon"><use href="#clock"/></svg></div><div><h4>Seguimiento</h4><p>72 semanas; endpoints primarios a semana 36.</p></div></div>
 </section>
-
 <section class="grid2" id="resultados">
-  <div class="card">
-    <h3>Resultado primario</h3>
-    <div class="eyebrow">Los datos cuantitativos se incorporarán únicamente después de verificar la fuente primaria.</div>
-    <div class="result">
-      <div><div class="num red">—</div><div class="res-label">Intervención</div></div>
-      <div class="vs">VS</div>
-      <div><div class="num blue">—</div><div class="res-label">Comparador</div></div>
-    </div>
-    <div class="hr">Resultado principal <span>· pendiente de completar</span></div>
-  </div>
-
-  <div class="card">
-    <h3>¿Qué significa?</h3>
-    <div class="meaning">
-      <div><div class="meaning-circle">?</div><strong>PREGUNTA CLÍNICA</strong><p>¿Puede la modulación de la miosina mejorar síntomas y función en el fenotipo estudiado?</p></div>
-      <div class="arrow">→</div>
-      <div><div class="meaning-circle">♥</div><strong>APLICACIÓN</strong><p>La lectura final se centrará en el cambio real de práctica.</p></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Lectura visual del ensayo</h3>
-    <div class="eyebrow">Mismo lenguaje gráfico de AIR-STEMI, sin adelantar cifras no verificadas.</div>
-    <div class="bars">
-      <div>
-        <div class="barlabel">Magnitud del efecto</div>
-        <div class="track"><div class="fill redf" style="width:34%"></div></div>
-        <div class="barvalue red">En revisión</div>
-      </div>
-      <div>
-        <div class="barlabel">Aplicabilidad clínica</div>
-        <div class="track"><div class="fill bluef" style="width:68%"></div></div>
-        <div class="barvalue blue">Por definir</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card quote">
-    <div class="quote-inner">
-      <b>LA PREGUNTA QUE DEBE QUEDAR</b>
-      <p>La selección fenotípica será clave para interpretar su aplicabilidad.</p>
-    </div>
-  </div>
+<div class="card"><h3>Síntomas: KCCQ-CSS a 36 semanas</h3><div class="eyebrow">Uno de los dos endpoints primarios</div><div class="result"><div><div class="num red">+11,4</div><div class="res-label">Aficamten</div></div><div class="vs">VS</div><div><div class="num blue">+8,4</div><div class="res-label">Placebo</div></div></div><div class="hr">Diferencia significativa<span> · p=0,02</span></div></div>
+<div class="card"><h3>¿Qué significa?</h3><div class="meaning"><div><div class="meaning-circle">↑QoL</div><strong>MENOS SÍNTOMAS</strong><p>Mejoría significativa del estado de salud percibido.</p></div><div class="arrow">→</div><div><div class="meaning-circle">↑VO₂</div><strong>MÁS CAPACIDAD</strong><p>También mejoró el rendimiento máximo de ejercicio.</p></div></div></div>
+<div class="card"><h3>Cambio en pVO₂</h3><div class="eyebrow">Segundo endpoint primario a semana 36</div><div class="bars"><div><div class="barlabel">Aficamten</div><div class="track"><div class="fill redf" style="width:82%"></div></div><div class="barvalue red">+0,64 mL/kg/min</div></div><div><div class="barlabel">Placebo</div><div class="track"><div class="fill bluef" style="width:5%"></div></div><div class="barvalue blue">−0,03 mL/kg/min</div></div></div></div>
+<div class="card quote"><div class="quote-inner"><b>UNA FRASE PARA RECORDAR</b><p>Por primera vez, un inhibidor de miosina mostró beneficio clínico en MCH no obstructiva sintomática.</p></div></div>
 </section>
-
-<section class="grid3">
-  <div class="card" id="interpretacion">
-    <h4>Interpretación</h4>
-    <ul class="list">
-      <li>La ficha se completará con el endpoint primario y los resultados secundarios relevantes.</li>
-      <li>Se separará significancia estadística de relevancia clínica.</li>
-      <li>La interpretación se enfocará en qué cambia realmente al día siguiente del congreso.</li>
-    </ul>
-  </div>
-
-  <div class="card" id="impacto">
-    <h4>Impacto clínico</h4>
-    <ul class="checks">
-      <li>Valorar si el resultado cambia práctica.</li>
-      <li>Definir en qué pacientes es aplicable.</li>
-      <li>Compararlo con la evidencia y recomendaciones previas.</li>
-      <li>Traducir el resultado a una conducta clínica concreta.</li>
-    </ul>
-  </div>
-
-  <div class="card" id="limitaciones">
-    <h4>Lectura crítica</h4>
-    <ul class="list">
-      <li>Diseño, potencia estadística y selección de pacientes.</li>
-      <li>Generalización a la práctica cotidiana.</li>
-      <li>Duración del seguimiento y consistencia de los desenlaces.</li>
-    </ul>
-  </div>
-</section>
-
+<section class="grid3"><div class="card" id="interpretacion"><h4>Interpretación</h4><ul class="list"><li>ACACIA-HCM cumplió sus dos endpoints primarios: síntomas y capacidad de ejercicio.</li><li>También hubo mejorías en clase funcional, ejercicio submáximo y NT-proBNP.</li><li>El resultado amplía el concepto de modulación de miosina más allá de la obstrucción del TSVI.</li></ul></div><div class="card" id="impacto"><h4>Impacto clínico</h4><ul class="checks"><li>Puede abrir una opción terapéutica específica para MCH no obstructiva sintomática.</li><li>La magnitud del beneficio fue clínicamente relevante, aunque su traducción a guías y aprobación regulatoria requiere el proceso habitual.</li><li>El tratamiento exige vigilancia de la función sistólica y ajuste de dosis.</li></ul></div><div class="card" id="limitaciones"><h4>Lectura crítica</h4><ul class="list"><li>La FEVI cayó por debajo de 50% en 10,5% con aficamten vs 0,8% con placebo; fue reversible con ajustes.</li><li>Los endpoints principales fueron funcionales y de calidad de vida, no mortalidad ni hospitalización.</li><li>Se necesita conocer durabilidad del beneficio y seguridad a largo plazo.</li></ul></div></section>
 <section class="resources" id="referencias">
-  <div class="resource"><strong>Publicación original</strong><span>Fuente primaria</span><span>Se añadirá al completar la ficha</span></div>
-  <div class="resource"><strong>ESC Congress 2026</strong><span>Presentación oficial</span><span>Se añadirá enlace verificado</span></div>
-  <div class="resource"><strong>Comentario experto</strong><span>Lectura editorial</span><span>En preparación</span></div>
-  <div class="resource"><strong>Ficha descargable</strong><span>Resumen académico del micrositio</span><span>Próximamente</span></div>
+<div class="resource"><strong>Publicación original</strong><span>New England Journal of Medicine</span><a href="https://www.nejm.org/doi/abs/10.1056/NEJMoa2603021" target="_blank" rel="noopener">Abrir publicación →</a></div>
+<div class="resource"><strong>ESC Congress 2026</strong><span>Resumen oficial del estudio</span><a href="https://www.escardio.org/news/press/press-releases/aficamten-trial-brings-positive-news-for-patients-living-with-non-obstructive-hypertrophic-cardiomyopathy" target="_blank" rel="noopener">Abrir ESC →</a></div>
+<div class="resource"><strong>Registro / DOI</strong><span>NCT06081894</span><a href="https://clinicaltrials.gov/study/NCT06081894" target="_blank" rel="noopener">Ver recurso →</a></div>
+<div class="resource"><strong>Mi lectura</strong><span>Doble endpoint positivo en un fenotipo con pocas opciones específicas.</span><a href="#impacto">Ver interpretación →</a></div>
 </section>
-
-<div class="sourcebox"><b>Estado:</b> esta página ya usa exactamente la misma plantilla visual de AIR-STEMI. El contenido clínico definitivo se incorporará después de verificar la publicación primaria y las fuentes oficiales del congreso.</div>
-
+<div class="sourcebox"><b>Fuente principal:</b> ACACIA-HCM: n=517; KCCQ-CSS +11,4 vs +8,4 (p=0,02) y pVO₂ +0,64 vs −0,03 mL/kg/min (p=0,003).</div>
 </div></main>
-
 <footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
-</body>
-</html>
+</body></html>
