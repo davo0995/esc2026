@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guías 2026 | ESC Congress</title><style>
+:root{
+  --ink:#0e2035;
+  --navy:#071321;
+  --navy2:#0b1d31;
+  --navy3:#102945;
+  --red:#ff4b45;
+  --red2:#ff6b62;
+  --redsoft:#fff0ee;
+  --blue:#315e88;
+  --muted:#708096;
+  --muted2:#9eacba;
+  --paper:#ffffff;
+  --page:#f6f8fb;
+  --line:#e4e9ef;
+  --soft:#f2f5f8;
+  --green:#2f7c50;
+  --shadow:0 9px 30px rgba(20,36,56,.08);
+  --max:1420px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+
+/* SVG icon sprite */
+.icon{width:27px;height:27px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon.small{width:20px;height:20px}
+
+/* top navigation */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(6,16,28,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;min-width:230px}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:#10243a;border:1px solid rgba(255,255,255,.1);display:grid;place-items:center;color:var(--red);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+.brand-copy{line-height:1.04}
+.brand-copy strong{font-size:14px;letter-spacing:.2px;display:block}
+.brand-copy span{display:block;color:#9fb0c2;font-size:9.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-top:5px}
+.navlinks{display:flex;gap:28px;align-items:center;color:#d8e0e8;font-size:13px;font-weight:650}
+.navlinks a{height:74px;display:flex;align-items:center;position:relative;transition:.2s}
+.navlinks a:hover{color:#fff}
+.navlinks a:first-child{color:#fff}
+.navlinks a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);border-radius:3px 3px 0 0}
+.search-dot{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#c5d0dc}
+
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:
+radial-gradient(circle at 74% 30%,rgba(255,69,60,.19),transparent 20%),
+radial-gradient(circle at 90% 80%,rgba(28,57,93,.28),transparent 28%),
+linear-gradient(112deg,#06101e 0%,#071524 54%,#0a1420 100%)}
+.hero:after{content:"";position:absolute;right:-3%;bottom:-35px;width:52%;height:55%;opacity:.33;background:linear-gradient(180deg,transparent,rgba(5,10,16,.65)),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 56px);transform:skewY(-2deg)}
+.hero-inner{min-height:505px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;position:relative;z-index:2}
+.hero-copy{padding:52px 0 48px;max-width:770px}
+.kicker{color:#ff766f;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.7px;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,5.4vw,78px);line-height:.96;letter-spacing:-2.6px;margin:0;font-weight:850}
+.hero h1 .line{display:block}
+.hero h2{margin:18px 0 0;font-size:clamp(22px,2.35vw,36px);line-height:1;font-weight:850;color:var(--red);letter-spacing:-.7px}
+.hero .intro{margin:18px 0 0;color:#d9e1ea;font-size:16px;line-height:1.55;max-width:650px}
+.hero .byline{margin-top:9px;color:#9cafc2;font-size:13px}
+.hero-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.hero-stat{width:154px;padding:14px 15px;border:1px solid rgba(255,255,255,.13);border-radius:11px;background:rgba(255,255,255,.025)}
+.hero-stat strong{display:block;font-size:29px;line-height:1;color:#fff;letter-spacing:-.8px}
+.hero-stat span{display:block;font-size:10.5px;color:#b8c5d4;margin-top:7px;font-weight:650}
+.hero-art{height:100%;min-height:470px;position:relative;display:grid;place-items:center}
+.glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,48,.22),rgba(255,59,48,.07) 38%,transparent 70%);filter:blur(5px)}
+.heart-svg{width:min(480px,92%);height:auto;overflow:visible;filter:drop-shadow(0 0 18px rgba(255,61,53,.34)) drop-shadow(0 0 42px rgba(255,61,53,.14));transform:rotate(-2deg)}
+.heart-shell{fill:url(#heartFill);stroke:#ff6259;stroke-width:5}
+.heart-vessel{fill:none;stroke:#ff554d;stroke-width:12;stroke-linecap:round}
+.heart-vessel.thin{stroke-width:5;opacity:.8}
+.heart-detail{fill:none;stroke:#ff9d97;stroke-width:2.2;opacity:.76}
+.heart-highlight{fill:none;stroke:#ffd3cf;stroke-width:1.8;opacity:.52}
+
+/* section typography */
+section.light{background:#fff;border-top:1px solid #edf1f5}
+.section{padding:34px 0}
+.section + .section{padding-top:16px}
+.section-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:17px}
+.title-group{display:flex;gap:12px;align-items:flex-start}
+.title-icon{color:var(--red);margin-top:2px}
+.section-title-row h3{font-size:22px;margin:0;color:#17273a;letter-spacing:-.45px}
+.section-title-row p{font-size:12.5px;color:var(--muted);margin:5px 0 0}
+.seeall{font-size:11.5px;font-weight:800;color:#5f7185;white-space:nowrap}
+
+/* messages */
+.messages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.msg{min-height:148px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 16px;text-align:center;box-shadow:0 4px 14px rgba(21,35,52,.045)}
+.msg-icon{height:40px;color:var(--red);display:grid;place-items:center;margin-bottom:7px}
+.msg h4{margin:0 0 8px;font-size:13.5px;color:#182b43}
+.msg p{font-size:11.5px;color:#687a8e;line-height:1.55;margin:0}
+
+/* top 10 */
+.top10{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:9px}
+.trial-card{min-width:0;background:#fff;border:1px solid var(--line);border-radius:11px;overflow:hidden;box-shadow:0 4px 12px rgba(20,35,52,.055);transition:transform .18s, box-shadow .18s}
+a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,52,.10)}
+.trial-art{height:78px;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(255,72,62,.46),transparent 22%),linear-gradient(145deg,#071524,#0b2138 70%,#12273f)}
+.trial-art:before,.trial-art:after{content:"";position:absolute;border:2px solid rgba(255,78,68,.52);border-radius:50%}
+.trial-art:before{width:72px;height:38px;left:12px;top:30px;transform:rotate(-18deg)}
+.trial-art:after{width:34px;height:62px;right:18px;top:11px;transform:rotate(29deg)}
+.rank{position:absolute;z-index:2;top:7px;left:7px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--red);color:#fff;font-size:10px;font-weight:850;box-shadow:0 4px 12px rgba(255,75,69,.28)}
+.trial-body{padding:10px 9px 11px}
+.trial-body h4{font-size:11.3px;line-height:1.1;margin:0 0 6px;color:#12263f;min-height:24px;overflow-wrap:anywhere}
+.trial-body p{font-size:9.8px;line-height:1.35;color:#748397;margin:0;min-height:39px}
+.trial-tag{margin-top:8px;font-size:8.8px;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.6px}
+
+/* topics */
+.topics{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.topic{background:#fff;border:1px solid var(--line);border-radius:10px;min-height:96px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(20,35,52,.04)}
+.topic .ico{color:#43688e;height:33px;display:grid;place-items:center}
+.topic:nth-child(2) .ico,.topic:nth-child(3) .ico,.topic:nth-child(4) .ico,.topic:nth-child(6) .ico{color:var(--red)}
+.topic h5{font-size:10.8px;line-height:1.25;margin:6px 0 0;color:#19304a}
+
+/* lower band */
+.band{background:linear-gradient(180deg,#081321,#07101b);margin-top:32px;color:#fff}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.band-card{background:#081321;padding:23px 24px;min-height:138px;display:grid;grid-template-columns:44px 1fr;gap:14px}
+.band-ico{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#62c5c6}
+.band-card:nth-child(2) .band-ico{color:#d49b46}.band-card:nth-child(3) .band-ico{color:#76b759}
+.band-card h4{margin:1px 0 6px;font-size:14px}.band-card p{margin:0;color:#afbdcb;font-size:11px;line-height:1.5}.band-card span{display:inline-block;margin-top:12px;border:1px solid rgba(255,255,255,.13);border-radius:6px;padding:6px 10px;color:#dbe4ec;font-size:9.5px;font-weight:700}
+.footer{background:#06101c;color:#879aad;border-top:1px solid rgba(255,255,255,.07);font-size:10px}
+.footer-inner{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer strong{color:#b9c7d4}
+
+/* mobile */
+@media(max-width:1180px){
+  .navlinks{gap:18px}.top10{grid-template-columns:repeat(5,1fr)}.topics{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:900px){
+  .container{width:min(100% - 30px,var(--max))}.navlinks{display:none}.brand{min-width:0}.hero-inner{grid-template-columns:1fr}.hero-art{min-height:320px}.hero-copy{padding-bottom:15px}.heart-svg{width:340px}.messages{grid-template-columns:repeat(2,1fr)}.band-grid{grid-template-columns:1fr}.footer-inner{padding:15px 0;flex-direction:column;align-items:flex-start;justify-content:center}
+}
+@media(max-width:560px){
+  .hero h1{font-size:42px}.hero h2{font-size:24px}.hero .intro{font-size:14px}.hero-stat{width:calc(50% - 7px)}.hero-stat:last-child{width:100%}.hero-art{min-height:270px}.messages{grid-template-columns:1fr}.top10{display:flex;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}.trial-card{min-width:145px;scroll-snap-align:start}.topics{grid-template-columns:repeat(2,1fr)}.section-title-row{align-items:flex-start}.seeall{margin-top:4px}
+}
+
+.hero-mini{background:linear-gradient(120deg,#06101e,#0b1c31);color:#fff;padding:54px 0 46px}
+.hero-mini h1{font-size:52px;margin:0;letter-spacing:-1.5px}.hero-mini p{color:#b8c5d4;max-width:760px;line-height:1.6}
+.guides-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding:36px 0 54px}
+.gcard{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;box-shadow:var(--shadow);transition:.18s}
+.gcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,35,52,.1)}
+.gtag{display:inline-block;background:var(--redsoft);color:var(--red);font-size:9px;font-weight:900;letter-spacing:.8px;border-radius:999px;padding:5px 8px;margin-bottom:12px}
+.gcard h2{font-size:22px;margin:0 0 10px;color:#17314d}.gcard p{font-size:12px;color:var(--muted);line-height:1.55;margin:0 0 16px}.gcard span{font-size:11px;font-weight:800;color:#356c9f}
+@media(max-width:750px){.guides-grid{grid-template-columns:1fr}.hero-mini h1{font-size:40px}}
+</style></head><body>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><div class="brand-mark">♥</div><div class="brand-copy"><strong>ESC Congress 2026</strong><span>Puesta al día en cardiología</span></div></a>
+<nav class="navlinks"><a href="index.html">Inicio</a><a href="ensayos.html">59 ensayos</a><a href="guias.html">Guías</a><a href="index.html#top10">Top 10</a><a href="index.html#acerca">Acerca de</a></nav></div></header>
+<section class="hero-mini"><div class="container"><div class="kicker">Más allá de las Hot Lines</div><h1>Guías y documentos 2026</h1><p>Tres nuevas guías ESC y la Quinta Definición Universal de Infarto, presentadas en ESC Congress 2026.</p></div></section>
+<main><div class="light"><div class="container guides-grid"><a class="gcard" href="guide-heart-failure.html"><div class="gtag">ESC 2026</div><h2>Insuficiencia cardiaca</h2><p>Menos zonas grises de FEVI y más énfasis en detectar y tratar la enfermedad antes.</p><span>Abrir resumen →</span></a><a class="gcard" href="guide-cardiac-rehab.html"><div class="gtag">ESC 2026</div><h2>Rehabilitación cardiaca</h2><p>La rehabilitación deja de ser un complemento: pasa a ser una parte estructurada del tratamiento cardiovascular.</p><span>Abrir resumen →</span></a><a class="gcard" href="guide-cvd-ckd.html"><div class="gtag">ESC 2026</div><h2>Enfermedad cardiovascular y renal crónica</h2><p>La ERC deja de ser una comorbilidad al margen: pasa a modificar activamente la estrategia cardiovascular.</p><span>Abrir resumen →</span></a><a class="gcard" href="guide-udmi5.html"><div class="gtag">ESC 2026</div><h2>5.ª Definición Universal de Infarto</h2><p>El nombre del infarto ahora debe explicar el mecanismo clínico, no solo asignar un número.</p><span>Abrir resumen →</span></a></div></div></main>
+<footer class="footer"><div class="container footer-inner"><div>4 documentos clave · ESC Congress 2026</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer></body></html>

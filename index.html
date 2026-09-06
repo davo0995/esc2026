@@ -117,6 +117,18 @@ a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,
 .topic:nth-child(2) .ico,.topic:nth-child(3) .ico,.topic:nth-child(4) .ico,.topic:nth-child(6) .ico{color:var(--red)}
 .topic h5{font-size:10.8px;line-height:1.25;margin:6px 0 0;color:#19304a}
 
+
+/* guide cards */
+.guide-home{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.guide-mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow);transition:.18s}
+.guide-mini:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(20,35,52,.1)}
+.guide-mini .glabel{font-size:8.5px;font-weight:900;color:var(--red);letter-spacing:.8px;text-transform:uppercase}
+.guide-mini h4{font-size:14px;margin:8px 0 7px;color:#18324e}
+.guide-mini p{font-size:10px;color:var(--muted);line-height:1.45;margin:0 0 10px}
+.guide-mini span{font-size:9.5px;font-weight:800;color:#356c9f}
+@media(max-width:1000px){.guide-home{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.guide-home{grid-template-columns:1fr}}
+
 /* lower band */
 .band{background:linear-gradient(180deg,#081321,#07101b);margin-top:32px;color:#fff}
 .band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08)}
@@ -163,7 +175,7 @@ a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,
 <div class="brand-copy"><strong>ESC Congress 2026</strong><span>Puesta al día en cardiología</span></div>
 </a>
 <nav class="navlinks">
-<a href="#inicio">Inicio</a><a href="#top10">Ensayos</a><a href="#guias">Guías</a><a href="#temas">Temas</a><a href="#top10">Top 10</a><a href="#descargas">Descargables</a><a href="#acerca">Acerca de</a>
+<a href="#inicio">Inicio</a><a href="ensayos.html">59 ensayos</a><a href="guias.html">Guías</a><a href="#temas">Temas</a><a href="#top10">Top 10</a><a href="#descargas">Descargables</a><a href="#acerca">Acerca de</a>
 </nav>
 <div aria-hidden="true" class="search-dot">⌕</div>
 </div>
@@ -215,7 +227,7 @@ a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,
 </div>
 </section>
 <section class="section container" id="top10">
-<div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-heart"></use></svg></div><div><h3>Top 10 Hot Line Trials</h3><p>Selección personal por relevancia clínica, novedad y potencial de cambio.</p></div></div><a class="seeall" href="#top10">Top 10 completo ✓</a></div>
+<div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-heart"></use></svg></div><div><h3>Top 10 Hot Line Trials</h3><p>Selección personal por relevancia clínica, novedad y potencial de cambio.</p></div></div><a class="seeall" href="ensayos.html">Ver los 59 →</a></div>
 <div class="top10">
 <a class="trial-card" href="tric-i-hf.html"><div class="trial-art"><span class="rank">1</span></div><div class="trial-body"><h4>TRIC-I-HF</h4><p>T-TEER en insuficiencia tricuspídea grave de alto riesgo.</p><div class="trial-tag">Ver ficha →</div></div></a>
 <a class="trial-card" href="air-stemi.html"><div class="trial-art"><span class="rank">2</span></div><div class="trial-body"><h4>AIR-STEMI</h4><p>Fisiología funcional vs angiografía en STEMI multivaso.</p><div class="trial-tag">Ver ficha →</div></div></a>
@@ -239,13 +251,22 @@ a.trial-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,35,
 <div class="topic"><div class="ico"><svg class="icon"><use href="#i-heart"></use></svg></div><h5>Corazón estructural</h5></div>
 <div class="topic"><div class="ico"><svg class="icon"><use href="#i-lungs"></use></svg></div><h5>TEP y emergencias</h5></div>
 <div class="topic"><div class="ico"><svg class="icon"><use href="#i-camera"></use></svg></div><h5>Imagen y diagnóstico</h5></div>
-<div class="topic" id="guias"><div class="ico"><svg class="icon"><use href="#i-doc"></use></svg></div><h5>Guías 2026</h5></div>
+<a class="topic" href="guias.html"><div class="ico"><svg class="icon"><use href="#i-doc"></use></svg></div><h5>Guías 2026</h5></a>
 </div>
 </section>
+
+<section class="section container" id="guias2026">
+<div class="section-title-row"><div class="title-group"><div class="title-icon"><svg class="icon"><use href="#i-doc"></use></svg></div><div><h3>Guías y documentos 2026</h3><p>Los cuatro documentos que completan la puesta al día del congreso.</p></div></div><a class="seeall" href="guias.html">Ver todas →</a></div>
+<div class="guide-home">
+<a class="guide-mini" href="guide-heart-failure.html"><div class="glabel">ESC 2026</div><h4>Insuficiencia cardiaca</h4><p>Nueva clasificación por FEVI, etapas y actualización terapéutica.</p><span>Abrir →</span></a>
+<a class="guide-mini" href="guide-cardiac-rehab.html"><div class="glabel">ESC 2026</div><h4>Rehabilitación cardiaca</h4><p>Primera guía ESC dedicada por completo a rehabilitación.</p><span>Abrir →</span></a>
+<a class="guide-mini" href="guide-cvd-ckd.html"><div class="glabel">ESC 2026</div><h4>CVD + ERC</h4><p>Marco STAMP on CKD e integración cardio-renal.</p><span>Abrir →</span></a>
+<a class="guide-mini" href="guide-udmi5.html"><div class="glabel">DEFINICIÓN 2026</div><h4>5.ª Definición de IAM</h4><p>Infarto primario, secundario y relacionado con procedimientos.</p><span>Abrir →</span></a>
+</div></section>
 </div>
 <section class="band" id="descargas">
 <div class="container band-grid">
-<div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-shield"></use></svg></div><div><h4>What changes in practice?</h4><p>Análisis crítico y aplicabilidad clínica de cada estudio.</p><span>Ver análisis</span></div></div>
+<a class="band-card" href="ensayos.html"><div class="band-ico"><svg class="icon small"><use href="#i-shield"></use></svg></div><div><h4>59 ensayos · 12 Hot Lines</h4><p>Top 10 ampliado + ficha breve del resto de estudios.</p><span>Explorar todos</span></div></a>
 <div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-download"></use></svg></div><div><h4>Descargables</h4><p>Fichas de lectura, resúmenes y material para repasar.</p><span>Próximamente</span></div></div>
 <div class="band-card"><div class="band-ico"><svg class="icon small"><use href="#i-update"></use></svg></div><div><h4>Actualizaciones</h4><p>Nuevos análisis, correcciones y seguimiento de publicaciones.</p><span>Ver novedades</span></div></div>
 </div>
