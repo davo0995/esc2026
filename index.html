@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ESC Congress 2026 | Puesta al día</title>
+
+<style>
+:root{
+  --navy:#102a43;
+  --blue:#2f5f86;
+  --soft-blue:#eef5f9;
+  --red:#d94b4b;
+  --green:#2e7d64;
+  --text:#243746;
+  --muted:#6f8292;
+  --border:#dce6ed;
+  --white:#ffffff;
+  --background:#f8fafc;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color:var(--text);
+  background:var(--background);
+  line-height:1.55;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-wrap{
+  max-width:1200px;
+  margin:auto;
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 24px;
+}
+
+.brand{
+  font-weight:800;
+  color:var(--navy);
+  font-size:20px;
+}
+
+.brand span{
+  color:var(--red);
+}
+
+.nav-links{
+  display:flex;
+  gap:26px;
+  font-size:14px;
+  font-weight:600;
+  color:#526778;
+}
+
+.nav-links a:hover{
+  color:var(--red);
+}
+
+/* HERO */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%, rgba(217,75,75,.10), transparent 28%),
+    linear-gradient(180deg,#fff 0%,#f4f8fb 100%);
+  border-bottom:1px solid var(--border);
+}
+
+.hero-wrap{
+  max-width:1200px;
+  margin:auto;
+  padding:95px 24px 80px;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:800;
+  color:var(--red);
+  margin-bottom:18px;
+}
+
+.hero h1{
+  color:var(--navy);
+  font-size:clamp(42px,7vw,78px);
+  line-height:1;
+  max-width:850px;
+  letter-spacing:-3px;
+}
+
+.hero h1 span{
+  color:var(--red);
+}
+
+.subtitle{
+  margin-top:24px;
+  max-width:720px;
+  font-size:20px;
+  color:#5d7181;
+}
+
+.author{
+  margin-top:38px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+.author strong{
+  color:var(--navy);
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:54px;
+  max-width:720px;
+}
+
+.stat{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.stat-number{
+  font-size:34px;
+  color:var(--navy);
+  font-weight:800;
+}
+
+.stat-label{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* SECTIONS */
+
+section{
+  padding:85px 24px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-label{
+  color:var(--red);
+  text-transform:uppercase;
+  font-weight:800;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.section-title{
+  font-size:38px;
+  line-height:1.15;
+  color:var(--navy);
+  margin-top:8px;
+}
+
+.section-description{
+  color:var(--muted);
+  margin-top:14px;
+  max-width:720px;
+}
+
+/* MESSAGES */
+
+.messages{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+  margin-top:36px;
+}
+
+.message{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+}
+
+.message h3{
+  color:var(--navy);
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.message p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* TOP 10 */
+
+.top-section{
+  background:#fff;
+}
+
+.top-grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.study{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px 22px 22px 74px;
+  position:relative;
+  transition:.2s ease;
+}
+
+.study:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(16,42,67,.08);
+}
+
+.rank{
+  position:absolute;
+  top:21px;
+  left:20px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  background:var(--soft-blue);
+  color:var(--navy);
+}
+
+.study h3{
+  color:var(--navy);
+  margin-bottom:4px;
+}
+
+.study p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* TOPICS */
+
+.topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:35px;
+}
+
+.topic{
+  padding:13px 20px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--border);
+  color:var(--navy);
+  font-weight:650;
+  font-size:14px;
+}
+
+/* HOTLINES */
+
+.hotline-list{
+  display:grid;
+  gap:12px;
+  margin-top:38px;
+}
+
+.hotline{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+}
+
+.hotline button{
+  width:100%;
+  background:#fff;
+  border:0;
+  padding:20px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  color:var(--navy);
+  font-weight:750;
+  font-size:16px;
+  text-align:left;
+}
+
+.hotline-content{
+  display:none;
+  padding:0 24px 22px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.hotline.open .hotline-content{
+  display:block;
+}
+
+.hotline-number{
+  color:var(--red);
+  margin-right:8px;
+}
+
+/* GUIDELINES */
+
+.guides{
+  background:#f2f6f9;
+}
+
+.guide-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:38px;
+}
+
+.guide{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:25px;
+}
+
+.guide-tag{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--red);
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.guide h3{
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.guide p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+}
+
+.cta-box{
+  background:var(--navy);
+  color:#fff;
+  padding:55px 25px;
+  border-radius:22px;
+}
+
+.cta-box h2{
+  font-size:36px;
+}
+
+.cta-box p{
+  color:#c9d7e2;
+  max-width:620px;
+  margin:15px auto 0;
+}
+
+/* FOOTER */
+
+footer{
+  padding:40px 24px;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.footer-wrap{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .messages{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .top-grid,
+  .guide-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-wrap{
+    padding-top:70px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+}
+
+@media(max-width:520px){
+
+  .messages{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:65px 20px;
+  }
+
+  .hero-wrap{
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-wrap">
+
+    <div class="brand">
+      ESC <span>2026</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#top10">Top 10</a>
+      <a href="#hotlines">Hot Lines</a>
+      <a href="#guias">Guías</a>
+      <a href="#acerca">Acerca de</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<header class="hero" id="inicio">
+  <div class="hero-wrap">
+
+    <div class="eyebrow">
+      Puesta al día en Cardiología
+    </div>
+
+    <h1>
+      ESC Congress <span>2026</span>
+    </h1>
+
+    <p class="subtitle">
+      Una selección de los ensayos, Hot Lines y documentos
+      que pueden cambiar nuestra práctica clínica.
+    </p>
+
+    <div class="author">
+      Curaduría académica ·
+      <strong>David Vélez Verbel</strong>
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+        <div class="stat-number">12</div>
+        <div class="stat-label">Hot Line Sessions</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">59</div>
+        <div class="stat-label">Estudios presentados</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Ensayos seleccionados</div>
+      </div>
+
+    </div>
+
+  </div>
+</header>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">Lo esencial</div>
+
+    <h2 class="section-title">
+      ¿Qué me llevo del congreso?
+    </h2>
+
+    <p class="section-description">
+      Cinco ideas para entender hacia dónde se está moviendo
+      la práctica cardiovascular.
+    </p>
+
+    <div class="messages">
+
+      <div class="message">
+        <h3>Prevención</h3>
+        <p>
+          La prevención cardiovascular en adultos mayores vuelve
+          al centro de la discusión.
+        </p>
+      </div>
+
+      <div class="message">
+        <h3>Coronarias</h3>
+        <p>
+          Revascularización completa no significa necesariamente
+          tratar angiográficamente cada lesión.
+        </p>
+      </div>
+
+      <div class="message">
+        <h3>Insuficiencia cardiaca</h3>
+        <p>
+          La selección del paciente importa tanto como la
+          intervención terapéutica.
+        </p>
+      </div>
+
+      <div class="message">
+        <h3>FA y arritmias</h3>
+        <p>
+          Ablación, anticoagulación y selección de pacientes
+          continúan evolucionando.
+        </p>
+      </div>
+
+      <div class="message">
+        <h3>TEP y emergencias</h3>
+        <p>
+          Nuevas estrategias invasivas buscan mejorar los
+          desenlaces de pacientes de mayor riesgo.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="top-section" id="top10">
+  <div class="container">
+
+    <div class="section-label">Selección personal</div>
+
+    <h2 class="section-title">
+      Top 10 del ESC Congress 2026
+    </h2>
+
+    <p class="section-description">
+      Los diez estudios que considero más interesantes
+      por relevancia clínica, novedad o potencial para modificar
+      nuestra práctica.
+    </p>
+
+
+    <div class="top-grid">
+
+      <div class="study">
+        <div class="rank">1</div>
+        <h3>TRIC-I-HF</h3>
+        <p>Intervención tricuspídea e insuficiencia cardiaca derecha.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">2</div>
+        <h3>AIR-STEMI</h3>
+        <p>Fisiología frente a angiografía en la revascularización del STEMI.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">3</div>
+        <h3>STAREE</h3>
+        <p>Estatinas para prevención primaria en adultos ≥70 años.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">4</div>
+        <h3>ACACIA-HCM</h3>
+        <p>Aficamten en miocardiopatía hipertrófica.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">5</div>
+        <h3>PRAGUE-26</h3>
+        <p>Intervención dirigida por catéter en tromboembolismo pulmonar.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">6</div>
+        <h3>SINGLE-AF</h3>
+        <p>Nuevas preguntas sobre estrategia terapéutica en fibrilación auricular.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">7</div>
+        <h3>REACT</h3>
+        <p>Prevención y aterosclerosis subclínica.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">8</div>
+        <h3>NOTION-4</h3>
+        <p>Trombosis subclínica de las valvas después de TAVI.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">9</div>
+        <h3>PVI-SHAM-AF</h3>
+        <p>Ablación de venas pulmonares frente a procedimiento simulado.</p>
+      </div>
+
+      <div class="study">
+        <div class="rank">10</div>
+        <h3>CARDIO-TTRansform</h3>
+        <p>Eplontersen y silenciamiento de transtiretina en ATTR-CM.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-label">Explorar</div>
+
+    <h2 class="section-title">
+      Evidencia por temas
+    </h2>
+
+    <div class="topics">
+      <span class="topic">Prevención</span>
+      <span class="topic">Coronarias</span>
+      <span class="topic">Insuficiencia cardiaca</span>
+      <span class="topic">Arritmias y FA</span>
+      <span class="topic">Valvulares</span>
+      <span class="topic">TEP</span>
+      <span class="topic">Imagen cardiovascular</span>
+      <span class="topic">Guías 2026</span>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="hotlines">
+  <div class="container">
+
+    <div class="section-label">Programa científico</div>
+
+    <h2 class="section-title">
+      Las 12 Hot Lines
+    </h2>
+
+    <p class="section-description">
+      Abre cada sesión para explorar los estudios seleccionados.
+      Iremos completando los análisis individuales progresivamente.
+    </p>
+
+    <div class="hotline-list">
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">01</span> Miocardiopatías y fibrilación auricular</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          CARDIO-TTRansform · SINGLE-AF · POET-II · ACACIA-HCM · CMR-GUIDE
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">02</span> Prevención cardiovascular</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          STAREE · AMUNDSEN · TRANQUILITY · REACT · ENRICH-AF · DAN-RSV
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">03</span> Síndrome coronario y antitrombóticos</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Evidencia sobre tratamiento antitrombótico y síndrome coronario agudo.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">04</span> Infarto y revascularización</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          PRESC1SE-MI · AIR-STEMI · TARGET-CTCA y estrategias diagnósticas.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">05</span> Salud digital</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Seguimiento remoto, prevención y rehabilitación cardiovascular.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">06</span> Insuficiencia cardiaca</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Nuevas estrategias farmacológicas y de intervención.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">07</span> Cardiología estructural</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          TRIC-I-HF · NOTION-4 · estrategias alrededor de TAVI.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">08</span> Fibrilación auricular</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          PVI-SHAM-AF y nuevas estrategias de ablación.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">09</span> Hipertensión y prevención</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Nuevas estrategias de reducción del riesgo cardiovascular.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">10</span> Dispositivos y electrofisiología</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Resincronización, estimulación y síncope.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">11</span> Imagen y enfermedad coronaria</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          Estrategias de imagen y selección del paciente coronario.
+        </div>
+      </div>
+
+
+      <div class="hotline">
+        <button>
+          <span><span class="hotline-number">12</span> Emergencias cardiovasculares</span>
+          <span>＋</span>
+        </button>
+
+        <div class="hotline-content">
+          PRAGUE-26 · paro cardiaco · tromboembolismo pulmonar.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="guides" id="guias">
+  <div class="container">
+
+    <div class="section-label">Más allá de las Hot Lines</div>
+
+    <h2 class="section-title">
+      Documentos que también cambian la práctica
+    </h2>
+
+    <div class="guide-grid">
+
+      <div class="guide">
+        <div class="guide-tag">ESC 2026</div>
+        <h3>Insuficiencia cardiaca</h3>
+        <p>
+          Actualización de recomendaciones y nuevos conceptos terapéuticos.
+        </p>
+      </div>
+
+      <div class="guide">
+        <div class="guide-tag">ESC 2026</div>
+        <h3>Enfermedad renal y cardiovascular</h3>
+        <p>
+          Integración del riesgo renal y cardiovascular.
+        </p>
+      </div>
+
+      <div class="guide">
+        <div class="guide-tag">Definición universal</div>
+        <h3>Infarto de miocardio</h3>
+        <p>
+          Una nueva forma de clasificar e interpretar el infarto.
+        </p>
+      </div>
+
+      <div class="guide">
+        <div class="guide-tag">ESC 2026</div>
+        <h3>Rehabilitación cardiovascular</h3>
+        <p>
+          La rehabilitación como parte integral del tratamiento cardiovascular.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta" id="acerca">
+  <div class="container">
+
+    <div class="cta-box">
+
+      <h2>
+        De la evidencia a la práctica.
+      </h2>
+
+      <p>
+        Este micrositio acompaña la presentación
+        “ESC Congress 2026: ¿Qué puede cambiar nuestra práctica?”
+        y reúne los estudios seleccionados para revisión académica.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-wrap">
+
+    <div>
+      <strong>David Vélez Verbel</strong><br>
+      Cardiología · Educación médica
+    </div>
+
+    <div>
+      Revisión académica independiente.<br>
+      No afiliada ni avalada por la European Society of Cardiology.
+    </div>
+
+  </div>
+</footer>
+
+
+<script>
+
+document.querySelectorAll(".hotline button").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const box = button.parentElement;
+
+    box.classList.toggle("open");
+
+    const symbol = button.querySelector("span:last-child");
+
+    symbol.textContent =
+      box.classList.contains("open")
+      ? "−"
+      : "＋";
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
