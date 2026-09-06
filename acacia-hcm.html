@@ -19,58 +19,128 @@
 @media(max-width:700px){.container{width:min(100% - 28px,var(--max))}.nav-right{display:none}.page{padding-top:20px}.header h1{font-size:42px}.subtitle{font-size:15px}.grid2,.grid3,.resources{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.meaning{grid-template-columns:1fr}.arrow{transform:rotate(90deg);margin:4px}.tabs{gap:20px}.footer-inner{padding:14px 0;flex-direction:column;align-items:flex-start;justify-content:center}}
 </style>
 </head>
+
 <body>
-<svg width="0" height="0" style="position:absolute">
-<symbol id="home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
-<symbol id="compare" viewBox="0 0 24 24"><path d="M8 4v16M16 4v16M5 7h6M13 17h6"/><path d="m9 5 2 2-2 2M15 15l-2 2 2 2"/></symbol>
-</svg>
-<header class="top"><div class="container nav"><a class="brand" href="index.html"><span class="mark">⌁</span><span><b>ESC Congress 2026</b><small>PUESTA AL DÍA EN CARDIOLOGÍA</small></span></a><div class="nav-right"><a href="index.html">Inicio</a><a href="index.html#top10">Ensayos</a><a href="index.html#temas">Temas</a><a href="index.html#guias">Guías</a></div></div></header>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
+<symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M15 9l5-5"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
+<symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
+</defs></svg>
+<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a><div class="nav-right"><a class="btn" href="index.html#top10">← Top 10</a><a class="btn" href="#referencias">Referencias</a></div></div></header>
 
-<main class="container page">
-<div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><a href="index.html#top10">Ensayos</a><span>›</span><b>Miocardiopatías</b><span>›</span><b>ACACIA-HCM</b></div>
-<div class="header"><div><h1>ACACIA-HCM</h1><p class="subtitle">Aficamten en miocardiopatía hipertrófica no obstructiva.</p></div><div class="impact"><small>Estado de la ficha</small>EN PREPARACIÓN</div></div>
-<nav class="tabs"><a class="active" href="#resumen">Resumen</a><a href="#resultados">Resultados</a><a href="#interpretacion">Interpretación</a><a href="#impacto">Impacto clínico</a><a href="#limitaciones">Limitaciones</a><a href="#referencias">Referencias</a></nav>
+<main class="page"><div class="container">
+<div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><b>Ensayos</b><span>›</span><b>Miocardiopatías</b><span>›</span><b>ACACIA-HCM</b></div>
 
-<section id="resumen">
-<div class="metrics">
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Ficha individual</h4><p>La navegación ya está activa desde la página de inicio.</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Contenido</h4><p>Se completará con los datos verificados del estudio.</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Formato</h4><p>Misma plantilla editorial utilizada en AIR-STEMI.</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Lectura crítica</h4><p>Interpretación, impacto y limitaciones por separado.</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Fuentes</h4><p>Publicación primaria y material del ESC.</p></div></div>
+<div class="header">
+  <div><h1>ACACIA-HCM</h1><p class="subtitle">Aficamten en miocardiopatía hipertrófica.</p></div>
+  <div class="impact"><small>Estado de la ficha</small>EN PREPARACIÓN</div>
 </div>
+
+<nav class="tabs">
+  <a class="active" href="#resumen">Resumen</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#interpretacion">Interpretación</a>
+  <a href="#impacto">Impacto clínico</a>
+  <a href="#limitaciones">Limitaciones</a>
+  <a href="#referencias">Referencias</a>
+</nav>
+
+<section class="metrics" id="resumen">
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Diseño</h4><p>Pendiente de incorporar desde la publicación primaria.</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#user"/></svg></div><div><h4>Población</h4><p>Miocardiopatía hipertrófica. Datos finales en revisión.</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#target"/></svg></div><div><h4>Intervención</h4><p>Se completará con la estrategia exacta del ensayo.</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Comparador</h4><p>Se completará con el brazo control del estudio.</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#clock"/></svg></div><div><h4>Seguimiento</h4><p>Duración final pendiente de verificación.</p></div></div>
 </section>
 
 <section class="grid2" id="resultados">
-<div class="card">
-<h3>Ficha en construcción</h3>
-<div class="eyebrow">El enlace ya funciona</div>
-<p style="font-size:14px;line-height:1.7;color:#52677c;margin:8px 0 0">
-Esta página ya forma parte del micrositio. No he colocado cifras ni conclusiones provisionales para evitar mezclar datos no verificados. La siguiente fase es completar esta ficha con el diseño, población, intervención, resultados y lectura crítica del estudio.
-</p>
-</div>
-<div class="card">
-<h3>Qué tendrá esta página</h3>
-<ul class="checks">
-<li>Pregunta clínica y diseño del ensayo.</li>
-<li>Población, intervención y comparador.</li>
-<li>Endpoint primario y resultados secundarios.</li>
-<li>Interpretación práctica.</li>
-<li>Impacto potencial en la práctica.</li>
-<li>Limitaciones y referencias primarias.</li>
-</ul>
-</div>
+  <div class="card">
+    <h3>Resultado primario</h3>
+    <div class="eyebrow">Los datos cuantitativos se incorporarán únicamente después de verificar la fuente primaria.</div>
+    <div class="result">
+      <div><div class="num red">—</div><div class="res-label">Intervención</div></div>
+      <div class="vs">VS</div>
+      <div><div class="num blue">—</div><div class="res-label">Comparador</div></div>
+    </div>
+    <div class="hr">Resultado principal <span>· pendiente de completar</span></div>
+  </div>
+
+  <div class="card">
+    <h3>¿Qué significa?</h3>
+    <div class="meaning">
+      <div><div class="meaning-circle">?</div><strong>PREGUNTA CLÍNICA</strong><p>¿Puede la modulación de la miosina mejorar síntomas y función en el fenotipo estudiado?</p></div>
+      <div class="arrow">→</div>
+      <div><div class="meaning-circle">♥</div><strong>APLICACIÓN</strong><p>La lectura final se centrará en el cambio real de práctica.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Lectura visual del ensayo</h3>
+    <div class="eyebrow">Mismo lenguaje gráfico de AIR-STEMI, sin adelantar cifras no verificadas.</div>
+    <div class="bars">
+      <div>
+        <div class="barlabel">Magnitud del efecto</div>
+        <div class="track"><div class="fill redf" style="width:34%"></div></div>
+        <div class="barvalue red">En revisión</div>
+      </div>
+      <div>
+        <div class="barlabel">Aplicabilidad clínica</div>
+        <div class="track"><div class="fill bluef" style="width:68%"></div></div>
+        <div class="barvalue blue">Por definir</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card quote">
+    <div class="quote-inner">
+      <b>LA PREGUNTA QUE DEBE QUEDAR</b>
+      <p>La selección fenotípica será clave para interpretar su aplicabilidad.</p>
+    </div>
+  </div>
 </section>
 
-<section class="grid3" style="margin-top:16px">
-<div class="card" id="interpretacion"><h4>Interpretación</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Pendiente de completar con la lectura crítica final.</p></div>
-<div class="card" id="impacto"><h4>Impacto clínico</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Se calificará después de revisar el artículo y el contexto clínico.</p></div>
-<div class="card" id="limitaciones"><h4>Limitaciones</h4><p style="font-size:13px;color:#64768a;line-height:1.65">Se incorporarán las limitaciones metodológicas y de aplicabilidad.</p></div>
+<section class="grid3">
+  <div class="card" id="interpretacion">
+    <h4>Interpretación</h4>
+    <ul class="list">
+      <li>La ficha se completará con el endpoint primario y los resultados secundarios relevantes.</li>
+      <li>Se separará significancia estadística de relevancia clínica.</li>
+      <li>La interpretación se enfocará en qué cambia realmente al día siguiente del congreso.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="impacto">
+    <h4>Impacto clínico</h4>
+    <ul class="checks">
+      <li>Valorar si el resultado cambia práctica.</li>
+      <li>Definir en qué pacientes es aplicable.</li>
+      <li>Compararlo con la evidencia y recomendaciones previas.</li>
+      <li>Traducir el resultado a una conducta clínica concreta.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="limitaciones">
+    <h4>Lectura crítica</h4>
+    <ul class="list">
+      <li>Diseño, potencia estadística y selección de pacientes.</li>
+      <li>Generalización a la práctica cotidiana.</li>
+      <li>Duración del seguimiento y consistencia de los desenlaces.</li>
+    </ul>
+  </div>
 </section>
 
-<div class="sourcebox" id="referencias"><b>Próximo paso:</b> completar esta ficha con evidencia verificada antes de publicar cifras o mensajes clínicos. AIR-STEMI ya sirve como ejemplo de la versión terminada.</div>
-<div style="margin:20px 0 34px"><a href="index.html#top10" style="display:inline-block;padding:10px 14px;border:1px solid #dfe6ec;border-radius:9px;background:#fff;font-size:12px;font-weight:700;color:#27435e">← Volver al Top 10</a></div>
-</main>
+<section class="resources" id="referencias">
+  <div class="resource"><strong>Publicación original</strong><span>Fuente primaria</span><span>Se añadirá al completar la ficha</span></div>
+  <div class="resource"><strong>ESC Congress 2026</strong><span>Presentación oficial</span><span>Se añadirá enlace verificado</span></div>
+  <div class="resource"><strong>Comentario experto</strong><span>Lectura editorial</span><span>En preparación</span></div>
+  <div class="resource"><strong>Ficha descargable</strong><span>Resumen académico del micrositio</span><span>Próximamente</span></div>
+</section>
+
+<div class="sourcebox"><b>Estado:</b> esta página ya usa exactamente la misma plantilla visual de AIR-STEMI. El contenido clínico definitivo se incorporará después de verificar la publicación primaria y las fuentes oficiales del congreso.</div>
+
+</div></main>
 
 <footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
 </body>
