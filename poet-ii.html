@@ -17,6 +17,30 @@
 .sourcebox{margin-top:16px;background:#f1f5f8;border:1px solid #e2e7ec;border-radius:10px;padding:12px 14px;font-size:10px;color:#64768a;line-height:1.55}.sourcebox b{color:#2a4058}.footer{background:#081523;color:#a8b6c5;font-size:10px}.footer-inner{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer strong{color:#d7e0e8}
 @media(max-width:1000px){.metrics{grid-template-columns:repeat(2,1fr)}.grid3,.resources{grid-template-columns:1fr 1fr}.header{grid-template-columns:1fr}.impact{justify-self:start}}
 @media(max-width:700px){.container{width:min(100% - 28px,var(--max))}.nav-right{display:none}.page{padding-top:20px}.header h1{font-size:42px}.subtitle{font-size:15px}.grid2,.grid3,.resources{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.meaning{grid-template-columns:1fr}.arrow{transform:rotate(90deg);margin:4px}.tabs{gap:20px}.footer-inner{padding:14px 0;flex-direction:column;align-items:flex-start;justify-content:center}}
+
+.key-statement{
+  min-height:165px;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:18px 22px;border-radius:12px;background:#fff;
+}
+.key-statement p{
+  margin:0;max-width:680px;font-size:20px;line-height:1.42;
+  font-weight:800;color:#17324e;
+}
+.key-statement em{font-style:normal;color:var(--red)}
+.impact.brief{background:#eef4fb;border-color:#d7e4f1;color:#315f8b}
+.impact.brief small{color:#6d8ba8}
+.mini-flow{
+  display:grid;grid-template-columns:1fr 54px 1fr;align-items:center;
+  text-align:center;min-height:190px
+}
+.mini-flow .circle{
+  width:84px;height:84px;border-radius:50%;margin:0 auto 10px;
+  background:var(--redsoft);display:grid;place-items:center;
+  color:var(--red);font-size:24px;font-weight:900
+}
+.mini-flow strong{font-size:11px}
+.mini-flow p{font-size:10px;color:#718096;margin:4px auto 0;max-width:230px;line-height:1.45}
+@media(max-width:700px){.mini-flow{grid-template-columns:1fr}.mini-flow .arrow{transform:rotate(90deg);margin:7px}}
 </style>
 </head>
 
@@ -30,50 +54,80 @@
 </defs></svg>
 <header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a>
-<div class="nav-right"><a class="btn" href="ensayos.html#hl1">← Hot Line 1</a><a class="btn" href="guias.html">Guías 2026</a></div>
+<div class="nav-right"><a class="btn" href="ensayos.html#hl1">← Hot Line 1</a><a class="btn" href="guias.html">Guías 2026</a><a class="btn" href="#referencias">Referencias</a></div>
 </div></header>
 
 <main class="page"><div class="container">
 <div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><a href="ensayos.html">59 ensayos</a><span>›</span><b>Hot Line 1</b><span>›</span><b>POET-II</b></div>
-<div class="header"><div><h1>POET-II</h1><p class="subtitle">Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</p></div>
-<div class="impact"><small>ESC CONGRESS 2026</small>HOT LINE 1 · FICHA BREVE</div></div>
 
-<nav class="tabs"><a class="active" href="#resumen">Resumen</a><a href="#resultado">Resultado</a><a href="#lectura">Lectura clínica</a><a href="#fuente">Fuente oficial</a></nav>
+<div class="header">
+  <div><h1>POET-II</h1><p class="subtitle">Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</p></div>
+  <div class="impact brief"><small>ESC CONGRESS 2026</small>HOT LINE 1 · ANÁLISIS CLÍNICO</div>
+</div>
+
+<nav class="tabs">
+  <a class="active" href="#resumen">Resumen</a>
+  <a href="#resultados">Resultados</a>
+  <a href="#interpretacion">Interpretación</a>
+  <a href="#impacto">Impacto clínico</a>
+  <a href="#limitaciones">Lectura crítica</a>
+  <a href="#referencias">Referencias</a>
+</nav>
 
 <section class="metrics" id="resumen">
-<div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Sesión</h4><p>Hot Line 1</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#clock"/></svg></div><div><h4>Fecha</h4><p>28 agosto 2026</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#target"/></svg></div><div><h4>Tema</h4><p>Miocardiopatías, endocarditis y fibrilación auricular</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#user"/></svg></div><div><h4>Nivel</h4><p>Hot Line / Late-Breaking Science</p></div></div>
-<div class="metric"><div class="mi"><svg class="icon"><use href="#heart"/></svg></div><div><h4>Formato</h4><p>Resumen clínico del micrositio</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#compare"/></svg></div><div><h4>Sesión</h4><p>Hot Line 1</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#clock"/></svg></div><div><h4>Fecha</h4><p>28 agosto 2026</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#target"/></svg></div><div><h4>Tema</h4><p>Miocardiopatías, endocarditis y fibrilación auricular</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#user"/></svg></div><div><h4>Nivel</h4><p>Hot Line / Late-Breaking Science</p></div></div>
+  <div class="metric"><div class="mi"><svg class="icon"><use href="#heart"/></svg></div><div><h4>Fuente</h4><p>Presentación / resumen oficial ESC 2026.</p></div></div>
 </section>
 
-<section class="grid2" id="resultado">
-<div class="card"><h3>¿Qué evaluó?</h3><div class="eyebrow">Pregunta clínica</div>
-<p style="font-size:14px;line-height:1.7;color:#52677c;margin:0">Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</p></div>
+<section class="grid2" id="resultados">
+  <div class="card">
+    <h3>Pregunta clínica</h3>
+    <div class="eyebrow">¿Qué evaluó el estudio?</div>
+    <div class="key-statement"><p>Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</p></div>
+  </div>
 
-<div class="card"><h3>Resultado clave</h3><div class="eyebrow">Lectura rápida de la presentación ESC</div>
-<p style="font-size:14px;line-height:1.7;color:#52677c;margin:0">La estrategia adaptada acortó el tratamiento (26 vs 41 días) y cumplió no inferioridad para seguridad, aunque hubo más recaídas primarias.</p></div>
+  <div class="card">
+    <h3>¿Qué significa?</h3>
+    <div class="mini-flow">
+      <div><div class="circle">?</div><strong>PREGUNTA</strong><p>Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</p></div>
+      <div class="arrow">→</div>
+      <div><div class="circle">♥</div><strong>RESULTADO</strong><p>La estrategia adaptada acortó el tratamiento (26 vs 41 días) y cumplió no inferioridad para seguridad, aunque hubo más recaídas primarias.</p></div>
+    </div>
+  </div>
 
-<div class="card" id="lectura"><h3>¿Por qué importa?</h3>
-<ul class="list">
-<li>Forma parte de los 59 estudios Hot Line seleccionados en ESC Congress 2026.</li>
-<li>Esta ficha prioriza el mensaje clínico y evita sobreinterpretar análisis secundarios.</li>
-<li>Para cifras, métodos y subgrupos, consulta siempre la publicación primaria y el material oficial.</li>
-</ul></div>
+  <div class="card">
+    <h3>Resultado clave</h3>
+    <div class="eyebrow">Mensaje principal comunicado en ESC Congress 2026</div>
+    <div class="key-statement"><p><em>La estrategia adaptada acortó el tratamiento (26 vs 41 días) y cumplió no inferioridad para seguridad, aunque hubo más recaídas primarias.</em></p></div>
+  </div>
 
-<div class="card quote"><div class="quote-inner"><b>LECTURA DAVID</b>
-<p>Lo importante aquí es saber si el hallazgo cambia una decisión clínica, confirma lo que ya hacíamos o simplemente abre una nueva pregunta.</p></div></div>
+  <div class="card quote">
+    <div class="quote-inner">
+      <b>LECTURA CRÍTICA</b>
+      <p>La pregunta no es solo si el resultado fue “positivo”, sino si cambia una decisión clínica concreta y en qué paciente.</p>
+    </div>
+  </div>
 </section>
 
-<section class="resources" id="fuente">
-<div class="resource"><strong>Resumen oficial ESC</strong><span>Hot Line 1 · Congress News</span><a href="https://www.escardio.org/news/news-room/congress-news/hot-line-1-cardio-ttransform-single-af-poet-ii-acacia-hcm-cmr-guide/" target="_blank" rel="noopener">Abrir ESC →</a></div>
-<div class="resource"><strong>Todos los ensayos</strong><span>59 Hot Line trials</span><a href="ensayos.html#hl1">Volver a Hot Line 1 →</a></div>
-<div class="resource"><strong>Top 10</strong><span>Selección priorizada</span><a href="index.html#top10">Ver Top 10 →</a></div>
-<div class="resource"><strong>Guías 2026</strong><span>4 documentos clave</span><a href="guias.html">Abrir guías →</a></div>
+<section class="grid3">
+  <div class="card" id="interpretacion"><h4>Interpretación</h4><ul class="list"><li>El estudio parte de una pregunta clínica concreta: Duración individualizada de antibióticos en endocarditis infecciosa izquierda estable.</li><li>El mensaje principal comunicado en ESC 2026 fue: La estrategia adaptada acortó el tratamiento (26 vs 41 días) y cumplió no inferioridad para seguridad, aunque hubo más recaídas primarias.</li><li>La lectura debe centrarse en si el hallazgo modifica una decisión clínica frecuente o solamente genera una nueva hipótesis.</li></ul></div>
+  <div class="card" id="impacto"><h4>Impacto clínico</h4><ul class="checks"><li>El hallazgo tiene potencial para influir en la práctica o ampliar una alternativa terapéutica.</li><li>Antes de extrapolarlo, deben revisarse magnitud del efecto, seguridad y selección de pacientes.</li><li>El resultado debe integrarse con guías, disponibilidad local y preferencias del paciente.</li></ul></div>
+  <div class="card" id="limitaciones"><h4>Lectura crítica</h4><ul class="list"><li>Esta ficha resume el mensaje presentado en el congreso y no sustituye la publicación primaria.</li><li>Conviene revisar diseño, tamaño muestral, endpoint primario, subgrupos y duración del seguimiento antes de generalizar.</li><li>Los análisis secundarios o señales exploratorias deben separarse de la conclusión principal del ensayo.</li></ul></div>
 </section>
 
-<div class="sourcebox"><b>Fuente:</b> resumen oficial de ESC Congress 2026 para Hot Line 1. Esta es una ficha breve de navegación; los ensayos del Top 10 cuentan con análisis ampliado.</div>
+<section class="resources" id="referencias">
+  <div class="resource"><strong>Resumen oficial ESC</strong><span>Hot Line 1 · Congress News</span><a href="https://www.escardio.org/news/news-room/congress-news/hot-line-1-cardio-ttransform-single-af-poet-ii-acacia-hcm-cmr-guide/" target="_blank" rel="noopener">Abrir ESC →</a></div>
+  <div class="resource"><strong>Todos los ensayos</strong><span>59 Hot Line trials</span><a href="ensayos.html#hl1">Volver a Hot Line 1 →</a></div>
+  <div class="resource"><strong>Top 10</strong><span>Selección priorizada</span><a href="index.html#top10">Ver Top 10 →</a></div>
+  <div class="resource"><strong>Lectura crítica</strong><span>Interpretación académica del micrositio</span><a href="#limitaciones">Ver análisis →</a></div>
+</section>
+
+<div class="sourcebox"><b>Fuente:</b> resumen oficial de ESC Congress 2026 para Hot Line 1. Los ensayos del Top 10 mantienen análisis ampliado; el resto conserva esta misma identidad visual con una síntesis clínica más breve.</div>
 </div></main>
+
 <footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
-</body></html>
+</body>
+</html>
