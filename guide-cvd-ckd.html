@@ -20,46 +20,49 @@
 </style>
 
 <style>
-.guide-summary{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}
-.summary-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;box-shadow:var(--shadow)}
-.summary-card h3{margin:0 0 10px;font-size:18px;color:#20354e}
-.summary-card p{font-size:12px;line-height:1.7;color:#52677c;margin:0}
-.summary-card ul{font-size:11px;line-height:1.65;color:#52677c;margin:0;padding-left:18px}
-.section-stack{display:grid;gap:10px;margin-top:16px}
-.section-item{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 17px;box-shadow:var(--shadow)}
-.section-item h4{font-size:13px;margin:0 0 5px;color:#20354e}
-.section-item p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.rec-wrap{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
-.rec-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.rec-head h3{margin:0;font-size:18px;color:#20354e}.rec-head p{margin:5px 0 0;font-size:10px;color:#78889a}
+.guide-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:16px}
+.summary-card,.side-card,.chapter-card{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.summary-card{padding:24px}.side-card{padding:21px}
+.summary-card h3,.side-card h3{margin:0 0 10px;color:#20354e;font-size:18px}
+.summary-card p{font-size:12px;line-height:1.72;color:#50667c;margin:0 0 11px}
+.summary-card p:last-child{margin-bottom:0}
+.side-card ul{margin:0;padding-left:18px;color:#607489;font-size:10.5px;line-height:1.65}
+.chapter-stack{display:grid;gap:15px;margin-top:17px}
+.chapter-card{overflow:hidden}
+.chapter-top{padding:18px 20px;background:linear-gradient(180deg,#fff,#fbfcfd);border-bottom:1px solid var(--line)}
+.chapter-num{font-size:9px;font-weight:900;letter-spacing:.9px;color:var(--red);text-transform:uppercase}
+.chapter-top h3{font-size:18px;color:#20354e;margin:5px 0 6px}
+.chapter-top p{font-size:11px;line-height:1.58;color:#6e8092;margin:0;max-width:1000px}
+.chapter-recs{padding:0}
+.chapter-recs h4{font-size:11px;color:#29445e;margin:0;padding:12px 15px 7px}
 .rec-table{width:100%;border-collapse:collapse}
-.rec-table th{font-size:9px;letter-spacing:.4px;text-transform:uppercase;text-align:left;color:#687b8f;background:#f7f9fb;padding:10px 12px;border-bottom:1px solid var(--line)}
-.rec-table td{font-size:10.5px;line-height:1.48;color:#425970;padding:12px;border-bottom:1px solid #edf1f4;vertical-align:top}
+.rec-table th{font-size:8.5px;text-transform:uppercase;letter-spacing:.45px;color:#738497;text-align:left;background:#f7f9fb;padding:9px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec-table td{font-size:10.2px;line-height:1.5;color:#425970;padding:11px 12px;border-bottom:1px solid #edf1f4;vertical-align:top}
 .rec-table tr:last-child td{border-bottom:none}
-.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:84px;text-align:center;white-space:nowrap}
-.badge{display:inline-flex;min-width:45px;justify-content:center;border-radius:999px;padding:5px 8px;font-weight:850;font-size:9px}
+.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:78px;text-align:center;white-space:nowrap}
+.badge{display:inline-flex;min-width:43px;justify-content:center;border-radius:999px;padding:5px 7px;font-weight:850;font-size:8.7px}
 .c1{background:#eaf7ef;color:#287445}.c2a{background:#eef5fc;color:#2d6496}.c2b{background:#fff6e9;color:#9a6a24}.c3{background:#fff0ef;color:#c13d38}.cna{background:#f0f2f4;color:#647383}
+.no-recs{padding:12px 15px 15px;color:#718196;font-size:10.5px;line-height:1.55}
 .changes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .change{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}
-.change b{display:block;color:var(--red);font-size:10px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
-.change h4{font-size:14px;color:#20354e;margin:0 0 7px}.change p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.final-box{margin-top:16px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:24px}
-.final-box .k{font-size:10px;font-weight:900;letter-spacing:.8px;color:#e35249;text-transform:uppercase}
-.final-box h2{font-size:26px;line-height:1.15;color:#c83f39;margin:9px 0 10px}
-.final-box p{font-size:12px;line-height:1.65;color:#6c5d5b;margin:0;max-width:1000px}
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{font-size:9px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
-@media(max-width:900px){.guide-summary{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.changes{grid-template-columns:1fr}.rec-wrap{overflow-x:auto}.rec-table{min-width:760px}}
+.change b{display:block;color:var(--red);font-size:9px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.change h4{font-size:13.5px;color:#20354e;margin:0 0 7px}.change p{font-size:10.3px;line-height:1.55;color:#748395;margin:0}
+.final-box{margin-top:18px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:25px}
+.final-box .k{font-size:9.5px;font-weight:900;letter-spacing:.9px;color:#e35249;text-transform:uppercase}
+.final-box h2{font-size:25px;line-height:1.17;color:#c83f39;margin:9px 0 10px}
+.final-box p{font-size:11.5px;line-height:1.68;color:#6c5d5b;margin:0;max-width:1050px}
+.section-title{margin-top:19px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
+.section-title h3{font-size:18px;color:#20354e;margin:0 0 5px}.section-title p{font-size:10px;color:#78889a;margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.legend span{font-size:8.7px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
+@media(max-width:900px){.guide-intro{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.changes{grid-template-columns:1fr}.chapter-card{overflow-x:auto}.rec-table{min-width:720px}}
 </style>
 </head>
 
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
-<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
 <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M15 9l5-5"/></symbol>
-<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
-<symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
 </defs></svg>
 <header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a>
@@ -76,60 +79,49 @@
 
 <nav class="tabs">
 <a class="active" href="#resumen">Resumen</a>
-<a href="#apartados">Apartados</a>
-<a href="#recomendaciones">Recomendaciones</a>
+<a href="#apartados">Apartados + recomendaciones</a>
 <a href="#cambios">Qué cambió</a>
 <a href="#importante">Lo más importante</a>
 <a href="#fuentes">Fuentes</a>
 </nav>
 
-<section class="guide-summary" id="resumen">
-<div class="summary-card"><h3>Resumen en 60 segundos</h3><p>Primera guía ESC dedicada al eje cardiovascular–renal. Su marco central es STAMP on CKD: detectar y estratificar la ERC, abordar el riesgo renal, modificar el manejo cardiovascular cuando la función renal lo exige y planificar los servicios de salud. El cambio más práctico es que eGFR y albuminuria pasan a ser variables cardiovasculares rutinarias. La guía integra presión arterial, lípidos, antitrombóticos, iSGLT2, finerenona, GLP-1RA, IC, enfermedad coronaria, arritmias, diálisis y trasplante.</p></div>
-<div class="summary-card"><h3>Cómo leer esta revisión</h3><ul>
-<li>Texto deliberadamente sintético: prioriza decisiones clínicas.</li>
-<li>Las recomendaciones están resumidas en español, no reproducidas literalmente.</li>
-<li>Clase y nivel de evidencia conservan la graduación original del documento.</li>
-<li>Para tablas completas, notas al pie y criterios exactos, abre la fuente oficial.</li>
-</ul></div>
+<section class="guide-intro" id="resumen">
+<div class="summary-card">
+<h3>Resumen clínico</h3>
+<p>Es la primera guía ESC dedicada al eje cardiovascular–renal. El documento propone STAMP on CKD: Screen, Triage, Address CKD risk, Modify CVD management y Plan health services. Su punto de partida es contundente: en todo paciente con enfermedad cardiovascular debemos medir eGFR y albuminuria, porque la ERC modifica pronóstico, dosificación y decisiones en IC, coronarias, FA, stroke, PAD y muerte súbita.</p><p>La guía convierte el tratamiento cardio-renal en una estrategia de reducción de riesgo. ACEI/ARA-II, iSGLT2, finerenona y semaglutida tienen indicaciones específicas según diabetes, eGFR y uACR. Para presión arterial se adopta una PAS 120–129 mmHg cuando es tolerada y la función renal lo permite; para lípidos se refuerza estatina intensiva en ERC moderada-avanzada sin diálisis.</p><p>También intenta corregir un sesgo clínico frecuente: la ERC no debe retrasar o impedir terapias cardiovasculares útiles. En IC descompensada, una subida moderada de creatinina durante una descongestión eficaz no significa automáticamente daño renal; en coronarias y antitrombóticos, el riesgo hemorrágico obliga a individualizar, pero no a infratratar por defecto.</p>
+</div>
+<div class="side-card">
+<h3>Cómo leerla</h3>
+<ul>
+<li>Resumen más completo, pero deliberadamente clínico.</li>
+<li>Cada apartado incluye su propia selección de recomendaciones.</li>
+<li>Las recomendaciones están parafraseadas en español; clase y nivel conservan la graduación ESC 2026.</li>
+<li>La selección prioriza lo que puede cambiar decisiones; no pretende reproducir todas las tablas originales.</li>
+<li>Para notas al pie, criterios exactos y todas las recomendaciones, abre el documento oficial.</li>
+</ul>
+</div>
 </section>
 
-<section id="apartados">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff">
-<div><h3>Apartados principales</h3><p>Mapa rápido de la estructura del documento.</p></div></div>
-<div class="section-stack"><div class='section-item'><h4>Definición y estadificación de ERC</h4><p>eGFR, albuminuria, etiología, riesgo de progresión y dosificación.</p></div><div class='section-item'><h4>Patrones de enfermedad CV</h4><p>Cómo la ERC modifica riesgo de IC, ASCVD, arritmias, stroke y muerte súbita.</p></div><div class='section-item'><h4>Reducción de riesgo cardio-renal</h4><p>Estilo de vida, presión arterial, lípidos, antitrombóticos y fármacos protectores.</p></div><div class='section-item'><h4>Insuficiencia cardiaca + ERC</h4><p>Diagnóstico, terapia crónica, descongestión y manejo de caída de eGFR.</p></div><div class='section-item'><h4>ASCVD + ERC</h4><p>Coronarias, enfermedad arterial periférica y stroke.</p></div><div class='section-item'><h4>Enfermedad tromboembólica</h4><p>Anticoagulación y balance isquemia–sangrado.</p></div><div class='section-item'><h4>Arritmias y muerte súbita</h4><p>FA, dispositivos y ajustes por función renal.</p></div><div class='section-item'><h4>Valvulopatías</h4><p>Evaluación e intervenciones en pacientes con ERC.</p></div><div class='section-item'><h4>AKI y procedimientos</h4><p>Contraste, cirugía, cambios perioperatorios de función renal.</p></div><div class='section-item'><h4>Diálisis y trasplante</h4><p>Riesgo CV, tratamiento y evaluación del candidato.</p></div><div class='section-item'><h4>Atención centrada en la persona</h4><p>Trabajo conjunto cardiología–nefrología y decisiones compartidas.</p></div></div>
-</section>
+<div class="section-title" id="apartados"><h3>Apartados y recomendaciones</h3>
+<p>Debajo de cada sección encontrarás un resumen y las recomendaciones de mayor impacto correspondientes a ese apartado.</p>
+<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span><span>B1/B2 = nueva gradación ESC 2026</span></div>
+</div>
+<section class="chapter-stack"><article class='chapter-card' id='cap1'><div class='chapter-top'><div class='chapter-num'>Apartado 01</div><h3>Screen y estadificación de ERC</h3><p>La combinación de eGFR + albuminuria define riesgo, necesidad de seguimiento y decisiones de tratamiento.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>En todo paciente con enfermedad cardiovascular, medir eGFR y albuminuria para detectar y estratificar ERC.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>En diabetes o alto riesgo de progresión, repetir eGFR al menos anualmente.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Repetir albuminuria al menos anualmente cuando pueda cambiar la estratificación o el tratamiento.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Ante caída nueva/inesperada de eGFR o aumento de albuminuria, repetir en días-semanas para descartar AKI.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Considerar controles más frecuentes de eGFR en alto riesgo de AKI o con fármacos renoexcretados de margen estrecho.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap2'><div class='chapter-top'><div class='chapter-num'>Apartado 02</div><h3>Presión arterial y riesgo vascular</h3><p>La PAS 120–129 mmHg es el objetivo preferido cuando se tolera; MAPA/AMPA ayuda a detectar patrones que la consulta no muestra.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Objetivo de PAS 120–129 mmHg si es tolerado en ERC con eGFR ≥30 mL/min/1,73 m².</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Usar MAPA/AMPA cuando sea necesario para detectar bata blanca, HTA enmascarada o elevación nocturna.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap3'><div class='chapter-top'><div class='chapter-num'>Apartado 03</div><h3>Lípidos y prevención aterosclerótica</h3><p>La ERC eleva el riesgo vascular y desplaza la estrategia hacia tratamiento basado en riesgo, no solo en cifras aisladas de LDL.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar estatina de alta intensidad en ERC con eGFR &lt;60 sin terapia renal sustitutiva, independientemente del nivel basal de lípidos.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>No usar antiagregación rutinaria para prevención primaria en ERC con eGFR &lt;60 sin ASCVD sintomática.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap4'><div class='chapter-top'><div class='chapter-num'>Apartado 04</div><h3>Terapias cardio-renales</h3><p>ACEI/ARA-II + iSGLT2 forman el núcleo; finerenona y semaglutida se añaden en fenotipos definidos de DM2 + ERC.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar ACEI o ARA-II a la máxima dosis tolerada para presión, progresión renal y riesgo CV.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>En DM2 + ERC con eGFR ≥20, usar iSGLT2 independientemente del control glucémico.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Sin diabetes, con eGFR ≥20 y uACR ≥200 mg/g, usar iSGLT2.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>En DM2 + ERC con eGFR ≥25 y uACR ≥30 mg/g, usar finerenona.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>En DM2 + ERC de alto riesgo según eGFR/albuminuria, usar semaglutida 1 mg/semana.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Sin diabetes, eGFR 20–44 y uACR &lt;200 mg/g, considerar iSGLT2.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>No combinar ACEI + ARA-II.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>A</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap5'><div class='chapter-top'><div class='chapter-num'>Apartado 05</div><h3>Diabetes + ERC</h3><p>La selección del hipoglucemiante se guía primero por protección cardio-renal y luego por la meta glucémica.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar iSGLT2 y GLP-1RA como fármacos de primera línea en DM2 + ERC por beneficio cardio-renal.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Si no se alcanza la meta con fármacos orales/GLP-1RA, usar insulina adicional.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Individualizar HbA1c aproximadamente entre &lt;6,5% y &lt;8,0%; cuando sea factible, objetivo cercano a &lt;7%.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar metformina si eGFR ≥30 mL/min/1,73 m².</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap6'><div class='chapter-top'><div class='chapter-num'>Apartado 06</div><h3>Insuficiencia cardiaca + ERC</h3><p>La guía insiste en tratar la IC con intensidad suficiente y distinguir cambios hemodinámicos esperables de deterioro renal real.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>En IC descompensada + ERC con eGFR &gt;20, iniciar iSGLT2 precozmente durante la hospitalización.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>En sobrecarga de volumen y sin diurético previo, considerar dosis IV inicial &gt;40 mg equivalentes de furosemida.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B2</span></td></tr><tr><td>En usuarios crónicos de asa con eGFR ≥20, considerar acetazolamida añadida para mejorar descongestión.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Evaluar respuesta diurética durante los primeros días para ajustar tratamiento.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Puede considerarse añadir tiazida a un diurético de asa adecuado si persiste congestión.</td><td><span class='badge c2b'>IIb</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap7'><div class='chapter-top'><div class='chapter-num'>Apartado 07</div><h3>Coronarias, stroke y antitrombóticos</h3><p>La ERC obliga a individualizar contraste, revascularización y duración/intensidad antitrombótica, pero no justifica retrasar tratamiento cardiovascular necesario.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Individualizar el uso de imagen coronaria con contraste según beneficio diagnóstico y riesgo renal; evitar demoras cuando la indicación cardiológica es fuerte.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>En prevención primaria sin ASCVD sintomática, evitar antiagregación rutinaria por riesgo hemorrágico.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap8'><div class='chapter-top'><div class='chapter-num'>Apartado 08</div><h3>Arritmias, válvulas y procedimientos</h3><p>La dosificación de anticoagulantes, riesgo de sangrado, necesidad de dispositivos y decisiones valvulares deben integrar eGFR y fragilidad sin caer en nihilismo terapéutico.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Ajustar fármacos renoexcretados y antitrombóticos a función renal y cambios clínicos.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>No retrasar intervenciones cardiológicas indicadas únicamente por la presencia de ERC; usar valoración multidisciplinaria cuando el balance es complejo.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap9'><div class='chapter-top'><div class='chapter-num'>Apartado 09</div><h3>IC avanzada, diálisis y trasplante</h3><p>La función renal forma parte de la evaluación de candidaturas a MCS/trasplante y puede hacer necesario considerar doble órgano.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>En candidatos a trasplante cardiaco con eGFR basal &lt;30, considerar evaluación por equipo corazón-riñón para posible trasplante combinado.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>En IC avanzada + ERC sin KRT, puede considerarse optimización hemodinámica invasiva para valorar reversibilidad y candidatura.</td><td><span class='badge c2b'>IIb</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>No usar MCS durable si eGFR &lt;30 es improbable que mejore y no existe opción de trasplante doble.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article></section>
 
-<section class="rec-wrap" id="recomendaciones">
-<div class="rec-head"><div><h3>Recomendaciones clave</h3><p>Selección de recomendaciones de mayor impacto. Redacción clínica sintética en español; clase y nivel conservan la graduación original ESC.</p>
-<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span></div>
-</div></div>
-<table class="rec-table"><thead><tr><th>Recomendación resumida en español</th><th>Clase</th><th>Nivel</th></tr></thead>
-<tbody><tr><td>Medir eGFR y albuminuria en pacientes con enfermedad cardiovascular para detectar y estratificar ERC.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Objetivo de PAS 120–129 mmHg si se tolera en ERC con eGFR ≥30 mL/min/1,73 m².</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Usar MAPA/AMPA para detectar bata blanca, HTA enmascarada o presión nocturna elevada.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Estatina intensiva, independientemente del nivel lipídico, en ERC con eGFR &lt;60 sin terapia renal sustitutiva.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>No usar antiagregación rutinaria en ERC eGFR &lt;60 sin ASCVD sintomática.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>ACEI o ARA-II a máxima dosis tolerada para presión, progresión renal y eventos CV.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>iSGLT2 en DM2 + ERC con eGFR ≥20, independientemente del control glucémico.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>iSGLT2 sin diabetes con eGFR ≥20 y uACR ≥200 mg/g.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Finerenona en DM2 + ERC con eGFR ≥25 y uACR ≥30 mg/g.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Semaglutida 1 mg/semana en DM2 + ERC con criterios de eGFR/albuminuria de alto riesgo.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Considerar iSGLT2 sin diabetes con eGFR 20–44 y uACR &lt;200 mg/g.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>No combinar ACEI + ARA-II por exceso de AKI e hiperpotasemia.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Iniciar iSGLT2 precozmente durante ingreso por IC descompensada + ERC con eGFR &gt;20.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Continuar descongestión si hay buena respuesta aunque creatinina aumente hasta ~50%.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table>
-</section>
-
-<section id="cambios">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff"><div><h3>Qué cambió / qué merece atención</h3><p>Los puntos que más alteran la lectura práctica del documento.</p></div></div>
-<div class="changes"><div class='change'><b>Cambio 1</b><h4>STAMP on CKD</h4><p>La ERC se convierte en una responsabilidad explícita también para cardiología.</p></div><div class='change'><b>Cambio 2</b><h4>Albuminuria obligatoria</h4><p>eGFR aislado ya no basta para una estratificación cardio-renal adecuada.</p></div><div class='change'><b>Cambio 3</b><h4>PAS 120–129</h4><p>Se formaliza este objetivo si es tolerado y eGFR ≥30.</p></div><div class='change'><b>Cambio 4</b><h4>Terapias cardio-renales clase I A</h4><p>iSGLT2, finerenona y semaglutida ganan indicaciones muy concretas.</p></div><div class='change'><b>Cambio 5</b><h4>Menos miedo a la creatinina</h4><p>En IC congestionada, una subida moderada de creatinina no obliga a parar descongestión eficaz.</p></div><div class='change'><b>Cambio 6</b><h4>No retrasar cardiología por ERC</h4><p>La complejidad renal no debe convertirse en infratratamiento cardiovascular.</p></div></div>
-</section>
+<div class="section-title" id="cambios"><h3>Qué cambió / qué debes notar</h3><p>Los cambios conceptuales o terapéuticos que más alteran la lectura práctica.</p></div>
+<section class="changes"><div class='change'><b>Cambio 1</b><h4>STAMP on CKD</h4><p>La ERC deja de ser una comorbilidad secundaria y se convierte en una tarea de cardiología.</p></div><div class='change'><b>Cambio 2</b><h4>eGFR + uACR</h4><p>La albuminuria entra de forma rutinaria en la evaluación cardiovascular.</p></div><div class='change'><b>Cambio 3</b><h4>PAS 120–129</h4><p>Nuevo objetivo preferido si se tolera.</p></div><div class='change'><b>Cambio 4</b><h4>Cuatro herramientas cardio-renales</h4><p>ACEI/ARA-II, iSGLT2, finerenona y GLP-1RA con umbrales concretos.</p></div><div class='change'><b>Cambio 5</b><h4>Menos miedo a creatinina</h4><p>La descongestión útil no debe interrumpirse automáticamente por cambios moderados de creatinina.</p></div><div class='change'><b>Cambio 6</b><h4>No al nihilismo</h4><p>La ERC complejiza el manejo cardiovascular; no lo invalida.</p></div></section>
 
 <section class="final-box" id="importante">
-<div class="k">Lo más importante</div>
-<h2>Todo paciente cardiovascular necesita que miremos riñón y albuminuria.</h2>
-<p>La regla práctica es sencilla: eGFR + uACR deben entrar en la evaluación cardiovascular rutinaria. Después, controla presión con objetivo 120–129 mmHg cuando corresponda, usa de forma activa las terapias cardio-renales con evidencia y evita dos errores frecuentes: combinar ACEI+ARA-II o retirar/dejar de intensificar tratamiento útil solo por temor a cambios moderados de función renal.</p>
+<div class="k">Lo más importante</div><h2>En cardiología, riñón significa eGFR + albuminuria, y ambas deben cambiar decisiones.</h2><p>La práctica que propone la guía es muy concreta: detectar ERC en todos los pacientes cardiovasculares; tratar presión y riesgo vascular con intensidad; usar temprano los fármacos cardio-renales con evidencia; y no confundir complejidad renal con contraindicación cardiovascular. Dos errores a evitar: ACEI + ARA-II y suspender tratamiento beneficioso por cambios renales moderados esperables.</p>
 </section>
 
 <section class="resources" id="fuentes">
 <div class="resource"><strong>Página oficial ESC</strong><span>Enfermedad cardiovascular + ERC</span><a href="https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/cvd-chronic-kidney-disease/" target="_blank" rel="noopener">Abrir ESC →</a></div>
-<div class="resource"><strong>Slide set oficial</strong><span>Resumen educativo ESC 2026</span><a href="https://dam-assets.escardio.org/download/b2e5c2ca9baa11f1aa4de2ada4ac7527" target="_blank" rel="noopener">Abrir diapositivas →</a></div>
-<div class="resource"><strong>Publicación</strong><span>EHJ · ehag098</span><a href="https://doi.org/10.1093/eurheartj/ehag098" target="_blank" rel="noopener">Abrir DOI →</a></div>
-<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos del congreso</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>Publicación completa</strong><span>European Heart Journal · ehag098</span><a href="https://doi.org/10.1093/eurheartj/ehag098" target="_blank" rel="noopener">Abrir DOI →</a></div>
+<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>59 ensayos</strong><span>12 Hot Lines</span><a href="ensayos.html">Explorar →</a></div>
 </section>
-
-<div class="sourcebox"><b>Nota editorial:</b> revisión académica independiente y sintética. Las recomendaciones están parafraseadas en español para facilitar lectura clínica; clase y nivel de evidencia se mantienen según la fuente ESC 2026. No sustituye el documento oficial.</div>
+<div class="sourcebox"><b>Nota editorial:</b> síntesis académica independiente. Las recomendaciones están resumidas/parafraseadas en español para facilitar lectura clínica; clase y nivel se conservan según ESC 2026. No sustituye la guía ni el documento de definición original.</div>
 </div></main>
-
-<footer class="footer"><div class="container footer-inner">
-<div>Revisión académica independiente · No afiliada ni avalada por la ESC</div>
-<div><strong>Curaduría académica: David Vélez Verbel</strong></div>
-</div></footer>
+<footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
 </body></html>

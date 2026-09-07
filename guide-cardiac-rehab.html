@@ -20,46 +20,49 @@
 </style>
 
 <style>
-.guide-summary{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}
-.summary-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;box-shadow:var(--shadow)}
-.summary-card h3{margin:0 0 10px;font-size:18px;color:#20354e}
-.summary-card p{font-size:12px;line-height:1.7;color:#52677c;margin:0}
-.summary-card ul{font-size:11px;line-height:1.65;color:#52677c;margin:0;padding-left:18px}
-.section-stack{display:grid;gap:10px;margin-top:16px}
-.section-item{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 17px;box-shadow:var(--shadow)}
-.section-item h4{font-size:13px;margin:0 0 5px;color:#20354e}
-.section-item p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.rec-wrap{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
-.rec-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.rec-head h3{margin:0;font-size:18px;color:#20354e}.rec-head p{margin:5px 0 0;font-size:10px;color:#78889a}
+.guide-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:16px}
+.summary-card,.side-card,.chapter-card{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.summary-card{padding:24px}.side-card{padding:21px}
+.summary-card h3,.side-card h3{margin:0 0 10px;color:#20354e;font-size:18px}
+.summary-card p{font-size:12px;line-height:1.72;color:#50667c;margin:0 0 11px}
+.summary-card p:last-child{margin-bottom:0}
+.side-card ul{margin:0;padding-left:18px;color:#607489;font-size:10.5px;line-height:1.65}
+.chapter-stack{display:grid;gap:15px;margin-top:17px}
+.chapter-card{overflow:hidden}
+.chapter-top{padding:18px 20px;background:linear-gradient(180deg,#fff,#fbfcfd);border-bottom:1px solid var(--line)}
+.chapter-num{font-size:9px;font-weight:900;letter-spacing:.9px;color:var(--red);text-transform:uppercase}
+.chapter-top h3{font-size:18px;color:#20354e;margin:5px 0 6px}
+.chapter-top p{font-size:11px;line-height:1.58;color:#6e8092;margin:0;max-width:1000px}
+.chapter-recs{padding:0}
+.chapter-recs h4{font-size:11px;color:#29445e;margin:0;padding:12px 15px 7px}
 .rec-table{width:100%;border-collapse:collapse}
-.rec-table th{font-size:9px;letter-spacing:.4px;text-transform:uppercase;text-align:left;color:#687b8f;background:#f7f9fb;padding:10px 12px;border-bottom:1px solid var(--line)}
-.rec-table td{font-size:10.5px;line-height:1.48;color:#425970;padding:12px;border-bottom:1px solid #edf1f4;vertical-align:top}
+.rec-table th{font-size:8.5px;text-transform:uppercase;letter-spacing:.45px;color:#738497;text-align:left;background:#f7f9fb;padding:9px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec-table td{font-size:10.2px;line-height:1.5;color:#425970;padding:11px 12px;border-bottom:1px solid #edf1f4;vertical-align:top}
 .rec-table tr:last-child td{border-bottom:none}
-.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:84px;text-align:center;white-space:nowrap}
-.badge{display:inline-flex;min-width:45px;justify-content:center;border-radius:999px;padding:5px 8px;font-weight:850;font-size:9px}
+.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:78px;text-align:center;white-space:nowrap}
+.badge{display:inline-flex;min-width:43px;justify-content:center;border-radius:999px;padding:5px 7px;font-weight:850;font-size:8.7px}
 .c1{background:#eaf7ef;color:#287445}.c2a{background:#eef5fc;color:#2d6496}.c2b{background:#fff6e9;color:#9a6a24}.c3{background:#fff0ef;color:#c13d38}.cna{background:#f0f2f4;color:#647383}
+.no-recs{padding:12px 15px 15px;color:#718196;font-size:10.5px;line-height:1.55}
 .changes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .change{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}
-.change b{display:block;color:var(--red);font-size:10px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
-.change h4{font-size:14px;color:#20354e;margin:0 0 7px}.change p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.final-box{margin-top:16px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:24px}
-.final-box .k{font-size:10px;font-weight:900;letter-spacing:.8px;color:#e35249;text-transform:uppercase}
-.final-box h2{font-size:26px;line-height:1.15;color:#c83f39;margin:9px 0 10px}
-.final-box p{font-size:12px;line-height:1.65;color:#6c5d5b;margin:0;max-width:1000px}
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{font-size:9px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
-@media(max-width:900px){.guide-summary{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.changes{grid-template-columns:1fr}.rec-wrap{overflow-x:auto}.rec-table{min-width:760px}}
+.change b{display:block;color:var(--red);font-size:9px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.change h4{font-size:13.5px;color:#20354e;margin:0 0 7px}.change p{font-size:10.3px;line-height:1.55;color:#748395;margin:0}
+.final-box{margin-top:18px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:25px}
+.final-box .k{font-size:9.5px;font-weight:900;letter-spacing:.9px;color:#e35249;text-transform:uppercase}
+.final-box h2{font-size:25px;line-height:1.17;color:#c83f39;margin:9px 0 10px}
+.final-box p{font-size:11.5px;line-height:1.68;color:#6c5d5b;margin:0;max-width:1050px}
+.section-title{margin-top:19px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
+.section-title h3{font-size:18px;color:#20354e;margin:0 0 5px}.section-title p{font-size:10px;color:#78889a;margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.legend span{font-size:8.7px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
+@media(max-width:900px){.guide-intro{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.changes{grid-template-columns:1fr}.chapter-card{overflow-x:auto}.rec-table{min-width:720px}}
 </style>
 </head>
 
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
-<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
 <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M15 9l5-5"/></symbol>
-<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
-<symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
 </defs></svg>
 <header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a>
@@ -76,60 +79,49 @@
 
 <nav class="tabs">
 <a class="active" href="#resumen">Resumen</a>
-<a href="#apartados">Apartados</a>
-<a href="#recomendaciones">Recomendaciones</a>
+<a href="#apartados">Apartados + recomendaciones</a>
 <a href="#cambios">Qué cambió</a>
 <a href="#importante">Lo más importante</a>
 <a href="#fuentes">Fuentes</a>
 </nav>
 
-<section class="guide-summary" id="resumen">
-<div class="summary-card"><h3>Resumen en 60 segundos</h3><p>Es la primera guía ESC dedicada íntegramente a rehabilitación cardiaca. La rehabilitación se presenta como una intervención cardiovascular integral —no solo ejercicio— que combina entrenamiento, control de factores de riesgo, educación, adherencia farmacológica, nutrición, cesación tabáquica, salud mental, función sexual y herramientas digitales. Amplía las indicaciones a múltiples fenotipos: síndromes coronarios, IC, valvulopatías, FA, dispositivos, cardiopatías congénitas, cáncer, fragilidad y comorbilidades.</p></div>
-<div class="summary-card"><h3>Cómo leer esta revisión</h3><ul>
-<li>Texto deliberadamente sintético: prioriza decisiones clínicas.</li>
-<li>Las recomendaciones están resumidas en español, no reproducidas literalmente.</li>
-<li>Clase y nivel de evidencia conservan la graduación original del documento.</li>
-<li>Para tablas completas, notas al pie y criterios exactos, abre la fuente oficial.</li>
-</ul></div>
+<section class="guide-intro" id="resumen">
+<div class="summary-card">
+<h3>Resumen clínico</h3>
+<p>Es la primera guía ESC dedicada exclusivamente a rehabilitación cardiaca. El mensaje central es que la rehabilitación no equivale a “mandar a ejercicio”: es una intervención multicomponente que combina entrenamiento, control de factores de riesgo, optimización farmacológica, educación, nutrición, cesación tabáquica, salud mental, reintegración social/laboral y herramientas digitales.</p><p>Las indicaciones se amplían mucho más allá del post-IAM. SCA, síndrome coronario crónico, HFrEF, HFpEF, TAVI/SAVR, trasplante, dispositivos, FA, cardiopatía congénita, fragilidad y determinados escenarios cardio-oncológicos forman parte del mapa. La guía también hace explícito el momento de inicio, la prescripción del ejercicio, los indicadores de calidad y las modalidades centro–domicilio–híbrido.</p><p>Otro cambio importante es que la función física, psicológica y la calidad de vida se consideran desenlaces terapéuticos centrales. La telerehabilitación y los wearables dejan de ser “extras tecnológicos” y pasan a ser herramientas para aumentar acceso, adherencia y seguimiento.</p>
+</div>
+<div class="side-card">
+<h3>Cómo leerla</h3>
+<ul>
+<li>Resumen más completo, pero deliberadamente clínico.</li>
+<li>Cada apartado incluye su propia selección de recomendaciones.</li>
+<li>Las recomendaciones están parafraseadas en español; clase y nivel conservan la graduación ESC 2026.</li>
+<li>La selección prioriza lo que puede cambiar decisiones; no pretende reproducir todas las tablas originales.</li>
+<li>Para notas al pie, criterios exactos y todas las recomendaciones, abre el documento oficial.</li>
+</ul>
+</div>
 </section>
 
-<section id="apartados">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff">
-<div><h3>Apartados principales</h3><p>Mapa rápido de la estructura del documento.</p></div></div>
-<div class="section-stack"><div class='section-item'><h4>Perspectiva del paciente</h4><p>Expectativas, satisfacción y resultados reportados por el paciente.</p></div><div class='section-item'><h4>Por qué funciona la rehabilitación</h4><p>Beneficios sobre mortalidad, hospitalización, función y calidad de vida.</p></div><div class='section-item'><h4>Indicaciones</h4><p>Quién debe recibir rehabilitación según el diagnóstico cardiovascular.</p></div><div class='section-item'><h4>Estándares de calidad</h4><p>Infraestructura, equipo, métricas, indicadores y evaluación de resultados.</p></div><div class='section-item'><h4>Componentes centrales</h4><p>Ejercicio, educación, autocuidado, fármacos, nutrición, tabaco y salud psicosocial.</p></div><div class='section-item'><h4>Telemedicina y mHealth</h4><p>Telerehabilitación, wearables, apps, telemonitorización y soporte digital.</p></div><div class='section-item'><h4>Modalidades de entrega</h4><p>Centro, hospital, domicilio y modelos híbridos.</p></div><div class='section-item'><h4>Cómo aumentar participación</h4><p>Derivación, enrolamiento, adherencia y finalización.</p></div><div class='section-item'><h4>Sexo, etnia y edad</h4><p>Adaptación del programa a poblaciones infrarrepresentadas.</p></div><div class='section-item'><h4>Después de fase II</h4><p>Autocuidado y mantenimiento a largo plazo.</p></div></div>
-</section>
+<div class="section-title" id="apartados"><h3>Apartados y recomendaciones</h3>
+<p>Debajo de cada sección encontrarás un resumen y las recomendaciones de mayor impacto correspondientes a ese apartado.</p>
+<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span><span>B1/B2 = nueva gradación ESC 2026</span></div>
+</div>
+<section class="chapter-stack"><article class='chapter-card' id='cap1'><div class='chapter-top'><div class='chapter-num'>Apartado 01</div><h3>Indicaciones por diagnóstico</h3><p>Define quién debe entrar a rehabilitación y qué desenlaces puede esperar cada grupo.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Tras SCA o en síndrome coronario crónico, indicar rehabilitación para reducir muerte CV e IAM.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>En HFrEF crónica, indicar rehabilitación para reducir hospitalizaciones y mejorar función/calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>En HFpEF, indicar rehabilitación para mejorar capacidad física y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Tras SAVR o TAVI por estenosis aórtica, indicar rehabilitación para mejorar función y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar rehabilitación en fibrilación auricular para mejorar síntomas/carga y capacidad funcional.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap2'><div class='chapter-top'><div class='chapter-num'>Apartado 02</div><h3>Evaluación inicial y objetivos</h3><p>La evaluación debe integrar riesgo cardiovascular, función, estado psicológico, objetivos del paciente, fragilidad y comorbilidades antes de prescribir.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Individualizar la prescripción de ejercicio según riesgo CV, función física y preferencias.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B2</span></td></tr><tr><td>Realizar cribado de depresión y ansiedad como parte de la evaluación integral.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>No excluir de rehabilitación a pacientes con indicación solo por fragilidad o comorbilidad.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap3'><div class='chapter-top'><div class='chapter-num'>Apartado 03</div><h3>Ejercicio y actividad física</h3><p>La prescripción combina resistencia y entrenamiento aeróbico, con intensidad basada en evaluación funcional y seguridad.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Incluir ejercicio en SCA/CCS para reducir muerte CV, IAM y hospitalización.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>En SCA/CCS, añadir entrenamiento de resistencia al aeróbico para mayor ganancia funcional.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Tras cirugía cardiotorácica, iniciar movilización/entrenamiento tan pronto como sea factible, idealmente dentro de las primeras semanas.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap4'><div class='chapter-top'><div class='chapter-num'>Apartado 04</div><h3>Prevención secundaria, fármacos y nutrición</h3><p>La rehabilitación se usa como plataforma para cerrar brechas de tratamiento, mejorar adherencia y consolidar cambios de estilo de vida.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar la rehabilitación como marco para optimizar farmacoterapia cardiovascular indicada por guías.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Ofrecer asesoramiento nutricional individualizado y patrón cardioprotector, incluida dieta mediterránea.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Integrar intervención para cesación tabáquica.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Usar farmacoterapia para dejar de fumar cuando esté indicada (TRN, vareniclina, bupropión o citisina).</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap5'><div class='chapter-top'><div class='chapter-num'>Apartado 05</div><h3>Salud psicológica y comportamiento</h3><p>La guía trata ansiedad, depresión, cognición, cambio conductual y retorno a la vida cotidiana como componentes centrales.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Ofrecer intervención psicológica en enfermedad coronaria o IC para mejorar función psicológica y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Usar terapia cognitivo-conductual en enfermedad coronaria, IC o pacientes con ICD para mejorar salud psicológica y reducir riesgo CV.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar herramientas digitales/telemonitorización con contenido psicosocial para reducir ansiedad y depresión.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap6'><div class='chapter-top'><div class='chapter-num'>Apartado 06</div><h3>Telemedicina, apps y wearables</h3><p>La tecnología sirve para aumentar acceso y continuidad, pero debe integrarse a objetivos clínicos y no sustituir la selección del paciente.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>En IC, usar teleconsulta combinada con telemonitorización para reducir muerte CV y hospitalización a corto plazo.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar teleconsulta en todos los pacientes de rehabilitación para aumentar asistencia, adherencia y finalización.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B2</span></td></tr><tr><td>Considerar wearables autooperados para ECG/actividad y parámetros relevantes durante rehabilitación.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar apps de automonitorización para mejorar objetivos de rehabilitación.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap7'><div class='chapter-top'><div class='chapter-num'>Apartado 07</div><h3>Modalidad de entrega</h3><p>La rehabilitación puede ser hospitalaria, ambulatoria, comunitaria, domiciliaria o híbrida según riesgo, recursos y preferencias.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar rehabilitación basada en centro cuando existe indicación.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>En alto riesgo o inestabilidad clínica, usar rehabilitación intrahospitalaria para optimizar función, tratamiento y comorbilidades.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>En SCA/CCS, considerar telerehabilitación o modelo híbrido como alternativa al centro.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>En IC, considerar telerehabilitación o modelo híbrido para mejorar capacidad y calidad de vida.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap8'><div class='chapter-top'><div class='chapter-num'>Apartado 08</div><h3>Acceso, participación y equidad</h3><p>La guía reconoce que el problema ya no es demostrar que la rehabilitación funciona, sino lograr que los pacientes entren y completen el programa.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Favorecer estrategias sistemáticas de derivación e invitación activa a rehabilitación cuando existe indicación.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Adaptar el programa a barreras individuales, sociales y de acceso para mejorar participación.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap9'><div class='chapter-top'><div class='chapter-num'>Apartado 09</div><h3>Fragilidad, edad y comorbilidades</h3><p>Edad avanzada, fragilidad o multimorbilidad obligan a adaptar el programa, no a negar rehabilitación.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>En pacientes frágiles con indicación, usar rehabilitación para mejorar el estado de fragilidad.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B2</span></td></tr><tr><td>No excluir de rehabilitación por fragilidad o comorbilidades si existe una indicación clínica.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>C</span></td></tr></tbody></table></div></article></section>
 
-<section class="rec-wrap" id="recomendaciones">
-<div class="rec-head"><div><h3>Recomendaciones clave</h3><p>Selección de recomendaciones de mayor impacto. Redacción clínica sintética en español; clase y nivel conservan la graduación original ESC.</p>
-<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span></div>
-</div></div>
-<table class="rec-table"><thead><tr><th>Recomendación resumida en español</th><th>Clase</th><th>Nivel</th></tr></thead>
-<tbody><tr><td>Rehabilitación tras SCA o en síndrome coronario crónico para reducir mortalidad CV e IAM.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Rehabilitación en HFrEF crónica para reducir hospitalizaciones y mejorar función y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Rehabilitación en HFpEF para mejorar capacidad física y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Rehabilitación tras SAVR o TAVI por estenosis aórtica para mejorar función y calidad de vida.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Considerar rehabilitación en FA para reducir síntomas/carga y mejorar capacidad funcional.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Rehabilitación en pacientes frágiles con indicación para mejorar el estado de fragilidad.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B2</span></td></tr><tr><td>No negar rehabilitación por fragilidad o comorbilidades cuando existe indicación.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Usar rehabilitación como marco para optimizar farmacoterapia indicada por guías.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Consejería nutricional individualizada y patrón saludable, incluida dieta mediterránea, durante rehabilitación.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Intervención para dejar de fumar como componente integral de rehabilitación.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Farmacoterapia para cesación tabáquica —TRN, vareniclina, bupropión o citisina— en fumadores.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Teleconsulta más telemonitorización en IC para reducir mortalidad CV/hospitalización a corto plazo.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table>
-</section>
-
-<section id="cambios">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff"><div><h3>Qué cambió / qué merece atención</h3><p>Los puntos que más alteran la lectura práctica del documento.</p></div></div>
-<div class="changes"><div class='change'><b>Cambio 1</b><h4>Primera guía ESC dedicada</h4><p>La rehabilitación deja de estar dispersa entre otras guías.</p></div><div class='change'><b>Cambio 2</b><h4>Más que ejercicio</h4><p>Se formalizan nutrición, tabaco, salud mental, autocuidado, fármacos y función.</p></div><div class='change'><b>Cambio 3</b><h4>Indicaciones más amplias</h4><p>Incluye FA, TAVI/SAVR, dispositivos, cáncer, fragilidad y cardiopatía congénita.</p></div><div class='change'><b>Cambio 4</b><h4>Digitalización</h4><p>Teleconsulta, monitorización remota, wearables y apps entran al marco formal.</p></div><div class='change'><b>Cambio 5</b><h4>Resultados centrados en el paciente</h4><p>Función y calidad de vida ganan peso junto a mortalidad y hospitalizaciones.</p></div><div class='change'><b>Cambio 6</b><h4>Acceso y participación</h4><p>La derivación y la finalización del programa pasan a ser objetivos de calidad.</p></div></div>
-</section>
+<div class="section-title" id="cambios"><h3>Qué cambió / qué debes notar</h3><p>Los cambios conceptuales o terapéuticos que más alteran la lectura práctica.</p></div>
+<section class="changes"><div class='change'><b>Cambio 1</b><h4>Primera guía propia</h4><p>La rehabilitación deja de estar dispersa en múltiples documentos.</p></div><div class='change'><b>Cambio 2</b><h4>Más allá del ejercicio</h4><p>Se formalizan 11 componentes centrales del programa.</p></div><div class='change'><b>Cambio 3</b><h4>Más indicaciones</h4><p>FA, TAVI/SAVR, dispositivos, trasplante, cáncer y fragilidad ganan espacio.</p></div><div class='change'><b>Cambio 4</b><h4>Inicio más temprano</h4><p>Se promueve inicio precoz tras SCA, cirugía y estabilización de IC.</p></div><div class='change'><b>Cambio 5</b><h4>Digitalización formal</h4><p>Telerehabilitación, apps y wearables reciben clases de recomendación.</p></div><div class='change'><b>Cambio 6</b><h4>Equidad</h4><p>Derivación, asistencia y finalización pasan a ser objetivos clínicos y de sistema.</p></div></section>
 
 <section class="final-box" id="importante">
-<div class="k">Lo más importante</div>
-<h2>La rehabilitación cardiaca es tratamiento, no un “extra”.</h2>
-<p>El mensaje clínico es muy fuerte: después de SCA/CCS la rehabilitación tiene clase I A; en HFrEF/HFpEF y tras TAVI/SAVR también ocupa un lugar central. El programa debe ser integral, personalizado y puede ser híbrido o digital. No debe negarse por edad, fragilidad o comorbilidad si existe indicación.</p>
+<div class="k">Lo más importante</div><h2>La rehabilitación cardiaca deja de ser un complemento y pasa a formar parte del tratamiento.</h2><p>Después de SCA/CCS la recomendación es I A. En IC y tras intervenciones valvulares también ocupa un lugar fuerte. El programa debe ser multicomponente, individualizado y puede ser híbrido o digital. La edad, la fragilidad y las comorbilidades no son razones para excluir a un paciente con indicación.</p>
 </section>
 
 <section class="resources" id="fuentes">
 <div class="resource"><strong>Página oficial ESC</strong><span>Rehabilitación cardiaca</span><a href="https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/cardiac-rehabilitation/" target="_blank" rel="noopener">Abrir ESC →</a></div>
-<div class="resource"><strong>Slide set oficial</strong><span>Resumen educativo ESC 2026</span><a href="https://dam-assets.escardio.org/download/b2e6c1de9baa11f1836c0a4401501d3b" target="_blank" rel="noopener">Abrir diapositivas →</a></div>
-<div class="resource"><strong>Publicación</strong><span>EHJ · ehag099</span><a href="https://doi.org/10.1093/eurheartj/ehag099" target="_blank" rel="noopener">Abrir DOI →</a></div>
-<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos del congreso</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>Publicación completa</strong><span>European Heart Journal · ehag099</span><a href="https://doi.org/10.1093/eurheartj/ehag099" target="_blank" rel="noopener">Abrir DOI →</a></div>
+<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>59 ensayos</strong><span>12 Hot Lines</span><a href="ensayos.html">Explorar →</a></div>
 </section>
-
-<div class="sourcebox"><b>Nota editorial:</b> revisión académica independiente y sintética. Las recomendaciones están parafraseadas en español para facilitar lectura clínica; clase y nivel de evidencia se mantienen según la fuente ESC 2026. No sustituye el documento oficial.</div>
+<div class="sourcebox"><b>Nota editorial:</b> síntesis académica independiente. Las recomendaciones están resumidas/parafraseadas en español para facilitar lectura clínica; clase y nivel se conservan según ESC 2026. No sustituye la guía ni el documento de definición original.</div>
 </div></main>
-
-<footer class="footer"><div class="container footer-inner">
-<div>Revisión académica independiente · No afiliada ni avalada por la ESC</div>
-<div><strong>Curaduría académica: David Vélez Verbel</strong></div>
-</div></footer>
+<footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
 </body></html>

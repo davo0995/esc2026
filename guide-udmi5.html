@@ -20,46 +20,49 @@
 </style>
 
 <style>
-.guide-summary{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}
-.summary-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;box-shadow:var(--shadow)}
-.summary-card h3{margin:0 0 10px;font-size:18px;color:#20354e}
-.summary-card p{font-size:12px;line-height:1.7;color:#52677c;margin:0}
-.summary-card ul{font-size:11px;line-height:1.65;color:#52677c;margin:0;padding-left:18px}
-.section-stack{display:grid;gap:10px;margin-top:16px}
-.section-item{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 17px;box-shadow:var(--shadow)}
-.section-item h4{font-size:13px;margin:0 0 5px;color:#20354e}
-.section-item p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.rec-wrap{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
-.rec-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
-.rec-head h3{margin:0;font-size:18px;color:#20354e}.rec-head p{margin:5px 0 0;font-size:10px;color:#78889a}
+.guide-intro{display:grid;grid-template-columns:1.35fr .65fr;gap:16px;margin-top:16px}
+.summary-card,.side-card,.chapter-card{background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}
+.summary-card{padding:24px}.side-card{padding:21px}
+.summary-card h3,.side-card h3{margin:0 0 10px;color:#20354e;font-size:18px}
+.summary-card p{font-size:12px;line-height:1.72;color:#50667c;margin:0 0 11px}
+.summary-card p:last-child{margin-bottom:0}
+.side-card ul{margin:0;padding-left:18px;color:#607489;font-size:10.5px;line-height:1.65}
+.chapter-stack{display:grid;gap:15px;margin-top:17px}
+.chapter-card{overflow:hidden}
+.chapter-top{padding:18px 20px;background:linear-gradient(180deg,#fff,#fbfcfd);border-bottom:1px solid var(--line)}
+.chapter-num{font-size:9px;font-weight:900;letter-spacing:.9px;color:var(--red);text-transform:uppercase}
+.chapter-top h3{font-size:18px;color:#20354e;margin:5px 0 6px}
+.chapter-top p{font-size:11px;line-height:1.58;color:#6e8092;margin:0;max-width:1000px}
+.chapter-recs{padding:0}
+.chapter-recs h4{font-size:11px;color:#29445e;margin:0;padding:12px 15px 7px}
 .rec-table{width:100%;border-collapse:collapse}
-.rec-table th{font-size:9px;letter-spacing:.4px;text-transform:uppercase;text-align:left;color:#687b8f;background:#f7f9fb;padding:10px 12px;border-bottom:1px solid var(--line)}
-.rec-table td{font-size:10.5px;line-height:1.48;color:#425970;padding:12px;border-bottom:1px solid #edf1f4;vertical-align:top}
+.rec-table th{font-size:8.5px;text-transform:uppercase;letter-spacing:.45px;color:#738497;text-align:left;background:#f7f9fb;padding:9px 12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec-table td{font-size:10.2px;line-height:1.5;color:#425970;padding:11px 12px;border-bottom:1px solid #edf1f4;vertical-align:top}
 .rec-table tr:last-child td{border-bottom:none}
-.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:84px;text-align:center;white-space:nowrap}
-.badge{display:inline-flex;min-width:45px;justify-content:center;border-radius:999px;padding:5px 8px;font-weight:850;font-size:9px}
+.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:78px;text-align:center;white-space:nowrap}
+.badge{display:inline-flex;min-width:43px;justify-content:center;border-radius:999px;padding:5px 7px;font-weight:850;font-size:8.7px}
 .c1{background:#eaf7ef;color:#287445}.c2a{background:#eef5fc;color:#2d6496}.c2b{background:#fff6e9;color:#9a6a24}.c3{background:#fff0ef;color:#c13d38}.cna{background:#f0f2f4;color:#647383}
+.no-recs{padding:12px 15px 15px;color:#718196;font-size:10.5px;line-height:1.55}
 .changes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .change{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}
-.change b{display:block;color:var(--red);font-size:10px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
-.change h4{font-size:14px;color:#20354e;margin:0 0 7px}.change p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
-.final-box{margin-top:16px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:24px}
-.final-box .k{font-size:10px;font-weight:900;letter-spacing:.8px;color:#e35249;text-transform:uppercase}
-.final-box h2{font-size:26px;line-height:1.15;color:#c83f39;margin:9px 0 10px}
-.final-box p{font-size:12px;line-height:1.65;color:#6c5d5b;margin:0;max-width:1000px}
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{font-size:9px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
-@media(max-width:900px){.guide-summary{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.changes{grid-template-columns:1fr}.rec-wrap{overflow-x:auto}.rec-table{min-width:760px}}
+.change b{display:block;color:var(--red);font-size:9px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.change h4{font-size:13.5px;color:#20354e;margin:0 0 7px}.change p{font-size:10.3px;line-height:1.55;color:#748395;margin:0}
+.final-box{margin-top:18px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:25px}
+.final-box .k{font-size:9.5px;font-weight:900;letter-spacing:.9px;color:#e35249;text-transform:uppercase}
+.final-box h2{font-size:25px;line-height:1.17;color:#c83f39;margin:9px 0 10px}
+.final-box p{font-size:11.5px;line-height:1.68;color:#6c5d5b;margin:0;max-width:1050px}
+.section-title{margin-top:19px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:17px 19px}
+.section-title h3{font-size:18px;color:#20354e;margin:0 0 5px}.section-title p{font-size:10px;color:#78889a;margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.legend span{font-size:8.7px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
+@media(max-width:900px){.guide-intro{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.changes{grid-template-columns:1fr}.chapter-card{overflow-x:auto}.rec-table{min-width:720px}}
 </style>
 </head>
 
 <body>
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
-<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
 <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M15 9l5-5"/></symbol>
-<symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
-<symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
 </defs></svg>
 <header class="topbar"><div class="container nav">
 <a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a>
@@ -76,60 +79,49 @@
 
 <nav class="tabs">
 <a class="active" href="#resumen">Resumen</a>
-<a href="#apartados">Apartados</a>
-<a href="#recomendaciones">Recomendaciones</a>
+<a href="#apartados">Apartados + recomendaciones</a>
 <a href="#cambios">Qué cambió</a>
 <a href="#importante">Lo más importante</a>
 <a href="#fuentes">Fuentes</a>
 </nav>
 
-<section class="guide-summary" id="resumen">
-<div class="summary-card"><h3>Resumen en 60 segundos</h3><p>La 5.ª Definición Universal abandona la clasificación numérica de los antiguos tipos 1–5 y organiza el infarto en tres grupos clínicos: primario, secundario y relacionado con procedimientos. Refuerza una idea esencial: troponina elevada no equivale a infarto. La lesión miocárdica debe interpretarse junto con síntomas, ECG, cinética de troponina, imagen y mecanismo. Se incorporan umbrales de troponina específicos por sexo y una clasificación ICD-11 más alineada con la etiología.</p></div>
-<div class="summary-card"><h3>Cómo leer esta revisión</h3><ul>
-<li>Texto deliberadamente sintético: prioriza decisiones clínicas.</li>
-<li>Las recomendaciones están resumidas en español, no reproducidas literalmente.</li>
-<li>Clase y nivel de evidencia conservan la graduación original del documento.</li>
-<li>Para tablas completas, notas al pie y criterios exactos, abre la fuente oficial.</li>
-</ul></div>
+<section class="guide-intro" id="resumen">
+<div class="summary-card">
+<h3>Resumen clínico</h3>
+<p>La 5.ª Definición Universal intenta que el diagnóstico de IAM vuelva a explicar fisiopatología y no solo un número de “tipo”. Sustituye los antiguos tipos 1–5 por tres categorías: IAM primario, IAM secundario e IAM relacionado con procedimientos. El diagnóstico clínico exige lesión miocárdica aguda más evidencia de isquemia; una troponina elevada, incluso dinámica, no es suficiente por sí sola.</p><p>La lesión aguda se define por ascenso/descenso de troponina I o T con al menos un valor sobre el percentil 99 específico por sexo. La lesión crónica corresponde a elevación persistente en una situación clínica estable. Imagen coronaria/cardiaca, ECG y contexto clínico se integran para confirmar que existe necrosis isquémica y para identificar el mecanismo.</p><p>El IAM primario incluye toda patología coronaria aguda espontánea —aterotrombosis, SCAD, embolia, vasoespasmo, etc.—; el secundario queda restringido al desequilibrio aporte-demanda causado por otra condición aguda; el IAM relacionado con procedimientos exige una complicación coronaria objetiva dentro de 30 días. El antiguo tipo 3 desaparece como etiqueta independiente.</p>
+</div>
+<div class="side-card">
+<h3>Cómo leerla</h3>
+<ul>
+<li>Resumen más completo, pero deliberadamente clínico.</li>
+<li>Cada apartado incluye su propia selección de recomendaciones.</li>
+<li>Las recomendaciones están parafraseadas en español; clase y nivel conservan la graduación ESC 2026.</li>
+<li>La selección prioriza lo que puede cambiar decisiones; no pretende reproducir todas las tablas originales.</li>
+<li>Para notas al pie, criterios exactos y todas las recomendaciones, abre el documento oficial.</li>
+</ul>
+</div>
 </section>
 
-<section id="apartados">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff">
-<div><h3>Apartados principales</h3><p>Mapa rápido de la estructura del documento.</p></div></div>
-<div class="section-stack"><div class='section-item'><h4>Contexto y objetivo</h4><p>Alinear la definición con la evaluación clínica y el mecanismo fisiopatológico.</p></div><div class='section-item'><h4>Lesión miocárdica aguda</h4><p>Ascenso/descenso de troponina con al menos un valor &gt; percentil 99 específico por sexo.</p></div><div class='section-item'><h4>Lesión miocárdica crónica</h4><p>Troponina persistentemente elevada en situación estable y contexto clínico compatible.</p></div><div class='section-item'><h4>IAM primario</h4><p>Patología coronaria aguda espontánea: aterotrombosis, SCAD, embolia, vasoespasmo, etc.</p></div><div class='section-item'><h4>IAM secundario</h4><p>Desequilibrio aporte–demanda por otra condición aguda, con criterios objetivos.</p></div><div class='section-item'><h4>IAM relacionado con procedimiento</h4><p>Complicación coronaria de intervención percutánea o cirugía dentro de 30 días.</p></div><div class='section-item'><h4>Síntomas y ECG</h4><p>Integración de presentación clínica, cambios isquémicos y ondas Q.</p></div><div class='section-item'><h4>Biomarcadores</h4><p>Uso seriado de troponina, percentil 99 específico por sexo y posibles interferencias.</p></div><div class='section-item'><h4>Imagen</h4><p>Angiografía, eco, RMC y otras técnicas para confirmar mecanismo y pérdida de miocardio viable.</p></div><div class='section-item'><h4>Codificación y salud pública</h4><p>Nuevos códigos ICD-11 y mejor comparabilidad clínica/investigación.</p></div></div>
-</section>
+<div class="section-title" id="apartados"><h3>Apartados y recomendaciones</h3>
+<p>Debajo de cada sección encontrarás un resumen y las recomendaciones de mayor impacto correspondientes a ese apartado.</p>
+<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span><span>B1/B2 = nueva gradación ESC 2026</span></div>
+</div>
+<section class="chapter-stack"><article class='chapter-card' id='cap1'><div class='chapter-top'><div class='chapter-num'>Apartado 01</div><h3>Lesión miocárdica aguda y crónica</h3><p>Primero se decide si existe lesión y si es aguda o crónica; después se pregunta si la causa es isquémica.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Lesión aguda: ascenso/descenso de cTn I/T con ≥1 valor sobre el percentil 99 específico por sexo.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Lesión crónica: troponina persistentemente por encima del percentil 99 en situación clínica estable.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap2'><div class='chapter-top'><div class='chapter-num'>Apartado 02</div><h3>Diagnóstico clínico de IAM</h3><p>No existe un único criterio suficiente: la definición combina biomarcador con síntomas, ECG, imagen y evidencia de isquemia.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Para diagnosticar IAM debe existir lesión miocárdica aguda más evidencia clínica/ECG o por imagen de isquemia.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Los umbrales de troponina de alta sensibilidad deben considerar el percentil 99 específico por sexo.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>En presentación precoz o síntomas persistentes/recurrentes, usar mediciones seriadas antes de excluir IAM.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap3'><div class='chapter-top'><div class='chapter-num'>Apartado 03</div><h3>IAM primario</h3><p>Presentación espontánea por una patología coronaria aguda primaria; prioriza sensibilidad para no perder una causa coronaria tratable.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Considerar IAM primario si lesión aguda e isquemia aparecen espontáneamente, sin otra enfermedad aguda o procedimiento que explique el cuadro.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Confirmar mecanismo con angiografía/imágenes cuando se identifica aterotrombosis, SCAD, vasoespasmo, embolia u otra patología coronaria aguda.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap4'><div class='chapter-top'><div class='chapter-num'>Apartado 04</div><h3>IAM secundario</h3><p>Se reserva para lesión isquémica por desequilibrio aporte-demanda provocado por otra enfermedad aguda, con criterios más objetivos.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Considerar IAM secundario cuando otra condición aguda causa desequilibrio aporte-demanda y existe evidencia de isquemia.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Usar imagen coronaria/cardiaca para distinguir enfermedad coronaria estable con desequilibrio de una patología coronaria aguda primaria.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap5'><div class='chapter-top'><div class='chapter-num'>Apartado 05</div><h3>IAM relacionado con procedimiento</h3><p>Unifica PCI y cirugía en un marco clínico común y evita usar solo umbrales arbitrarios de troponina.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Considerar IAM relacionado con procedimiento cuando una complicación coronaria de PCI o cirugía produce lesión isquémica dentro de 30 días.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>El diagnóstico debe incluir evidencia objetiva de complicación coronaria y/o nueva pérdida regional de miocardio viable.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap6'><div class='chapter-top'><div class='chapter-num'>Apartado 06</div><h3>Síntomas y ECG</h3><p>Los síntomas siguen siendo importantes, pero son inespecíficos; el ECG puede identificar isquemia, oclusión y evolución, aunque no todos los IAM presentan elevación de ST.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Integrar síntomas isquémicos, cambios nuevos del ST-T y ondas Q patológicas con biomarcadores e imagen.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>No excluir una oclusión coronaria únicamente por ausencia de elevación clásica del ST.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap7'><div class='chapter-top'><div class='chapter-num'>Apartado 07</div><h3>Imagen y mecanismos especiales</h3><p>La imagen deja de ser un apéndice y pasa a ser una herramienta central para confirmar etiología, especialmente en MINOCA, SCAD, vasoespasmo y daño no isquémico.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Usar angiografía y/o imagen cardiaca para confirmar mecanismo cuando el diagnóstico clínico es incierto o la etiología cambia tratamiento.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>En coronarias no obstructivas, usar RMC y pruebas dirigidas para diferenciar IAM de miocarditis, Takotsubo u otras causas de lesión.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article><article class='chapter-card' id='cap8'><div class='chapter-top'><div class='chapter-num'>Apartado 08</div><h3>Codificación y comunicación diagnóstica</h3><p>La clasificación se alinea con ICD-11 para que el diagnóstico comunique mecanismo y tenga implicaciones clínicas claras.</p></div><div class='chapter-recs'><h4>Recomendaciones / principios del apartado</h4><table class='rec-table'><thead><tr><th>Resumen clínico en español</th><th>Clase</th><th>Nivel</th></tr></thead><tbody><tr><td>Documentar el IAM como primario, secundario o relacionado con procedimiento y, cuando sea posible, añadir el mecanismo específico.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Evitar usar “IAM” como sinónimo de lesión miocárdica aislada.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table></div></article></section>
 
-<section class="rec-wrap" id="recomendaciones">
-<div class="rec-head"><div><h3>Principios diagnósticos (clase/nivel: no aplica)</h3><p>Este documento es una definición/consenso diagnóstico, no una guía terapéutica. Por eso estas definiciones no llevan clase de recomendación ni nivel de evidencia ESC.</p>
-<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span></div>
-</div></div>
-<table class="rec-table"><thead><tr><th>Recomendación resumida en español</th><th>Clase</th><th>Nivel</th></tr></thead>
-<tbody><tr><td>Lesión miocárdica aguda: ascenso y/o descenso de cTn I/T con ≥1 valor sobre el percentil 99 específico por sexo.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Lesión crónica: ≥2 valores de troponina por encima del percentil 99 en situación clínica estable.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>IAM primario: lesión aguda + evidencia clínica/ECG de isquemia y confirmación de patología coronaria aguda o nueva lesión miocárdica isquémica.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>IAM secundario: lesión aguda por desequilibrio aporte–demanda debido a otra condición aguda, sin patología coronaria aguda.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>IAM relacionado con procedimiento: complicación coronaria de PCI/cirugía dentro de 30 días con criterios objetivos de lesión isquémica.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>En presentación precoz o síntomas persistentes/recurrentes, se requieren mediciones seriadas de troponina antes de excluir IAM.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>Usar umbrales de troponina de alta sensibilidad específicos por sexo reduce infradiagnóstico en mujeres.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr><tr><td>La imagen cardiaca/coronaria se utiliza para definir etiología y confirmar pérdida regional de miocardio viable.</td><td><span class='badge cna'>—</span></td><td><span class='badge cna'>No aplica</span></td></tr></tbody></table>
-</section>
-
-<section id="cambios">
-<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff"><div><h3>Qué cambió / qué merece atención</h3><p>Los puntos que más alteran la lectura práctica del documento.</p></div></div>
-<div class="changes"><div class='change'><b>Cambio 1</b><h4>Adiós a tipos 1–5</h4><p>Se reemplazan por IAM primario, secundario y relacionado con procedimientos.</p></div><div class='change'><b>Cambio 2</b><h4>Troponina ≠ IAM</h4><p>La lesión miocárdica se separa explícitamente del diagnóstico de infarto.</p></div><div class='change'><b>Cambio 3</b><h4>Umbral específico por sexo</h4><p>El percentil 99 específico por sexo entra en la definición de lesión aguda.</p></div><div class='change'><b>Cambio 4</b><h4>Más peso de la imagen</h4><p>La confirmación etiológica y la pérdida de viabilidad ganan relevancia.</p></div><div class='change'><b>Cambio 5</b><h4>Procedimientos: mismo marco</h4><p>PCI y cirugía utilizan un enfoque diagnóstico armonizado y clínicamente significativo.</p></div><div class='change'><b>Cambio 6</b><h4>ICD-11</h4><p>La nueva clasificación se conecta directamente con códigos diagnósticos etiológicos.</p></div></div>
-</section>
+<div class="section-title" id="cambios"><h3>Qué cambió / qué debes notar</h3><p>Los cambios conceptuales o terapéuticos que más alteran la lectura práctica.</p></div>
+<section class="changes"><div class='change'><b>Cambio 1</b><h4>Adiós a tipos 1–5</h4><p>Se sustituyen por primario, secundario y relacionado con procedimientos.</p></div><div class='change'><b>Cambio 2</b><h4>Troponina ≠ IAM</h4><p>La lesión se separa explícitamente del infarto.</p></div><div class='change'><b>Cambio 3</b><h4>Percentil por sexo</h4><p>Se adopta el percentil 99 específico por sexo para definir lesión.</p></div><div class='change'><b>Cambio 4</b><h4>Más imagen</h4><p>La etiología debe confirmarse cuando cambia la clasificación o el tratamiento.</p></div><div class='change'><b>Cambio 5</b><h4>Procedimientos unificados</h4><p>PCI y cirugía comparten una lógica diagnóstica clínica.</p></div><div class='change'><b>Cambio 6</b><h4>ICD-11</h4><p>El código diagnóstico se alinea con el mecanismo fisiopatológico.</p></div></section>
 
 <section class="final-box" id="importante">
-<div class="k">Lo más importante</div>
-<h2>Primero define si hay lesión; después demuestra isquemia; finalmente explica el mecanismo.</h2>
-<p>Ese es el algoritmo mental que deja la 5.ª UDMI. Una troponina dinámica es lesión aguda, no infarto por sí sola. Si hay isquemia, clasifica el mecanismo como primario, secundario o relacionado con procedimiento. La mayor ganancia de la nueva definición es clínica: obliga a abandonar etiquetas automáticas y a explicar qué produjo realmente el IAM.</p>
+<div class="k">Lo más importante</div><h2>El algoritmo mental es: lesión → isquemia → mecanismo.</h2><p>Primero demuestra si la troponina representa lesión aguda o crónica. Si es aguda, busca evidencia de isquemia. Solo entonces llámalo infarto y clasifícalo como primario, secundario o relacionado con un procedimiento. La gran virtud de la nueva definición es que obliga a explicar por qué ocurrió el IAM, no a asignar automáticamente un número.</p>
 </section>
 
 <section class="resources" id="fuentes">
 <div class="resource"><strong>Página oficial ESC</strong><span>5.ª Definición Universal de IAM</span><a href="https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/fifth-universal-definition-myocardial-infarction/" target="_blank" rel="noopener">Abrir ESC →</a></div>
-<div class="resource"><strong>Slide set oficial</strong><span>Resumen educativo ESC 2026</span><a href="https://dam-assets.escardio.org/download/b2e827b89baa11f1879e62eac143aa37" target="_blank" rel="noopener">Abrir diapositivas →</a></div>
-<div class="resource"><strong>Publicación</strong><span>EHJ · ehag101</span><a href="https://doi.org/10.1093/eurheartj/ehag101" target="_blank" rel="noopener">Abrir DOI →</a></div>
-<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos del congreso</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>Publicación completa</strong><span>European Heart Journal · ehag101</span><a href="https://doi.org/10.1093/eurheartj/ehag101" target="_blank" rel="noopener">Abrir DOI →</a></div>
+<div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos</span><a href="guias.html">Ver todas →</a></div>
+<div class="resource"><strong>59 ensayos</strong><span>12 Hot Lines</span><a href="ensayos.html">Explorar →</a></div>
 </section>
-
-<div class="sourcebox"><b>Nota editorial:</b> revisión académica independiente y sintética. Las recomendaciones están parafraseadas en español para facilitar lectura clínica; clase y nivel de evidencia se mantienen según la fuente ESC 2026. No sustituye el documento oficial.</div>
+<div class="sourcebox"><b>Nota editorial:</b> síntesis académica independiente. Las recomendaciones están resumidas/parafraseadas en español para facilitar lectura clínica; clase y nivel se conservan según ESC 2026. No sustituye la guía ni el documento de definición original.</div>
 </div></main>
-
-<footer class="footer"><div class="container footer-inner">
-<div>Revisión académica independiente · No afiliada ni avalada por la ESC</div>
-<div><strong>Curaduría académica: David Vélez Verbel</strong></div>
-</div></footer>
+<footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
 </body></html>
