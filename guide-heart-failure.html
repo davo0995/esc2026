@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#ffffff" />
-<title>Insuficiencia cardiaca | ESC 2026</title>
+<title>Insuficiencia cardiaca | ESC Congress 2026</title>
 <style>
 :root{--ink:#13233a;--navy:#081625;--red:#ff4b45;--redsoft:#fff1ef;--blue:#2576c9;--green:#2f7b4f;--greensoft:#eef8f1;--muted:#718096;--line:#e3e8ee;--page:#f7f9fb;--white:#fff;--shadow:0 7px 24px rgba(22,39,61,.06);--max:1420px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}.container{width:min(var(--max),calc(100% - 48px));margin:auto}.icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -18,35 +18,118 @@
 @media(max-width:1000px){.metrics{grid-template-columns:repeat(2,1fr)}.grid3,.resources{grid-template-columns:1fr 1fr}.header{grid-template-columns:1fr}.impact{justify-self:start}}
 @media(max-width:700px){.container{width:min(100% - 28px,var(--max))}.nav-right{display:none}.page{padding-top:20px}.header h1{font-size:42px}.subtitle{font-size:15px}.grid2,.grid3,.resources{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.meaning{grid-template-columns:1fr}.arrow{transform:rotate(90deg);margin:4px}.tabs{gap:20px}.footer-inner{padding:14px 0;flex-direction:column;align-items:flex-start;justify-content:center}}
 </style>
+
+<style>
+.guide-summary{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;margin-top:16px}
+.summary-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;box-shadow:var(--shadow)}
+.summary-card h3{margin:0 0 10px;font-size:18px;color:#20354e}
+.summary-card p{font-size:12px;line-height:1.7;color:#52677c;margin:0}
+.summary-card ul{font-size:11px;line-height:1.65;color:#52677c;margin:0;padding-left:18px}
+.section-stack{display:grid;gap:10px;margin-top:16px}
+.section-item{background:#fff;border:1px solid var(--line);border-radius:11px;padding:15px 17px;box-shadow:var(--shadow)}
+.section-item h4{font-size:13px;margin:0 0 5px;color:#20354e}
+.section-item p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
+.rec-wrap{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow)}
+.rec-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.rec-head h3{margin:0;font-size:18px;color:#20354e}.rec-head p{margin:5px 0 0;font-size:10px;color:#78889a}
+.rec-table{width:100%;border-collapse:collapse}
+.rec-table th{font-size:9px;letter-spacing:.4px;text-transform:uppercase;text-align:left;color:#687b8f;background:#f7f9fb;padding:10px 12px;border-bottom:1px solid var(--line)}
+.rec-table td{font-size:10.5px;line-height:1.48;color:#425970;padding:12px;border-bottom:1px solid #edf1f4;vertical-align:top}
+.rec-table tr:last-child td{border-bottom:none}
+.rec-table td:nth-child(2),.rec-table td:nth-child(3){width:84px;text-align:center;white-space:nowrap}
+.badge{display:inline-flex;min-width:45px;justify-content:center;border-radius:999px;padding:5px 8px;font-weight:850;font-size:9px}
+.c1{background:#eaf7ef;color:#287445}.c2a{background:#eef5fc;color:#2d6496}.c2b{background:#fff6e9;color:#9a6a24}.c3{background:#fff0ef;color:#c13d38}.cna{background:#f0f2f4;color:#647383}
+.changes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.change{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:var(--shadow)}
+.change b{display:block;color:var(--red);font-size:10px;text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.change h4{font-size:14px;color:#20354e;margin:0 0 7px}.change p{font-size:10.5px;line-height:1.55;color:#748395;margin:0}
+.final-box{margin-top:16px;border:1px solid #ffd9d4;background:#fff4f2;border-radius:14px;padding:24px}
+.final-box .k{font-size:10px;font-weight:900;letter-spacing:.8px;color:#e35249;text-transform:uppercase}
+.final-box h2{font-size:26px;line-height:1.15;color:#c83f39;margin:9px 0 10px}
+.final-box p{font-size:12px;line-height:1.65;color:#6c5d5b;margin:0;max-width:1000px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.legend span{font-size:9px;color:#687b8f;background:#f4f7f9;border:1px solid #e4e9ed;border-radius:999px;padding:5px 8px}
+@media(max-width:900px){.guide-summary{grid-template-columns:1fr}.changes{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.changes{grid-template-columns:1fr}.rec-wrap{overflow-x:auto}.rec-table{min-width:760px}}
+</style>
 </head>
-<body><svg width="0" height="0" style="position:absolute"><defs>
+
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8z"/></symbol>
 <symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 4-7 8-7s7 2 8 7"/></symbol>
 <symbol id="target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M15 9l5-5"/></symbol>
 <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
 <symbol id="compare" viewBox="0 0 24 24"><path d="M7 4v16M17 4v16M4 8h6M14 16h6"/></symbol>
 </defs></svg>
-<header class="topbar"><div class="container nav"><a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a><div class="nav-right"><a class="btn" href="guias.html">← Guías</a><a class="btn" href="ensayos.html">59 ensayos</a></div></div></header>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="index.html"><div class="mark"><svg class="icon"><use href="#heart"/></svg></div><div>ESC Congress 2026</div></a>
+<div class="nav-right"><a class="btn" href="guias.html">← Guías</a><a class="btn" href="ensayos.html">59 ensayos</a><a class="btn" href="#fuentes">Fuentes</a></div>
+</div></header>
+
 <main class="page"><div class="container">
 <div class="breadcrumbs"><a href="index.html">Inicio</a><span>›</span><a href="guias.html">Guías 2026</a><span>›</span><b>Insuficiencia cardiaca</b></div>
-<div class="header"><div><h1>Insuficiencia cardiaca</h1><p class="subtitle">2026 ESC Guidelines for the Management of Heart Failure</p></div><div class="impact"><small>DOCUMENTO CLAVE</small>ESC 2026</div></div>
-<nav class="tabs"><a class="active" href="#cambios">Qué cambia</a><a href="#practica">Práctica</a><a href="#fuente">Documento oficial</a></nav>
-<section class="grid2" id="cambios">
-<div class="card"><h3>Tres cambios que importan</h3><ul class="list" style="font-size:13px;line-height:1.75"><li>Desaparece HFmrEF como fenotipo separado: HFrEF pasa a definirse con FEVI &lt;50% y HFpEF con FEVI ≥50%.</li><li>Se introduce una clasificación por etapas con más énfasis en prevención, reconocimiento precoz e intervención oportuna.</li><li>Se revisa la nomenclatura de terapias y se actualizan indicaciones según la evidencia reciente.</li></ul></div>
-<div class="card quote" id="practica"><div class="quote-inner"><b>PARA RECORDAR</b><p>Menos zonas grises de FEVI y más énfasis en detectar y tratar la enfermedad antes.</p></div></div>
+
+<div class="header">
+<div><h1>Insuficiencia cardiaca</h1><p class="subtitle">2026 ESC Guidelines for the management of heart failure</p></div>
+<div class="impact"><small>REVISIÓN ESTRUCTURADA</small>ESC 2026</div>
+</div>
+
+<nav class="tabs">
+<a class="active" href="#resumen">Resumen</a>
+<a href="#apartados">Apartados</a>
+<a href="#recomendaciones">Recomendaciones</a>
+<a href="#cambios">Qué cambió</a>
+<a href="#importante">Lo más importante</a>
+<a href="#fuentes">Fuentes</a>
+</nav>
+
+<section class="guide-summary" id="resumen">
+<div class="summary-card"><h3>Resumen en 60 segundos</h3><p>La guía simplifica los fenotipos por FEVI: HFrEF pasa a incluir FEVI &lt;50% y HFpEF ≥50%, desapareciendo HFmrEF como categoría separada. Adopta estadios A–D, reemplaza “acute HF” por “decompensated HF” y redefine la nomenclatura terapéutica. El cambio práctico más potente es que varias terapias se extienden más allá del antiguo límite de FEVI, con MRA de clase I en insuficiencia cardiaca sintomática independientemente de la FEVI, inicio intrahospitalario de iSGLT2 tras estabilización y nuevas recomendaciones para obesidad, shock, TEER mitral y amiloidosis.</p></div>
+<div class="summary-card"><h3>Cómo leer esta revisión</h3><ul>
+<li>Texto deliberadamente sintético: prioriza decisiones clínicas.</li>
+<li>Las recomendaciones están resumidas en español, no reproducidas literalmente.</li>
+<li>Clase y nivel de evidencia conservan la graduación original del documento.</li>
+<li>Para tablas completas, notas al pie y criterios exactos, abre la fuente oficial.</li>
+</ul></div>
 </section>
-<section class="grid3">
-<div class="card"><h4>Cómo usarla</h4><ul class="checks"><li>Identifica qué cambió respecto a la práctica previa.</li><li>Busca primero las recomendaciones que modifican decisiones frecuentes.</li><li>Confirma clase y nivel de evidencia en el documento oficial.</li></ul></div>
-<div class="card"><h4>En la exposición</h4><ul class="list"><li>Una diapositiva de “qué cambia el lunes”.</li><li>Un algoritmo o tabla clave.</li><li>Una frase final de aplicabilidad.</li></ul></div>
-<div class="card"><h4>En el micrositio</h4><ul class="list"><li>Resumen académico independiente.</li><li>Acceso directo a la página oficial ESC.</li><li>Complementa, no reemplaza, la guía completa.</li></ul></div>
+
+<section id="apartados">
+<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff">
+<div><h3>Apartados principales</h3><p>Mapa rápido de la estructura del documento.</p></div></div>
+<div class="section-stack"><div class='section-item'><h4>Definición y clasificación</h4><p>Definición de IC, nuevos fenotipos por FEVI y estadios A–D.</p></div><div class='section-item'><h4>Prevención</h4><p>Intervenciones en estadio A/B para evitar progresión a IC clínica.</p></div><div class='section-item'><h4>Diagnóstico de IC crónica</h4><p>Péptidos natriuréticos, ecocardiografía, RMC, etiología y fenotipos.</p></div><div class='section-item'><h4>Manejo de IC crónica</h4><p>Terapia médica fundamental, terapias adicionales, dispositivos e intervenciones.</p></div><div class='section-item'><h4>IC descompensada</h4><p>Descongestión, iSGLT2, soporte respiratorio y shock cardiogénico.</p></div><div class='section-item'><h4>IC avanzada</h4><p>Derivación precoz, trasplante, soporte circulatorio y cuidados paliativos.</p></div><div class='section-item'><h4>Comorbilidades</h4><p>FA, enfermedad valvular, obesidad, sueño, fragilidad y salud mental.</p></div><div class='section-item'><h4>Manejo multidisciplinario</h4><p>Ejercicio, rehabilitación, seguimiento y planificación anticipada.</p></div><div class='section-item'><h4>Situaciones específicas</h4><p>Embarazo, amiloidosis y otros escenarios de alta complejidad.</p></div></div>
 </section>
-<section class="resources" id="fuente">
-<div class="resource"><strong>Documento oficial ESC</strong><span>2026 ESC Guidelines for the Management of Heart Failure</span><a href="https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/heart-failure/" target="_blank" rel="noopener">Abrir ESC →</a></div>
+
+<section class="rec-wrap" id="recomendaciones">
+<div class="rec-head"><div><h3>Recomendaciones clave</h3><p>Selección de recomendaciones de mayor impacto. Redacción clínica sintética en español; clase y nivel conservan la graduación original ESC.</p>
+<div class="legend"><span>I = recomendado</span><span>IIa = debe considerarse</span><span>IIb = puede considerarse</span><span>III = no recomendado</span></div>
+</div></div>
+<table class="rec-table"><thead><tr><th>Recomendación resumida en español</th><th>Clase</th><th>Nivel</th></tr></thead>
+<tbody><tr><td>Control de PAS &lt;130 mmHg en hipertensión o estadio B para reducir riesgo de IC.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Betabloqueador en estadio B con FEVI &lt;50% para reducir hospitalización por IC o muerte.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>MRA en IC sintomática, independientemente de la FEVI, para reducir hospitalización por IC o muerte CV.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>A</span></td></tr><tr><td>Titular la terapia médica fundamental cada 1–2 semanas hasta la máxima dosis tolerada.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Mantener la terapia fundamental incluso si desaparecen síntomas o mejora la FEVI.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Iniciar un iSGLT2 durante la hospitalización por IC descompensada tras estabilización inicial.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Usar Heart Team/Shock Team multidisciplinario al considerar soporte circulatorio mecánico temporal.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>C</span></td></tr><tr><td>Bomba microaxial en shock por STEMI seleccionado, sin alto riesgo de lesión cerebral hipóxica.</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>No usar soporte mecánico temporal de rutina en shock por IAM no seleccionado.</td><td><span class='badge c3'>III</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>TEER mitral en HFrEF seleccionado con IM secundaria grave persistente pese a tratamiento/CRT optimizados.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Semaglutida o tirzepatida en IC sintomática, FEVI ≥45% e IMC ≥30 kg/m².</td><td><span class='badge c2a'>IIa</span></td><td><span class='badge cna'>B1</span></td></tr><tr><td>Ejercicio personalizado dentro de rehabilitación cardiaca multidisciplinaria en pacientes estables.</td><td><span class='badge c1'>I</span></td><td><span class='badge cna'>B1</span></td></tr></tbody></table>
+</section>
+
+<section id="cambios">
+<div class="rec-head" style="margin-top:16px;border:1px solid var(--line);border-radius:13px;background:#fff"><div><h3>Qué cambió / qué merece atención</h3><p>Los puntos que más alteran la lectura práctica del documento.</p></div></div>
+<div class="changes"><div class='change'><b>Cambio 1</b><h4>FEVI: desaparece HFmrEF</h4><p>HFrEF se amplía a FEVI &lt;50%; HFpEF comienza en 50%.</p></div><div class='change'><b>Cambio 2</b><h4>Estadios A–D</h4><p>La prevención y el reconocimiento precoz pasan a ser parte explícita del continuo de IC.</p></div><div class='change'><b>Cambio 3</b><h4>MRA más allá de HFrEF</h4><p>MRA recibe clase I en IC sintomática independientemente de la FEVI.</p></div><div class='change'><b>Cambio 4</b><h4>IC descompensada</h4><p>Se consolida el inicio intrahospitalario de iSGLT2 tras estabilización.</p></div><div class='change'><b>Cambio 5</b><h4>Obesidad como diana terapéutica</h4><p>Semaglutida/tirzepatida entra con IIa B1 en IC con FEVI ≥45% e IMC ≥30.</p></div><div class='change'><b>Cambio 6</b><h4>TEER mitral</h4><p>Pasa a clase I B1 en un fenotipo seleccionado de HFrEF con IM secundaria grave.</p></div></div>
+</section>
+
+<section class="final-box" id="importante">
+<div class="k">Lo más importante</div>
+<h2>La FEVI deja de ser una frontera terapéutica tan rígida.</h2>
+<p>Para la práctica diaria: piensa en IC como un continuo A–D; trata precozmente, titula rápido, no retires tratamiento solo porque la FEVI mejoró y reconoce que MRA, iSGLT2, obesidad, TEER y soporte mecánico tienen ahora indicaciones más definidas. El cambio conceptual más memorable es simple: &lt;50% ya entra en HFrEF.</p>
+</section>
+
+<section class="resources" id="fuentes">
+<div class="resource"><strong>Página oficial ESC</strong><span>Insuficiencia cardiaca</span><a href="https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/heart-failure/" target="_blank" rel="noopener">Abrir ESC →</a></div>
+<div class="resource"><strong>Slide set oficial</strong><span>Resumen educativo ESC 2026</span><a href="https://dam-assets.escardio.org/download/b2e587389baa11f185de06bdfb3e4be9" target="_blank" rel="noopener">Abrir diapositivas →</a></div>
+<div class="resource"><strong>Publicación</strong><span>EHJ · ehag100</span><a href="https://doi.org/10.1093/eurheartj/ehag100" target="_blank" rel="noopener">Abrir DOI →</a></div>
 <div class="resource"><strong>Guías 2026</strong><span>Los 4 documentos del congreso</span><a href="guias.html">Ver todas →</a></div>
-<div class="resource"><strong>59 ensayos</strong><span>Las 12 Hot Lines</span><a href="ensayos.html">Explorar ensayos →</a></div>
-<div class="resource"><strong>Inicio</strong><span>Micrositio ESC Congress 2026</span><a href="index.html">Volver →</a></div>
 </section>
-<div class="sourcebox"><b>Nota:</b> resumen académico independiente basado en los mensajes oficiales ESC 2026. Para recomendaciones, clases y niveles de evidencia, consulta el documento completo.</div>
+
+<div class="sourcebox"><b>Nota editorial:</b> revisión académica independiente y sintética. Las recomendaciones están parafraseadas en español para facilitar lectura clínica; clase y nivel de evidencia se mantienen según la fuente ESC 2026. No sustituye el documento oficial.</div>
 </div></main>
-<footer class="footer"><div class="container footer-inner"><div>Revisión académica independiente · No afiliada ni avalada por la ESC</div><div><strong>Curaduría académica: David Vélez Verbel</strong></div></div></footer>
+
+<footer class="footer"><div class="container footer-inner">
+<div>Revisión académica independiente · No afiliada ni avalada por la ESC</div>
+<div><strong>Curaduría académica: David Vélez Verbel</strong></div>
+</div></footer>
 </body></html>
